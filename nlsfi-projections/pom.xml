@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fi.nls.oskari.extras</groupId>
+    <artifactId>nlsfi-projections</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <name>Oskari wrapper for projection libs usable in NSLFI applications</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>fi.nls.projektio</groupId>
+            <artifactId>java-projections</artifactId>
+            <version>2012.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>fi.nls.oskari.service</groupId>
+            <artifactId>oskari-map</artifactId>
+            <!-- Any version after 1.36.0-SNAPSHOT  -->
+            <version>[1.36.0-SNAPSHOT,)</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>oskari_org</id>
+            <name>Oskari.org repository</name>
+            <url>http://oskari.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>oskari_org_snapshot</id>
+            <name>Oskari.org snapshot repository</name>
+            <url>http://oskari.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <!-- For uploading artifacts to oskari.org repository -->
+    <distributionManagement>
+        <repository>
+            <id>oskari_org</id>
+            <name>Oskari.org repository</name>
+            <url>http://oskari.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>oskari_org</id>
+            <name>Oskari.org repository</name>
+            <url>http://oskari.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
