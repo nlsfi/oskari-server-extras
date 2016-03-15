@@ -27,3 +27,5 @@ Note! This module is coupled with oskari-server version. The dependency uses 1.3
             <artifactId>nlsfi-projections</artifactId>
             <version>1.0</version>
         </dependency>
+
+The functionality uses java.awt so you might need to set system property `java.awt.headless=true`
