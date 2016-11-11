@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>nlsfi-projections</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
     <name>Oskari wrapper for projection libs usable in NSLFI applications</name>
 
@@ -19,8 +19,8 @@
         <dependency>
             <groupId>fi.nls.oskari.service</groupId>
             <artifactId>oskari-map</artifactId>
-            <!-- Any version after 1.36.0-SNAPSHOT  -->
-            <version>[1.36.0-SNAPSHOT,)</version>
+            <!-- Any version after 1.40.0  -->
+            <version>[1.40.0,)</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

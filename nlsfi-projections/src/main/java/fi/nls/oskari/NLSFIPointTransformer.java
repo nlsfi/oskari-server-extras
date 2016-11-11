@@ -4,19 +4,20 @@ import fi.nls.common.grt.projections.ProjectionTransform;
 import fi.nls.oskari.domain.geo.Point;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
+import fi.nls.oskari.map.geometry.DefaultPointTransformer;
 import fi.nls.oskari.map.geometry.PointTransformer;
-import fi.nls.oskari.map.geometry.ProjectionHelper;
 
 import java.awt.geom.Point2D;
 
 /**
  * Oskari wrapper for custom transform library implemented by NLSFI.
- * Defaults to fi.nls.oskari.map.geometry.ProjectionHelper one or both of the projections are unsupported by
+ * Defaults to fi.nls.oskari.map.geometry.DefaultPointTransformer if one or both of the projections are unsupported by
  * the custom lib.
  */
 public class NLSFIPointTransformer implements PointTransformer {
 
     private static final Logger LOG = LogFactory.getLogger(NLSFIPointTransformer.class);
+    private DefaultPointTransformer defaultPointTransformer = new DefaultPointTransformer();
 
     public Point reproject(Point point, String sourceSRS, String targetSRS) {
 
@@ -25,7 +26,7 @@ public class NLSFIPointTransformer implements PointTransformer {
         if(source.equals(NLSFIProjections.UNSUPPORTED) ||
                 target.equals(NLSFIProjections.UNSUPPORTED)) {
             LOG.info("Projections not supported", sourceSRS, targetSRS, "by NLSFI library. Using ProjectionHelper instead.");
-            return ProjectionHelper.transformPoint(point, sourceSRS, targetSRS);
+            return defaultPointTransformer.reproject(point, sourceSRS, targetSRS);
         }
 
         ProjectionTransform transform = new ProjectionTransform(source.code, target.code);

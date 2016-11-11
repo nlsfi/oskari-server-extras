@@ -29,3 +29,16 @@ Note! This module is coupled with oskari-server version. The dependency uses 1.3
         </dependency>
 
 The functionality uses java.awt so you might need to set system property `java.awt.headless=true`
+
+## Version history
+
+### 1.0
+
+Initial version.
+Dependency on oskari-server version 1.36.0 or later
+
+### 1.1
+ 
+Changed unsupported transform to use the new DefaultPointTransfomer instead of ProjectionHelper.
+Dependency on oskari-server version 1.40.0 or later.
+
