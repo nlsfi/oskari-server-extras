@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <!-- Any version after 1.40.0 -->
-        <oskari.version>[1.40.0,)</oskari.version>
+        <oskari.version>[1.48.0,)</oskari.version>
         <fi.mml.nameregister.version>1.0</fi.mml.nameregister.version>
         <geotools.version>14.2</geotools.version>
         <javax.xml.version>1.0</javax.xml.version>
