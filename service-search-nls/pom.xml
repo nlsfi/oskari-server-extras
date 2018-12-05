@@ -5,17 +5,17 @@
 
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>oskari-search-nls</artifactId>
-    <version>2.1</version>
+    <version>3.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>NLS Search Service</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
-        <!-- Any version after 1.40.0 -->
-        <oskari.version>[1.48.0,)</oskari.version>
+        <!-- Any version after 1.50.0 -->
+        <oskari.version>[1.50.0-SNAPSHOT,)</oskari.version>
         <fi.mml.nameregister.version>1.0</fi.mml.nameregister.version>
-        <geotools.version>14.2</geotools.version>
+        <geotools.version>19.2</geotools.version>
         <javax.xml.version>1.0</javax.xml.version>
         <vecmath.version>1.5.2</vecmath.version>
         <xmlunit.version>1.5</xmlunit.version>
