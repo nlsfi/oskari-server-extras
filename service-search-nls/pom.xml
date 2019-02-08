@@ -5,7 +5,7 @@
 
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>oskari-search-nls</artifactId>
-    <version>3.1</version>
+    <version>3.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>NLS Search Service</name>
 
@@ -13,8 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <!-- Any version after 1.50.0 -->
-        <!--oskari.version>[1.50.0,)</oskari.version -->
-        <oskari.version>1.50.0</oskari.version>
+        <oskari.version>[1.51.0-SNAPSHOT,)</oskari.version>
         <fi.mml.nameregister.version>1.0</fi.mml.nameregister.version>
         <geotools.version>19.2</geotools.version>
         <javax.xml.version>1.0</javax.xml.version>
@@ -96,13 +95,13 @@
             <groupId>fi.nls.oskari.service</groupId>
             <artifactId>oskari-search</artifactId>
             <version>${oskari.version}</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>fi.nls.oskari.service</groupId>
             <artifactId>oskari-control-base</artifactId>
             <version>${oskari.version}</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>fi.nls.oskari</groupId>
@@ -206,11 +205,11 @@
             <name>Oskari.org repository</name>
             <url>http://oskari.org/nexus/content/repositories/releases/</url>
         </repository>
-        <!--snapshotRepository>
+        <snapshotRepository>
             <id>oskari_org</id>
             <name>Oskari.org repository</name>
             <url>http://oskari.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository-->
+        </snapshotRepository>
     </distributionManagement>
 
     <pluginRepositories>
