@@ -42,6 +42,7 @@ import java.util.Map;
 public class ELFGeoLocatorParser {
     private Logger log = LogFactory.getLogger(this.getClass());
     public static final String KEY_NAME = "_name";
+    public static final String KEY_LANGUAGE = "_name_lang";
     public static final String KEY_TYPE = "_type";
     public static final String KEY_LOCATIONTYPE_TITLE = "locationType_title";
     // Role value is value of SI_LocationType gml:id
@@ -143,6 +144,7 @@ public class ELFGeoLocatorParser {
                 this.parseFeatureProperties(result, feature);
 
                 List<String> names = this.findProperties(result, KEY_NAME);
+                List<String> languages = this.findProperties(result, KEY_LANGUAGE);
                 List<String> types = this.findProperties(result, KEY_TYPE);
                 List<String> loctypes = this.findProperties(result, KEY_LOCATIONTYPE_TITLE);
                 List<String> loctypeids = this.findProperties(result, KEY_LOCATIONTYPE_ROLE);
@@ -185,8 +187,10 @@ public class ELFGeoLocatorParser {
 
                 SearchResultItem item = new SearchResultItem();
 
-                item.addValue("exonymNames", getVariantName(names, types));
                 item.setTitle(getOfficialName(names, types));
+                item.addValue("localized", getLocalizedNames(names, languages, types));
+                item.addValue("exonymNames", getVariantName(names, types));
+
 
                 for (int k = 0; k < size; k++) {
                     if (types.size() >= k + 1) {
@@ -245,6 +249,21 @@ public class ELFGeoLocatorParser {
         return searchResultList;
     }
 
+    private Map<String, String> getLocalizedNames(List<String> names, List<String> languages, List<String> types) {
+        Map<String, String> map = new HashMap<>();
+        if (names == null || types == null || languages == null ||
+                names.isEmpty() || types.isEmpty() || languages.isEmpty()) {
+            return map;
+        }
+        int index = 0;
+        for (String type : types) {
+            if (type.equals("official")) {
+                map.put(languages.get(index), names.get(index));
+            }
+            index++;
+        }
+        return map;
+    }
 
     private String getOfficialName(List<String> names, List<String> types){
         if(names != null && types != null){
@@ -358,9 +377,13 @@ public class ELFGeoLocatorParser {
                     if (entry.getKey().endsWith(key)) {
                         values.add(value.toString());
                         // Trick order num hack for ordering properties later on because of original hash order
-                        String[] num = entry.getKey().split("_");
-                        if (num.length > 2){
-                            order.add(Integer.parseInt(num[num.length - 2]));
+                        int endIndex = entry.getKey().length() - key.length();
+                        if (endIndex == 0) {
+                            continue;
+                        }
+                        String[] num = entry.getKey().substring(0, endIndex).split("_");
+                        if (num.length > 1){
+                            order.add(Integer.parseInt(num[num.length - 1]));
                         }
                     }
                 }
