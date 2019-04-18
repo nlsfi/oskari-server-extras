@@ -249,20 +249,22 @@ public class ELFGeoLocatorParser {
         return searchResultList;
     }
 
-    private Map<String, String> getLocalizedNames(List<String> names, List<String> languages, List<String> types) {
-        Map<String, String> map = new HashMap<>();
+    private List<Map<String, String>> getLocalizedNames(List<String> names, List<String> languages, List<String> types) {
+        List<Map<String, String>> list = new ArrayList<>();
         if (names == null || types == null || languages == null ||
                 names.isEmpty() || types.isEmpty() || languages.isEmpty()) {
-            return map;
+            return list;
         }
         int index = 0;
         for (String type : types) {
             if (type.equals("official")) {
+                Map<String, String> map = new HashMap<>();
                 map.put(languages.get(index), names.get(index));
+                list.add(map);
             }
             index++;
         }
-        return map;
+        return list;
     }
 
     private String getOfficialName(List<String> names, List<String> types){
