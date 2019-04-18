@@ -259,7 +259,8 @@ public class ELFGeoLocatorParser {
         for (String type : types) {
             if (type.equals("official")) {
                 Map<String, String> map = new HashMap<>();
-                map.put(languages.get(index), names.get(index));
+                map.put("locale", languages.get(index));
+                map.put("name", names.get(index));
                 list.add(map);
             }
             index++;
