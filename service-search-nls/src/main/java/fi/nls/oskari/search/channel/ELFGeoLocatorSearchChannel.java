@@ -58,6 +58,7 @@ public class ELFGeoLocatorSearchChannel extends SearchChannel implements SearchA
     public static final String PROPERTY_AUTOCOMPLETE_URL = PropertyUtil.getOptional("search.channel.ELFGEOLOCATOR_CHANNEL.autocomplete.url");
     public static final String PROPERTY_AUTOCOMPLETE_USERNAME = PropertyUtil.getOptional("search.channel.ELFGEOLOCATOR_CHANNEL.autocomplete.userName");
     public static final String PROPERTY_AUTOCOMPLETE_PASSWORD = PropertyUtil.getOptional("search.channel.ELFGEOLOCATOR_CHANNEL.autocomplete.password");
+    private static final String PROPERTY_SERVICE_LANG = "search.channel.ELFGEOLOCATOR_CHANNEL.lang";
 
     // Parameters
     public static final String PARAM_NORMAL = "normal";
@@ -263,7 +264,8 @@ public class ELFGeoLocatorSearchChannel extends SearchChannel implements SearchA
 
         // Language
         Locale locale = new Locale(searchCriteria.getLocale());
-        String lang3 = locale.getISO3Language();
+        String propertyName = PROPERTY_SERVICE_LANG +"."+ locale.getLanguage();
+        String lang3 = PropertyUtil.get(propertyName, locale.getISO3Language());
 
         StringBuffer buf = new StringBuffer(serviceURL);
         if ("true".equals(searchCriteria.getParamAsString(PARAM_FILTER))) {
