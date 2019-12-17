@@ -37,7 +37,7 @@ public class AddressParamHandler extends ParamHandler {
             log.debug("Got multiple coordinates for address", coordinates);
             // not found or multiple found -> open search plugin with param value
             final JSONObject config = getBundleConfig(params.getConfig(), ViewModifier.BUNDLE_MAPFULL);
-            final JSONObject searchplugin = MapfullHandler.getPlugin(MapfullHandler.PLUGIN_SEARCH, config);
+            final JSONObject searchplugin = MapfullHandler.getPlugin("Oskari.mapframework.bundle.mapmodule.plugin.SearchPlugin", config);
             if(searchplugin != null) {
                 log.debug("Modifying search plugin config", searchplugin);
                 // get existing config or initialize new node
