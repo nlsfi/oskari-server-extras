@@ -84,8 +84,8 @@ public class NLSNearestFeatureParser {
             InputStream xml = new ByteArrayInputStream(outputStream.toByteArray());
 
             //create the parser with the gml 3.0 configuration
-            org.geotools.xml.Configuration configuration = new org.geotools.gml3.GMLConfiguration();
-            org.geotools.xml.Parser parser = new org.geotools.xml.Parser(configuration);
+            org.geotools.xsd.Configuration configuration = new org.geotools.gml3.GMLConfiguration();
+            org.geotools.xsd.Parser parser = new org.geotools.xsd.Parser(configuration);
             parser.setValidating(false);
             parser.setFailOnValidationError(false);
             parser.setStrict(false);

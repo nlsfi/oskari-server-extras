@@ -111,8 +111,8 @@ public class ELFGeoLocatorParser {
             InputStream xml = new ByteArrayInputStream(outputStream.toByteArray());
 
             //create the parser with the gml 3.0 configuration
-            org.geotools.xml.Configuration configuration = new org.geotools.gml3.GMLConfiguration();
-            org.geotools.xml.Parser parser = new org.geotools.xml.Parser(configuration);
+            org.geotools.xsd.Configuration configuration = new org.geotools.gml3.GMLConfiguration();
+            org.geotools.xsd.Parser parser = new org.geotools.xsd.Parser(configuration);
             parser.setValidating(false);
             parser.setFailOnValidationError(false);
             parser.setStrict(false);
@@ -120,7 +120,7 @@ public class ELFGeoLocatorParser {
 
 
             //parse featurecollection
-            FeatureCollection<SimpleFeatureType, SimpleFeature> fc = null;
+            FeatureCollection<SimpleFeatureType, SimpleFeature> fc;
             try {
                 Object obj = parser.parse(xml);
                 if (obj instanceof Map) {
@@ -167,8 +167,8 @@ public class ELFGeoLocatorParser {
                     log.debug("Bounds:", f.getBounds());
                 }
                 */
-                if (feature.getDefaultGeometry() instanceof com.vividsolutions.jts.geom.Point) {
-                    com.vividsolutions.jts.geom.Point point = (com.vividsolutions.jts.geom.Point) feature.getDefaultGeometry();
+                if (feature.getDefaultGeometry() instanceof org.locationtech.jts.geom.Point) {
+                    org.locationtech.jts.geom.Point point = (org.locationtech.jts.geom.Point) feature.getDefaultGeometry();
                     log.debug("Original coordinates - x:", point.getX(), "y:", point.getY());
 
                     Point p2 = null;
