@@ -1,7 +1,7 @@
 package fi.nls.oskari.control.metadata;
 
-import fi.mml.map.mapwindow.service.db.OskariMapLayerGroupService;
-import fi.mml.map.mapwindow.service.db.OskariMapLayerGroupServiceIbatisImpl;
+import org.oskari.service.maplayer.OskariMapLayerGroupService;
+import org.oskari.service.maplayer.OskariMapLayerGroupServiceMybatisImpl;
 import fi.nls.oskari.control.ActionParameters;
 import fi.nls.oskari.search.channel.MetadataCatalogueChannelSearchService;
 import fi.nls.oskari.util.IOHelper;
@@ -53,13 +53,13 @@ public class GetMetadataSearchOptionsHandlerTest extends JSONActionRouteTest {
     }
 
     private void mockInternalServices() throws Exception {
-        final OskariMapLayerGroupService service = mock(OskariMapLayerGroupServiceIbatisImpl.class);
+        final OskariMapLayerGroupService service = mock(OskariMapLayerGroupServiceMybatisImpl.class);
         doReturn(Collections.emptyList()).when(service).findAll();
 
 
         // return mocked service if a new one is created
         // classes doing this must be listed in PrepareForTest annotation
-        PowerMockito.whenNew(OskariMapLayerGroupServiceIbatisImpl.class).withNoArguments().
+        PowerMockito.whenNew(OskariMapLayerGroupServiceMybatisImpl.class).withNoArguments().
                 thenAnswer(new Answer<Object>() {
                     public Object answer(InvocationOnMock invocation) throws Throwable {
                         return service;
