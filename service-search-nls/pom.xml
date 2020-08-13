@@ -119,11 +119,6 @@
             <version>${geotools.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.xml</groupId>
-            <artifactId>jsr173</artifactId>
-            <version>${javax.xml.version}</version>
-        </dependency>
-        <dependency>
             <groupId>javax.vecmath</groupId>
             <artifactId>vecmath</artifactId>
             <version>${vecmath.version}</version>
