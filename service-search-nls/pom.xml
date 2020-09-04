@@ -28,7 +28,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
@@ -36,7 +36,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -49,7 +49,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.2.0</version>
                 <configuration>
                     <failOnError>false</failOnError>
                 </configuration>
@@ -65,11 +65,11 @@
             </plugin>
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>2.3.1</version>
+                <version>2.5.2</version>
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.5</version>
+                <version>3.2.0</version>
             </plugin>
             <plugin>
                 <!-- explicitly define maven-deploy-plugin after other to 
@@ -91,19 +91,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-search</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>service-search</artifactId>
             <version>${oskari.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-base</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-base</artifactId>
             <version>${oskari.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>fi.nls.oskari</groupId>
+            <groupId>org.oskari</groupId>
             <artifactId>shared-test-resources</artifactId>
             <version>${oskari.version}</version>
             <scope>test</scope>
@@ -129,29 +129,18 @@
             <version>${xmlunit.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>xml-apis</groupId>
-            <artifactId>xml-apis</artifactId>
-            <version>1.4.01</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.xmlbeans</groupId>
-            <artifactId>xmlbeans</artifactId>
-            <version>${xmlbeans.version}</version>
-        </dependency>
     </dependencies>
 
     <repositories>
         <repository>
             <id>oskari_org</id>
             <name>Oskari.org repository</name>
-            <url>http://oskari.org/nexus/content/repositories/releases/</url>
+            <url>https://oskari.org/nexus/content/repositories/releases/</url>
         </repository>
         <repository>
             <id>oskari_org_snapshot</id>
             <name>Oskari.org snapshot repository</name>
-            <url>http://oskari.org/nexus/content/repositories/snapshots/</url>
+            <url>https://oskari.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
             <id>osgeo</id>
