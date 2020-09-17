@@ -1,12 +1,12 @@
 package fi.nls.oskari.search.ktjkiiwfs;
 
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Point;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
 import fi.nls.oskari.search.channel.ConnectionProvider;
 import fi.nls.oskari.util.IOHelper;
 import fi.nls.oskari.util.XmlHelper;
-import org.geotools.GML;
+import org.geotools.wfs.GML;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureIterator;
 import org.geotools.geometry.jts.ReferencedEnvelope;

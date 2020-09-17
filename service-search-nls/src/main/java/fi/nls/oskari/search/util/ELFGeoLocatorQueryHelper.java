@@ -9,8 +9,8 @@ package fi.nls.oskari.search.util;
 
 import fi.nls.oskari.service.ServiceRuntimeException;
 import org.geotools.factory.CommonFactoryFinder;
-import org.geotools.xml.Configuration;
-import org.geotools.xml.Encoder;
+import org.geotools.xsd.Configuration;
+import org.geotools.xsd.Encoder;
 import org.opengis.filter.Filter;
 import org.opengis.filter.FilterFactory2;
 import org.opengis.filter.PropertyIsEqualTo;

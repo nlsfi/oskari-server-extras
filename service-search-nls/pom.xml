@@ -5,7 +5,7 @@
 
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>oskari-search-nls</artifactId>
-    <version>3.3</version>
+    <version>3.4</version>
     <packaging>jar</packaging>
     <name>NLS Search Service</name>
 
@@ -13,12 +13,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <!-- Any version after 1.52.0 -->
-        <oskari.version>[1.52.0,)</oskari.version>
+        <oskari.version>[2.0.0,)</oskari.version>
         <fi.mml.nameregister.version>1.0</fi.mml.nameregister.version>
-        <geotools.version>19.2</geotools.version>
+        <geotools.version>23.2</geotools.version>
         <javax.xml.version>1.0</javax.xml.version>
         <vecmath.version>1.5.2</vecmath.version>
-        <xmlunit.version>1.5</xmlunit.version>
+        <xmlunit.version>1.6</xmlunit.version>
         <xmlbeans.version>2.6.0</xmlbeans.version>
     </properties>
 
@@ -28,7 +28,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
@@ -36,7 +36,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -49,7 +49,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.2.0</version>
                 <configuration>
                     <failOnError>false</failOnError>
                 </configuration>
@@ -65,11 +65,11 @@
             </plugin>
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>2.3.1</version>
+                <version>2.5.2</version>
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.5</version>
+                <version>3.2.0</version>
             </plugin>
             <plugin>
                 <!-- explicitly define maven-deploy-plugin after other to 
@@ -91,19 +91,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-search</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>service-search</artifactId>
             <version>${oskari.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-base</artifactId>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-base</artifactId>
             <version>${oskari.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>fi.nls.oskari</groupId>
+            <groupId>org.oskari</groupId>
             <artifactId>shared-test-resources</artifactId>
             <version>${oskari.version}</version>
             <scope>test</scope>
@@ -119,11 +119,6 @@
             <version>${geotools.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.xml</groupId>
-            <artifactId>jsr173</artifactId>
-            <version>${javax.xml.version}</version>
-        </dependency>
-        <dependency>
             <groupId>javax.vecmath</groupId>
             <artifactId>vecmath</artifactId>
             <version>${vecmath.version}</version>
@@ -134,75 +129,35 @@
             <version>${xmlunit.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>xml-apis</groupId>
-            <artifactId>xml-apis</artifactId>
-            <version>1.4.01</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.xmlbeans</groupId>
-            <artifactId>xmlbeans</artifactId>
-            <version>${xmlbeans.version}</version>
-        </dependency>
     </dependencies>
 
     <repositories>
         <repository>
             <id>oskari_org</id>
             <name>Oskari.org repository</name>
-            <url>http://oskari.org/nexus/content/repositories/releases/</url>
+            <url>https://oskari.org/nexus/content/repositories/releases/</url>
         </repository>
         <repository>
             <id>oskari_org_snapshot</id>
             <name>Oskari.org snapshot repository</name>
-            <url>http://oskari.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>http://repo.maven.apache.org/maven2</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>maven2-repository.dev.java.net</id>
-            <name>Java.net repository</name>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
-        <repository>
-            <id>thecentral</id>
-            <name>The Central repository</name>
-            <url>http://repo1.maven.org/maven2</url>
+            <url>https://oskari.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
             <id>osgeo</id>
-            <name>Open Source Geospatial Foundation Repository</name>
-            <url>http://download.osgeo.org/webdav/geotools/</url>
-        </repository>
-        <repository>
-            <id>geosolutions</id>
-            <name>Geo-solutions Maven Repository</name>
-            <url>http://maven.geo-solutions.it</url>
-        </repository>
-        <repository>
-            <id>boundless</id>
-            <name>Boundless Maven Repository</name>
-            <url>http://repo.boundlessgeo.com/main/</url>
+            <name>OSGeo repository</name>
+            <url>https://repo.osgeo.org/repository/release/</url>
         </repository>
     </repositories>
     <distributionManagement>
         <repository>
             <id>oskari_org</id>
             <name>Oskari.org repository</name>
-            <url>http://oskari.org/nexus/content/repositories/releases/</url>
+            <url>https://oskari.org/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
             <id>oskari_org</id>
             <name>Oskari.org repository</name>
-            <url>http://oskari.org/nexus/content/repositories/snapshots/</url>
+            <url>https://oskari.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -220,7 +175,5 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
-
-
 
 </project>
