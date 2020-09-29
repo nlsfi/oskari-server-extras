@@ -97,10 +97,10 @@ public class MetadataCatalogueChannelSearchServiceTest {
             result = results.get(i);
             assertEquals("Title mismatch", "Title", result.getTitle());
             assertEquals("Description mismatch", "Abstract text.", result.getDescription());
-            assertEquals("Westbound longitude mismatch", "19.08317359", result.getWestBoundLongitude());
-            assertEquals("Southbound latitude mismatch", "59.45414258", result.getSouthBoundLatitude());
-            assertEquals("Eastbound longitude mismatch", "31.58672881", result.getEastBoundLongitude());
-            assertEquals("Northbound latitude mismatch", "70.09229553", result.getNorthBoundLatitude());
+            assertEquals("Westbound longitude mismatch", 19.08317359, result.getWestBoundLongitude(), 0.001);
+            assertEquals("Southbound latitude mismatch", 59.45414258, result.getSouthBoundLatitude(), 0.001);
+            assertEquals("Eastbound longitude mismatch", 31.58672881, result.getEastBoundLongitude(), 0.001);
+            assertEquals("Northbound latitude mismatch", 70.09229553, result.getNorthBoundLatitude(), 0.001);
             // FIXME: downloadable points to:
             // gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:protocol
             // which was previously parsed as boolean but in test XML it's "OGC:WMS-1.1.1-http-get-map" so ignoring for now...
@@ -155,10 +155,10 @@ public class MetadataCatalogueChannelSearchServiceTest {
             result = results.get(i);
             assertEquals("Title mismatch", "Title", result.getTitle());
             assertEquals("Description mismatch", "Abstract text.", result.getDescription());
-            assertEquals("Westbound longitude mismatch", "19.08317359", result.getWestBoundLongitude());
-            assertEquals("Southbound latitude mismatch", "59.45414258", result.getSouthBoundLatitude());
-            assertEquals("Eastbound longitude mismatch", "31.58672881", result.getEastBoundLongitude());
-            assertEquals("Northbound latitude mismatch", "70.09229553", result.getNorthBoundLatitude());
+            assertEquals("Westbound longitude mismatch", 19.08317359, result.getWestBoundLongitude(), 0.001);
+            assertEquals("Southbound latitude mismatch", 59.45414258, result.getSouthBoundLatitude(), 0.001);
+            assertEquals("Eastbound longitude mismatch", 31.58672881, result.getEastBoundLongitude(), 0.001);
+            assertEquals("Northbound latitude mismatch", 70.09229553, result.getNorthBoundLatitude(), 0.001);
             assertEquals("IsDownloadable mismatch", false, result.isDownloadable());
             assertEquals("GMD URL mismatch", "http://www.gee-em-dee.com", result.getGmdURL());
             assertEquals("Action URL mismatch", "fetchPageURL.fiUUIDUUID-UUID-UUID-UUID-UUIDUUIDUUID", result.getActionURL());
