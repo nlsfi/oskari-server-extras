@@ -18,8 +18,8 @@ public class TM35LehtijakoSearchChannelTest {
         ChannelSearchResult result = instance.doSearch(searchCriteria);
         SearchResultItem item = result.getSearchResultItems().get(0);
 
-        assertEquals(548000.0d, Double.parseDouble(item.getLon()), 0.0d);
-        assertEquals(7506000.0d, Double.parseDouble(item.getLat()), 0.0d);
+        assertEquals(548000.0d, item.getLon(), 0.0d);
+        assertEquals(7506000.0d, item.getLat(), 0.0d);
     }
     @Test
     public void testDoSearchInvalidKeyword() {
