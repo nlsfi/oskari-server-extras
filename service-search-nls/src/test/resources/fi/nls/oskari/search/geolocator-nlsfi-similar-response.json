@@ -1,0 +1,28 @@
+{
+  "terms" : [ {
+    "text" : "Tesmo",
+    "similarity" : 0.375,
+    "word_similarity" : 0.5,
+    "count" : 1
+  }, {
+    "text" : "Tessu",
+    "similarity" : 0.375,
+    "word_similarity" : 0.5,
+    "count" : 1
+  }, {
+    "text" : "Tesala",
+    "similarity" : 0.333333343,
+    "word_similarity" : 0.428571433,
+    "count" : 1
+  }, {
+    "text" : "Tesoma",
+    "similarity" : 0.333333343,
+    "word_similarity" : 0.428571433,
+    "count" : 1
+  }, {
+    "text" : "Tessjö",
+    "similarity" : 0.333333343,
+    "word_similarity" : 0.428571433,
+    "count" : 1
+  } ]
+}

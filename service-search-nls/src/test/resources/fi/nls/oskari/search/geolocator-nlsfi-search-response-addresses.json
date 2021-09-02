@@ -1,0 +1,222 @@
+
+{
+  "type" : "FeatureCollection",
+  "features" : [ {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "101080118Y",
+      "kiinteistotunnus" : "39800100150073",
+      "katunimi" : "Hämeenkatu",
+      "katunumero" : "1",
+      "postinumero" : "15110",
+      "kuntanimiFin" : "Lahti",
+      "kuntanimiSwe" : "Lahtis",
+      "kuntatunnus" : "398",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#1",
+      "distance" : null,
+      "rank" : 1,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "similarity" : 0.4285714285714286,
+      "confidence" : 0.75,
+      "label" : "Hämeenkatu 1 (Lahti )",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "398",
+      "label:kuntatunnus" : "Lahti",
+      "label:municipality" : "Lahti"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 427009.951, 6761578.014 ]
+    }
+  }, {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "1010801190",
+      "kiinteistotunnus" : "39800100150074",
+      "katunimi" : "Hämeenkatu",
+      "katunumero" : "1",
+      "postinumero" : "15110",
+      "kuntanimiFin" : "Lahti",
+      "kuntanimiSwe" : "Lahtis",
+      "kuntatunnus" : "398",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#2",
+      "distance" : null,
+      "rank" : 2,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "similarity" : 0.4285714285714286,
+      "confidence" : 0.75,
+      "label" : "Hämeenkatu 1 (Lahti )",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "398",
+      "label:kuntatunnus" : "Lahti",
+      "label:municipality" : "Lahti"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 427024.889, 6761546.223 ]
+    }
+  }, {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "1034317823",
+      "kiinteistotunnus" : "85300100090011",
+      "katunimi" : "Hämeenkatu",
+      "katunumero" : "1",
+      "postinumero" : "20500",
+      "kuntanimiFin" : "Turku",
+      "kuntanimiSwe" : "Åbo",
+      "kuntatunnus" : "853",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#9",
+      "distance" : null,
+      "rank" : 9,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "similarity" : 0.4285714285714286,
+      "confidence" : 0.75,
+      "label" : "Hämeenkatu 1 (Turku )",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "853",
+      "label:kuntatunnus" : "Turku",
+      "label:municipality" : "Turku"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 240811.495, 6711202.855 ]
+    }
+  }, {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "102025166C",
+      "kiinteistotunnus" : "11100300020011",
+      "katunimi" : "Hämeenkatu",
+      "katunumero" : "1",
+      "postinumero" : "18100",
+      "kuntanimiFin" : "Heinola",
+      "kuntanimiSwe" : "Heinola",
+      "kuntatunnus" : "111",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#4",
+      "distance" : null,
+      "rank" : 4,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "similarity" : 0.3913043478260869,
+      "confidence" : 0.75,
+      "label" : "Hämeenkatu 1 (Heinola )",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "111",
+      "label:kuntatunnus" : "Heinola",
+      "label:municipality" : "Heinola"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 448191.0, 6786492.0 ]
+    }
+  }, {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "102025167D",
+      "kiinteistotunnus" : "11100300020011",
+      "katunimi" : "Hämeenkatu",
+      "katunumero" : "1",
+      "postinumero" : "18100",
+      "kuntanimiFin" : "Heinola",
+      "kuntanimiSwe" : "Heinola",
+      "kuntatunnus" : "111",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#5",
+      "distance" : null,
+      "rank" : 5,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "similarity" : 0.3913043478260869,
+      "confidence" : 0.75,
+      "label" : "Hämeenkatu 1 (Heinola )",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "111",
+      "label:kuntatunnus" : "Heinola",
+      "label:municipality" : "Heinola"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 448196.0, 6786517.0 ]
+    }
+  } ],
+  "geocoding" : {
+    "status" : "success",
+    "metadata" : [ {
+      "rawTerm" : "hämeenkatu",
+      "searchTerm" : "hämeenkatu",
+      "searchTermParts" : [ "hämeenkatu" ],
+      "seartchTermPartCount" : 1,
+      "matchedParts" : [ ],
+      "matchingCodelists" : { },
+      "similarTerms" : [ {
+        "text" : "Hämeenkyrö",
+        "similarity" : 0.46666666865348816,
+        "word_similarity" : 0.6363636255264282,
+        "count" : 1
+      } ]
+    } ],
+    "sources" : {
+      "addresses" : {
+        "status" : "success",
+        "duration" : 295,
+        "links" : [ {
+          "href" : "/rahu/wfs?FILTER=%3Cogc%3AFilter+xmlns%3Aogc%3D%22http%3A%2F%2Fwww.opengis.net%2Fogc%22%3E%0D%0A%09%3Cogc%3AAnd%3E%0D%0A%09%09%3Cogc%3APropertyIsLike+wildCard%3D%22%2A%22+singleChar%3D%22%3F%22%0D%0A%09%09%09escape%3D%22%21%22+matchCase%3D%22false%22%3E%0D%0A%09%09%09%3Cogc%3APropertyName%3Ekatunimi%3C%2Fogc%3APropertyName%3E%0D%0A%09%09%09%3Cogc%3ALiteral%3Eh%C3%A4meenkatu%3C%2Fogc%3ALiteral%3E%0D%0A%09%09%3C%2Fogc%3APropertyIsLike%3E%0D%0A%0D%0A%09%09%3Cogc%3APropertyIsEqualTo%3E%0D%0A%09%09%09%3Cogc%3APropertyName%3Ekatunumero%3C%2Fogc%3APropertyName%3E%0D%0A%09%09%09%3Cogc%3ALiteral%3E1%3C%2Fogc%3ALiteral%3E%0D%0A%09%09%3C%2Fogc%3APropertyIsEqualTo%3E%0D%0A%0D%0A%09%0D%0A%09%3C%2Fogc%3AAnd%3E%0D%0A%3C%2Fogc%3AFilter%3E&MAXFEATURES=250&NAMESPACE=xmlns%28oso%3Dhttp%3A%2F%2Fxml.nls.fi%2FOsoitteet%2FOsoitepiste%2F2011%2F02%29&REQUEST=GetFeature&RESULTTYPE=results&SERVICE=WFS&srsName=EPSG%3A3067&TYPENAME=oso%3AOsoitenimi&VERSION=1.1.0",
+          "rel" : "backend"
+        } ]
+      },
+      "geographic-names" : {
+        "status" : "success",
+        "duration" : 285,
+        "links" : [ {
+          "href" : "/geographic-names/wfs3/v1/collections/places/items?crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067&limit=250&name.spelling_case_insensitive=h%C3%A4meenkatu%2A",
+          "rel" : "backend"
+        } ]
+      }
+    },
+    "query" : {
+      "sources" : "geographic-names,addresses,cadastral-units",
+      "crs" : "http://www.opengis.net/def/crs/EPSG/0/3067",
+      "requestCrs" : "http://www.opengis.net/def/crs/EPSG/0/3067",
+      "scaleDenominator" : 5000,
+      "excludesMaps" : { },
+      "text" : "Hämeenkatu",
+      "querySize" : 5
+    },
+    "version" : "0.2",
+    "attribution" : "https://www.maanmittauslaitos.fi/en/opendata-licence-cc40",
+    "engine" : {
+      "name" : "maanmittauslaitos.fi/geocoding",
+      "author" : "National Land Survey of Finland",
+      "version" : "0.5"
+    },
+    "timestamp" : 1630592750520
+  }
+}
