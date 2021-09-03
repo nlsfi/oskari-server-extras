@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import fi.mml.portti.service.search.ChannelSearchResult;
 import fi.mml.portti.service.search.SearchCriteria;
 import fi.mml.portti.service.search.SearchResultItem;
+import fi.nls.oskari.SearchWorker;
 import fi.nls.oskari.annotation.Oskari;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
@@ -54,10 +55,10 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
     @Override
     public void init() {
         super.init();
-        baseURL = getProperty("url", "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding");
-        apiKey = getProperty("user", getProperty("apiKey", null));
+        baseURL = getProperty("service.url", "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding");
+        apiKey = getProperty("APIkey", getProperty("service.user", null));
         if (apiKey == null) {
-            throw new ServiceRuntimeException("API-key missing for channel. Configure with " + getPropertyName("user"));
+            throw new ServiceRuntimeException("API-key missing for channel. Configure with " + getPropertyName("APIkey"));
         }
         // TODO: from props?
         endPoints.put("default", "/v1/pelias/search"); // the text search
@@ -76,8 +77,11 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
             Map<String, Object> geojson = getResult(searchCriteria);
             return parseResponse(searchCriteria, geojson);
         } catch (Exception e) {
-            LOG.error(e, "Failed to search locations from " + ID);
-            return new ChannelSearchResult();
+            LOG.error("Failed to search locations from:", ID, "Message was:", e.getMessage());
+            ChannelSearchResult result = new ChannelSearchResult();
+            result.setException(e);
+            result.setQueryFailed(true);
+            return result;
         }
     }
 
@@ -144,18 +148,40 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         SearchResultItem item = new SearchResultItem();
         item.setLat(feat.y);
         item.setLon(feat.x);
+
+        // all features seems to have label, geonames have "name" that is an object
+        //item.setLocationName((String) feat.properties.get("label"));
+        item.setTitle((String) feat.properties.get("label"));
         // "label:municipality" is atleast in both "source" : "geographic-names" && "addresses"
         item.setRegion((String) feat.properties.get("label:municipality"));
         String src = (String) feat.properties.get("source");
         if (src == null) {
             // all features seems to have label, geonames have "name" that is an object
-            item.setLocationName((String) feat.properties.get("label"));
             return item;
         }
+        item.addValue("source", src);
+        // TODO: maybe do some mapping from source to localized string
+        item.setType(src);
+
         if ("geographic-names".equals(src)) {
             // all features seems to have label, geonames have "name" that is an object
-            item.setLocationName((String) feat.properties.get("label"));
+            item.setResourceId("" + feat.properties.get("placeId"));
+            Integer scaleRelevance = (Integer)feat.properties.get("scaleRelevance");
+            if (scaleRelevance != null && scaleRelevance > 0) {
+                item.setZoomScale(scaleRelevance);
+            }
+            item.setType((String) feat.properties.get("label:placeTypeGroup"));
+            // TODO: check the name for tyyppi
+            item.addValue("paikkatyyppi", feat.properties.get("label:placeTypeCategory"));
             // TODO: parse name, use lang
+        } else {
+            ResourceBundle loc = ResourceBundle.getBundle("SearchLocalization", new Locale(lang));
+            if ("cadastral-units".equals(src)) {
+                item.setType(loc.getString("realEstateIdentifiers"));
+                //item.setZoomScale();
+            } else if ("addresses".equals(src)) {
+                item.setType(loc.getString("address"));
+            }
         }
         return item;
     }
@@ -198,7 +224,7 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         Map<String, String> params = new LinkedHashMap<>();
         params.put("text", query);
         params.put("lang", language);
-        params.put("size", Integer.toString(count));
+        params.put("size", Integer.toString(SearchWorker.getMaxResults(count)));
 
         // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
         params.put("sources", "geographic-names,addresses,cadastral-units");
@@ -230,7 +256,7 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
 
         if (expectedContentType != null) {
             String contentType = conn.getContentType();
-            if (contentType != null && contentType.indexOf(expectedContentType) != -1) {
+            if (contentType != null && contentType.indexOf(expectedContentType) != 0) {
                 throw new ServiceRuntimeException("Unexpected content type " + contentType);
             }
         }

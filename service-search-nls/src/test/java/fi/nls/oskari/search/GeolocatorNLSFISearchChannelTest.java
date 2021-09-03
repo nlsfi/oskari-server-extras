@@ -19,14 +19,14 @@ public class GeolocatorNLSFISearchChannelTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        //PropertyUtil.addProperty("search.channel." + GeolocatorNLSFISearchChannel.ID + ".url", "https://mydomain.com/testing?");
+        //PropertyUtil.addProperty("search.channel." + GeolocatorNLSFISearchChannel.ID + ".service.url", "https://mydomain.com/testing?");
         try {
             channel.init();
         } catch (ServiceRuntimeException e) {
             assertTrue(e.getMessage().startsWith("API-key missing for channel"));
         }
         String user = "[this is an api key for testing]"; //apikey
-        PropertyUtil.addProperty("search.channel." + GeolocatorNLSFISearchChannel.ID + ".user", user);
+        PropertyUtil.addProperty("search.channel." + GeolocatorNLSFISearchChannel.ID + ".APIkey", user);
         channel.init();
     }
 
