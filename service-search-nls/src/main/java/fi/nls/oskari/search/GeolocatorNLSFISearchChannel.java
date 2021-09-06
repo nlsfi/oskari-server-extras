@@ -180,6 +180,7 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         } else {
             ResourceBundle loc = ResourceBundle.getBundle("SearchLocalization", new Locale(lang));
             if ("cadastral-units".equals(src)) {
+                item.setResourceId(item.getTitle());
                 item.setType(loc.getString("realEstateIdentifiers"));
                 item.setZoomScale(2000);
             } else if ("addresses".equals(src)) {
@@ -228,7 +229,7 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         Map<String, String> params = new LinkedHashMap<>();
         params.put("text", query);
         params.put("lang", language);
-        params.put("size", Integer.toString(SearchWorker.getMaxResults(count)));
+        params.put("size", Integer.toString(SearchWorker.getMaxResults(count) + 1));
 
         // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
         params.put("sources", "geographic-names,addresses,cadastral-units");

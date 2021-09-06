@@ -40,7 +40,7 @@ public class GeolocatorNLSFISearchChannelTest {
     public void getUrl() {
         String expected = "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding/v1/pelias/search?" +
                 "text=test" +
-                "&lang=fi&size=5" +
+                "&lang=fi&size=6" +
                 "&sources=geographic-names%2Caddresses%2Ccadastral-units" +
                 "&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067" +
                 "&request-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067";
