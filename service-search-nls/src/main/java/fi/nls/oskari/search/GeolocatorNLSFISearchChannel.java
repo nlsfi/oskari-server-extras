@@ -58,7 +58,9 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         baseURL = getProperty("service.url", "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding");
         apiKey = getProperty("APIkey", getProperty("service.user", null));
         if (apiKey == null) {
-            throw new ServiceRuntimeException("API-key missing for channel. Configure with " + getPropertyName("APIkey"));
+            throw new ServiceRuntimeException("API-key missing for channel. Configure with "
+                    + getPropertyName("APIkey")
+                    + ". You can get an apikey by registering in https://omatili.maanmittauslaitos.fi/.");
         }
         // TODO: from props?
         endPoints.put("default", "/v1/pelias/search"); // the text search
@@ -168,9 +170,10 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
             item.setResourceId("" + feat.properties.get("placeId"));
             Integer scaleRelevance = (Integer)feat.properties.get("scaleRelevance");
             if (scaleRelevance != null && scaleRelevance > 0) {
-                item.setZoomScale(scaleRelevance);
+                // divide by to get a closer zoom. Oskari zooms out to get the scale
+                item.setZoomScale(scaleRelevance.doubleValue() / 2);
             }
-            item.setType((String) feat.properties.get("label:placeTypeGroup"));
+            item.setType((String) feat.properties.get("label:placeType"));
             // TODO: check the name for tyyppi
             item.addValue("paikkatyyppi", feat.properties.get("label:placeTypeCategory"));
             // TODO: parse name, use lang
@@ -178,9 +181,10 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
             ResourceBundle loc = ResourceBundle.getBundle("SearchLocalization", new Locale(lang));
             if ("cadastral-units".equals(src)) {
                 item.setType(loc.getString("realEstateIdentifiers"));
-                //item.setZoomScale();
+                item.setZoomScale(2000);
             } else if ("addresses".equals(src)) {
                 item.setType(loc.getString("address"));
+                item.setZoomScale(5000);
             }
         }
         return item;
