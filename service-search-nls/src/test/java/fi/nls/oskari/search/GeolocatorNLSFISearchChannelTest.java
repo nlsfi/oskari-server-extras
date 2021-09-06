@@ -1,5 +1,7 @@
 package fi.nls.oskari.search;
 
+import fi.nls.oskari.search.geocoding.Feature;
+import fi.nls.oskari.search.geocoding.GeocodeHelper;
 import fi.nls.oskari.service.ServiceRuntimeException;
 import fi.nls.oskari.util.PropertyUtil;
 import org.junit.AfterClass;
@@ -35,7 +37,6 @@ public class GeolocatorNLSFISearchChannelTest {
         PropertyUtil.clearProperties();
     }
 
-    //
     @Test
     public void getUrl() {
         String expected = "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding/v1/pelias/search?" +
@@ -44,13 +45,13 @@ public class GeolocatorNLSFISearchChannelTest {
                 "&sources=geographic-names%2Caddresses%2Ccadastral-units" +
                 "&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067" +
                 "&request-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067";
-        assertEquals(expected, channel.getUrl(channel.getQueryParams("test", "fi", "ESPG:3067", 5)));
+        assertEquals(expected, channel.getUrl(channel.getSearchParams("test", "fi", 5)));
     }
 
     @Test
     public void testAutoComplete() {
         //List<String> results = channel.doSearchAutocomplete("test");
-        List<String> results = channel.parseAutocomplete(this.getClass().getResourceAsStream("geolocator-nlsfi-similar-response.json"));
+        List<String> results = GeocodeHelper.parseAutocomplete(this.getClass().getResourceAsStream("geolocator-nlsfi-similar-response.json"));
         String commaSeparated = results.stream().collect(Collectors.joining(","));
         assertEquals("Parsed autocomplete response to words", "Tesmo,Tessu,Tesala,Tesoma,Tessjö", commaSeparated);
     }
@@ -59,8 +60,8 @@ public class GeolocatorNLSFISearchChannelTest {
     public void testResponseParsing() throws IOException {
         //List<String> results = channel.doSearchAutocomplete("test");
 
-        Map<String, Object> geojson = channel.readMap(this.getClass().getResourceAsStream("geolocator-nlsfi-search-response-addresses.json"));
-        List<GeolocatorNLSFISearchChannel.Feature> results = channel.parseResponse(geojson);
+        Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("geolocator-nlsfi-search-response-addresses.json"));
+        List<Feature> results = GeocodeHelper.parseResponse(geojson);
         results.stream().forEach(feat -> System.out.println(feat.id));
         //assertEquals("Parsed autocomplete response to words", "Tesmo,Tessu,Tesala,Tesoma,Tessjö", commaSeparated);
     }

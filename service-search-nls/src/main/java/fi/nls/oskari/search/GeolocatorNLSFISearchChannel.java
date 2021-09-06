@@ -1,7 +1,5 @@
 package fi.nls.oskari.search;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fi.mml.portti.service.search.ChannelSearchResult;
 import fi.mml.portti.service.search.SearchCriteria;
 import fi.mml.portti.service.search.SearchResultItem;
@@ -9,17 +7,23 @@ import fi.nls.oskari.SearchWorker;
 import fi.nls.oskari.annotation.Oskari;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
+import fi.nls.oskari.map.geometry.ProjectionHelper;
 import fi.nls.oskari.search.channel.SearchAutocomplete;
 import fi.nls.oskari.search.channel.SearchChannel;
+import fi.nls.oskari.search.geocoding.Feature;
+import fi.nls.oskari.search.geocoding.GeocodeHelper;
 import fi.nls.oskari.service.ServiceRuntimeException;
 import fi.nls.oskari.util.IOHelper;
 import fi.nls.oskari.util.PropertyUtil;
+import fi.nls.oskari.domain.geo.Point;
+import org.geotools.referencing.CRS;
+import org.opengis.referencing.FactoryException;
+import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Search channel impl for https://www.maanmittauslaitos.fi/geokoodauspalvelu/tekninen-kuvaus
@@ -43,13 +47,12 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
     private static final String PASSWORD = "";
 
     private static final int MAX_REDIRECTS = 5;
-    private static final String CONTENT_TYPE_JSON = "application/json";
-    private static final TypeReference<HashMap<String, Object>> TYPE_REF = new TypeReference<HashMap<String, Object>>() {};
 
-    private static final ObjectMapper OM = new ObjectMapper();
     private String baseURL;
     private String apiKey;
     private Map<String, String> endPoints = new HashMap();
+    private static final int SERVICE_SRS_CODE = 3067;
+    private CoordinateReferenceSystem serviceCRS;
 
 
     @Override
@@ -62,11 +65,24 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
                     + getPropertyName("APIkey")
                     + ". You can get an apikey by registering in https://omatili.maanmittauslaitos.fi/.");
         }
-        // TODO: from props?
+        // defaults
         endPoints.put("default", "/v1/pelias/search"); // the text search
         endPoints.put("reverse", "/v1/pelias/reverse"); // reverse geocoding
         endPoints.put("autocomplete", "/v1/searchterm/similar"); // autocompletion
-        // TODO: we might have more endPoints for app requested search result prioritizing
+        // override/add more from props:
+        // search.channel.GEOLOCATOR_NLS_FI.endpoint.horses=/v8/wroom
+        // would add a new endpoint called "horses" with path "/v8/wroom"
+        String prefix = getPropertyName("endpoint.");
+        PropertyUtil.getMatchingPropertyNames(prefix)
+            .forEach(propName -> {
+                String id = propName.substring(prefix.length());
+                endPoints.put(id, PropertyUtil.get(propName));
+            });
+        try {
+            serviceCRS = CRS.decode("EPSG:" + SERVICE_SRS_CODE, true);
+        } catch (FactoryException e) {
+            throw new ServiceRuntimeException("Can't provide transformation for service");
+        }
         LOG.info("ServiceURL set to " + baseURL);
     }
 
@@ -77,7 +93,7 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
     public ChannelSearchResult doSearch(SearchCriteria searchCriteria) {
         try {
             Map<String, Object> geojson = getResult(searchCriteria);
-            return parseResponse(searchCriteria, geojson);
+            return parseResponse(searchCriteria, geojson, searchCriteria.getSRS());
         } catch (Exception e) {
             LOG.error("Failed to search locations from:", ID, "Message was:", e.getMessage());
             ChannelSearchResult result = new ChannelSearchResult();
@@ -88,11 +104,11 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
     }
 
     public List<String> doSearchAutocomplete(String searchString) {
-        String url = getUrl("autocomplete", getQueryParams(searchString, PropertyUtil.getDefaultLanguage(), 10));
+        String url = getUrl("autocomplete", getAutocompleteParams(searchString, PropertyUtil.getDefaultLanguage(), 10));
         try {
             HttpURLConnection conn = connectToService(url);
             try (InputStream in = conn.getInputStream()) {
-                return parseAutocomplete(in);
+                return GeocodeHelper.parseAutocomplete(in);
             }
         }
         catch (IOException ex) {
@@ -100,24 +116,6 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         }
     }
 
-    protected List<String> parseAutocomplete(InputStream in) {
-        List responseTerms;
-        try {
-            Map<String, Object> response = readMap(in);
-            responseTerms = (List) response.getOrDefault("terms", Collections.emptyList());
-        }
-        catch (Exception ex) {
-            throw new ServiceRuntimeException("Couldn't open or read from connection!", ex);
-        }
-        List<String> result = new ArrayList<>();
-            responseTerms.forEach(item -> {
-            Map<String, Object> term = (Map<String, Object>) (item);
-            if (term != null && term.get("text") != null) {
-                result.add((String) term.get("text"));
-            }
-        });
-        return result;
-    }
 
     private HttpURLConnection connectToService(String url) throws IOException {
         HttpURLConnection conn = IOHelper.getConnection(url, apiKey, PASSWORD);
@@ -126,22 +124,28 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
     }
 
     private Map<String, Object> getResult(SearchCriteria criteria) throws IOException {
-        String url = getUrl(getQueryParams(criteria.getSearchString(),
+        String url = getUrl(getSearchParams(criteria.getSearchString(),
                 criteria.getLocale(),
-                criteria.getSRS(),
                 criteria.getMaxResults()));
 
         HttpURLConnection conn = connectToService(url);
-        validateResponse(conn, CONTENT_TYPE_JSON);
-        Map<String, Object> geojson = readMap(conn);
-        return geojson;
+        validateResponse(conn);
+        return GeocodeHelper.readJSON(conn);
     }
 
-    private ChannelSearchResult parseResponse(SearchCriteria searchCriteria, Map<String, Object> geojson) {
-        List<Feature> features = parseResponse(geojson);
+    private ChannelSearchResult parseResponse(SearchCriteria searchCriteria, Map<String, Object> geojson, String srs) {
+        List<Feature> features = GeocodeHelper.parseResponse(geojson);
         ChannelSearchResult result = new ChannelSearchResult();
         result.setChannelId(ID);
-        features.forEach(feat -> result.addItem(getItem(feat, searchCriteria.getLocale())));
+        boolean reqProj = requiresReprojection(srs);
+        features.forEach(feat -> {
+            if (reqProj) {
+                Point poi = ProjectionHelper.transformPoint(feat.x, feat.y, serviceCRS, srs);
+                feat.x = poi.getLon();
+                feat.y = poi.getLat();
+            }
+            result.addItem(getItem(feat, searchCriteria.getLocale()));
+        });
         return result;
     }
 
@@ -153,10 +157,10 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
 
         // all features seems to have label, geonames have "name" that is an object
         //item.setLocationName((String) feat.properties.get("label"));
-        item.setTitle((String) feat.properties.get("label"));
+        item.setTitle(feat.getString("label"));
         // "label:municipality" is atleast in both "source" : "geographic-names" && "addresses"
-        item.setRegion((String) feat.properties.get("label:municipality"));
-        String src = (String) feat.properties.get("source");
+        item.setRegion(feat.getString("label:municipality"));
+        String src = feat.getString("source");
         if (src == null) {
             // all features seems to have label, geonames have "name" that is an object
             return item;
@@ -173,37 +177,23 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
                 // divide by to get a closer zoom. Oskari zooms out to get the scale
                 item.setZoomScale(scaleRelevance.doubleValue() / 2);
             }
-            item.setType((String) feat.properties.get("label:placeType"));
-            // TODO: check the name for tyyppi
-            item.addValue("paikkatyyppi", feat.properties.get("label:placeTypeCategory"));
-            // TODO: parse name, use lang
+            item.setType(feat.getString("label:placeType"));
+            // TODO: check the name AND value for "paikkatyyppi"
+            item.addValue("paikkatyyppi", feat.getString("label:placeTypeCategory"));
         } else {
-            ResourceBundle loc = ResourceBundle.getBundle("SearchLocalization", new Locale(lang));
+            item.setType(GeocodeHelper.getLocalizedType(src, lang));
             if ("cadastral-units".equals(src)) {
                 item.setResourceId(item.getTitle());
-                item.setType(loc.getString("realEstateIdentifiers"));
                 item.setZoomScale(2000);
             } else if ("addresses".equals(src)) {
-                item.setType(loc.getString("address"));
                 item.setZoomScale(5000);
             }
         }
         return item;
     }
 
-    protected List<Feature> parseResponse(Map<String, Object> geojson) {
-        List<Object> features = (List) geojson.getOrDefault("features", Collections.emptyList());
-        return features.stream().map(item -> {
-            Map<String, Object> map = (Map) item;
-            Feature feat = new Feature();
-            feat.id = (String) map.get("id");
-            feat.properties = (Map) map.get("properties");
-            Map<String, Object> geom = (Map) map.get("geometry");
-            List<Double> coords = (List) geom.get("coordinates");
-            feat.x = coords.get(0);
-            feat.y = coords.get(1);
-            return feat;
-        }).collect(Collectors.toList());
+    private boolean requiresReprojection(String srs) {
+        return !("EPSG:" + SERVICE_SRS_CODE).equals(srs);
     }
 
     protected String getEndpoint() {
@@ -225,7 +215,15 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
     protected String getUrl(String endpointId, Map<String, String> params) {
         return IOHelper.constructUrl(getEndpoint(endpointId), params);
     }
-    protected Map<String, String> getQueryParams(String query, String language, int count) {
+
+    protected Map<String, String> getSearchParams(String query, String language, int count) {
+        Map<String, String> params = getAutocompleteParams(query, language, count);
+        params.put("crs", "http://www.opengis.net/def/crs/EPSG/0/" + SERVICE_SRS_CODE);
+        params.put("request-crs", "http://www.opengis.net/def/crs/EPSG/0/" + SERVICE_SRS_CODE);
+        return params;
+    }
+
+    protected Map<String, String> getAutocompleteParams(String query, String language, int count) {
         Map<String, String> params = new LinkedHashMap<>();
         params.put("text", query);
         params.put("lang", language);
@@ -235,42 +233,16 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         params.put("sources", "geographic-names,addresses,cadastral-units");
         return params;
     }
-    protected Map<String, String> getQueryParams(String query, String language, String srs, int count) {
-        Map<String, String> params = getQueryParams(query, language, count);
-        String epsgCode = srs.split("\\:")[1];
-        params.put("crs", "http://www.opengis.net/def/crs/EPSG/0/" + epsgCode);
-        params.put("request-crs", "http://www.opengis.net/def/crs/EPSG/0/" + epsgCode);
-        return params;
-    }
 
-    private static Map<String, Object> readMap(HttpURLConnection conn) throws IOException {
-        try (InputStream in = conn.getInputStream()) {
-            return readMap(in);
-        }
-    }
-
-    protected static Map<String, Object> readMap(InputStream in) throws IOException {
-        return OM.readValue(in, TYPE_REF);
-    }
-
-    public static void validateResponse(HttpURLConnection conn, String expectedContentType)
+    private static void validateResponse(HttpURLConnection conn)
             throws ServiceRuntimeException, IOException {
         if (conn.getResponseCode() != 200) {
             throw new ServiceRuntimeException("Unexpected status code " + conn.getResponseCode());
         }
 
-        if (expectedContentType != null) {
-            String contentType = conn.getContentType();
-            if (contentType != null && contentType.indexOf(expectedContentType) != 0) {
-                throw new ServiceRuntimeException("Unexpected content type " + contentType);
-            }
+        String contentType = conn.getContentType();
+        if (contentType != null && !contentType.startsWith("application/json")) {
+            throw new ServiceRuntimeException("Unexpected content type " + contentType);
         }
-    }
-
-    class Feature {
-        String id;
-        Map<String, Object> properties;
-        double x;
-        double y;
     }
 }
