@@ -97,7 +97,6 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         } catch (Exception e) {
             LOG.error("Failed to search locations from:", ID, "Message was:", e.getMessage());
             ChannelSearchResult result = new ChannelSearchResult();
-            result.setException(e);
             result.setQueryFailed(true);
             return result;
         }
@@ -185,8 +184,15 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
             if ("cadastral-units".equals(src)) {
                 item.setResourceId(item.getTitle());
                 item.setZoomScale(2000);
-            } else if ("addresses".equals(src)) {
+            } else if ("addresses".equals(src) || "interpolated-road-addresses".equals(src)) {
                 item.setZoomScale(5000);
+                // label includes the same postfixed with " ([municipality] )" that we want to get rid of
+                String address = feat.getString("katunimi");
+                String addressNumber = feat.getString("katunumero");
+                if (addressNumber != null && !addressNumber.isEmpty()) {
+                    address += " " + addressNumber;
+                }
+                item.setTitle(address);
             }
         }
         return item;
@@ -230,7 +236,7 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
         params.put("size", Integer.toString(SearchWorker.getMaxResults(count) + 1));
 
         // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
-        params.put("sources", "geographic-names,addresses,cadastral-units");
+        params.put("sources", "geographic-names,addresses,cadastral-units,interpolated-road-addresses");
         return params;
     }
 
