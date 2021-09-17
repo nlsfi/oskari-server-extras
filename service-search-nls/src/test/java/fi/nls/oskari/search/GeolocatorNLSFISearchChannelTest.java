@@ -39,7 +39,7 @@ public class GeolocatorNLSFISearchChannelTest {
 
     @Test
     public void getUrl() {
-        String expected = "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding/v1/pelias/search?" +
+        String expected = "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding/v2/advanced/search?" +
                 "text=test" +
                 "&lang=fi&size=6" +
                 "&sources=geographic-names%2Caddresses%2Ccadastral-units%2Cinterpolated-road-addresses" +

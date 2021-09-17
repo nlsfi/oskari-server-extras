@@ -66,17 +66,22 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
                     + ". You can get an apikey by registering in https://omatili.maanmittauslaitos.fi/.");
         }
         // defaults
-        endPoints.put("default", "/v1/pelias/search"); // the text search
+        //endPoints.put("default", "/v1/pelias/search"); // the text search
+        endPoints.put("default", "/v2/advanced/search"); // the text search
+        endPoints.put("autocomplete", "/v2/searchterm/similar"); // autocompletion
         endPoints.put("reverse", "/v1/pelias/reverse"); // reverse geocoding
-        endPoints.put("autocomplete", "/v1/searchterm/similar"); // autocompletion
         // override/add more from props:
         // search.channel.GEOLOCATOR_NLS_FI.endpoint.horses=/v8/wroom
         // would add a new endpoint called "horses" with path "/v8/wroom"
+        // search.channel.GEOLOCATOR_NLS_FI.endpoint.default=/v2/advanced/search
+        // search.channel.GEOLOCATOR_NLS_FI.endpoint.autocomplete=/v2/searchterm/similar
         String prefix = getPropertyName("endpoint.");
         PropertyUtil.getMatchingPropertyNames(prefix)
             .forEach(propName -> {
                 String id = propName.substring(prefix.length());
-                endPoints.put(id, PropertyUtil.get(propName));
+                String value = PropertyUtil.get(propName);
+                endPoints.put(id, value);
+                LOG.info("Additional configuration endpoint '", id, "' with path:", value);
             });
         try {
             serviceCRS = CRS.decode("EPSG:" + SERVICE_SRS_CODE, true);
@@ -127,6 +132,7 @@ public class GeolocatorNLSFISearchChannel extends SearchChannel implements Searc
                 criteria.getLocale(),
                 criteria.getMaxResults()));
 
+        LOG.debug("Calling search with", url);
         HttpURLConnection conn = connectToService(url);
         validateResponse(conn);
         return GeocodeHelper.readJSON(conn);
