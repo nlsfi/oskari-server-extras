@@ -38,11 +38,11 @@ import java.util.*;
 // interpolated-road-addresses
 // cadastral-units
 // mapsheets-tm35 (tätä tuskin tarvitaan)
-@Oskari(GeolocatorNLSFISearchChannel.ID)
-public class GeolocatorNLSFISearchChannel extends SearchChannel implements SearchAutocomplete {
-    public static final String ID = "GEOLOCATOR_NLS_FI";
+@Oskari(NLSFIGeocodingSearchChannel.ID)
+public class NLSFIGeocodingSearchChannel extends SearchChannel implements SearchAutocomplete {
+    public static final String ID = "NLSFI_GEOCODING";
 
-    private static final Logger LOG = LogFactory.getLogger(GeolocatorNLSFISearchChannel.class);
+    private static final Logger LOG = LogFactory.getLogger(NLSFIGeocodingSearchChannel.class);
     // password is always empty string with apikey
     private static final String PASSWORD = "";
 
