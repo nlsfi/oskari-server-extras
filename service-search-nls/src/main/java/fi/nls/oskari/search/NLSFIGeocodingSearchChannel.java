@@ -50,7 +50,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
 
     private String baseURL;
     private String apiKey;
-    private Map<String, String> endPoints = new HashMap();
+    private final Map<String, String> endPoints = new HashMap();
     private static final int SERVICE_SRS_CODE = 3067;
     private CoordinateReferenceSystem serviceCRS;
 
@@ -242,7 +242,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         params.put("size", Integer.toString(SearchWorker.getMaxResults(count) + 1));
 
         // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
-        params.put("sources", "geographic-names,addresses,cadastral-units,interpolated-road-addresses");
+        params.put("sources", "geographic-names,cadastral-units,interpolated-road-addresses"); // ,addresses
         return params;
     }
 

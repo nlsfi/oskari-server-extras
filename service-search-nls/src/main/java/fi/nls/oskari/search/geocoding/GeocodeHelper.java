@@ -15,7 +15,7 @@ public class GeocodeHelper {
 
     private static final ObjectMapper OM = new ObjectMapper();
     private static final TypeReference<HashMap<String, Object>> TYPE_REF = new TypeReference<HashMap<String, Object>>() {};
-    private static Map<String, String> localization = new HashMap<>();
+    private static final Map<String, String> localization = new HashMap<>();
 
     public static Map<String, Object> readJSON(HttpURLConnection conn) throws IOException {
         try (InputStream in = conn.getInputStream()) {
@@ -66,6 +66,7 @@ public class GeocodeHelper {
             ResourceBundle loc = ResourceBundle.getBundle("SearchLocalization", new Locale(lang));
             localization.put(lang + ".cadastral-units", loc.getString("realEstateIdentifiers"));
             localization.put(lang + ".addresses", loc.getString("address"));
+            localization.put(lang + ".interpolated-road-addresses", loc.getString("address"));
         }
     }
 

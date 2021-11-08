@@ -42,7 +42,7 @@ public class NLSFIGeocodingSearchChannelTest {
         String expected = "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding/v2/advanced/search?" +
                 "text=test" +
                 "&lang=fi&size=6" +
-                "&sources=geographic-names%2Caddresses%2Ccadastral-units%2Cinterpolated-road-addresses" +
+                "&sources=geographic-names%2Ccadastral-units%2Cinterpolated-road-addresses" +
                 "&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067" +
                 "&request-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067";
         assertEquals(expected, channel.getUrl(channel.getSearchParams("test", "fi", 5)));
@@ -58,11 +58,9 @@ public class NLSFIGeocodingSearchChannelTest {
 
     @Test
     public void testResponseParsing() throws IOException {
-        //List<String> results = channel.doSearchAutocomplete("test");
-
         Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-addresses.json"));
         List<Feature> results = GeocodeHelper.parseResponse(geojson);
-        results.stream().forEach(feat -> System.out.println(feat.id));
-        //assertEquals("Parsed autocomplete response to words", "Tesmo,Tessu,Tesala,Tesoma,Tessjö", commaSeparated);
+        assertEquals("Should get 5 results", 5, results.size());
+        //results.stream().forEach(feat -> System.out.println(feat.id));
     }
 }
