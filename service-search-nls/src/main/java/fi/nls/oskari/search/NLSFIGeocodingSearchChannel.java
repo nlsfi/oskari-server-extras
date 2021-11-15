@@ -76,7 +76,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         // search.channel.GEOLOCATOR_NLS_FI.endpoint.default=/v2/advanced/search
         // search.channel.GEOLOCATOR_NLS_FI.endpoint.autocomplete=/v2/searchterm/similar
         String prefix = getPropertyName("endpoint.");
-        PropertyUtil.getMatchingPropertyNames(prefix)
+        PropertyUtil.getPropertyNamesStartingWith(prefix)
             .forEach(propName -> {
                 String id = propName.substring(prefix.length());
                 String value = PropertyUtil.get(propName);
@@ -128,9 +128,11 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
     }
 
     private Map<String, Object> getResult(SearchCriteria criteria) throws IOException {
-        String url = getUrl(getSearchParams(criteria.getSearchString(),
+        String requestedEndpoint = (String) criteria.getParamAsString("endpoint");
+        String url = getUrl(requestedEndpoint, getSearchParams(criteria.getSearchString(),
                 criteria.getLocale(),
-                criteria.getMaxResults()));
+                criteria.getMaxResults(),
+                criteria.getParamAsString("sources")));
 
         LOG.debug("Calling search with", url);
         HttpURLConnection conn = connectToService(url);
@@ -228,21 +230,28 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         return IOHelper.constructUrl(getEndpoint(endpointId), params);
     }
 
-    protected Map<String, String> getSearchParams(String query, String language, int count) {
-        Map<String, String> params = getAutocompleteParams(query, language, count);
+    protected Map<String, String> getSearchParams(String query, String language, int count, String sources) {
+        Map<String, String> params = getAutocompleteParams(query, language, count, sources);
         params.put("crs", "http://www.opengis.net/def/crs/EPSG/0/" + SERVICE_SRS_CODE);
         params.put("request-crs", "http://www.opengis.net/def/crs/EPSG/0/" + SERVICE_SRS_CODE);
         return params;
     }
 
     protected Map<String, String> getAutocompleteParams(String query, String language, int count) {
+        return getAutocompleteParams(query, language, count, null);
+    }
+    protected Map<String, String> getAutocompleteParams(String query, String language, int count, String sources) {
         Map<String, String> params = new LinkedHashMap<>();
         params.put("text", query);
         params.put("lang", language);
         params.put("size", Integer.toString(SearchWorker.getMaxResults(count) + 1));
 
-        // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
-        params.put("sources", "geographic-names,cadastral-units,interpolated-road-addresses"); // ,addresses
+        if (sources == null) {
+            // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
+            params.put("sources", "geographic-names,cadastral-units,interpolated-road-addresses"); // ,addresses
+        } else {
+            params.put("sources", sources);
+        }
         return params;
     }
 
