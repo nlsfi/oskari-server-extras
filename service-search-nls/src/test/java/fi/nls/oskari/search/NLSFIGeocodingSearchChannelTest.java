@@ -29,6 +29,7 @@ public class NLSFIGeocodingSearchChannelTest {
         }
         String user = "[this is an api key for testing]"; //apikey
         PropertyUtil.addProperty("search.channel." + NLSFIGeocodingSearchChannel.ID + ".APIkey", user);
+        PropertyUtil.addProperty("search.channel." + NLSFIGeocodingSearchChannel.ID + ".endpoint.test", "/xyz/testing");
         channel.init();
     }
 
@@ -45,7 +46,15 @@ public class NLSFIGeocodingSearchChannelTest {
                 "&sources=geographic-names%2Ccadastral-units%2Cinterpolated-road-addresses" +
                 "&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067" +
                 "&request-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067";
-        assertEquals(expected, channel.getUrl(channel.getSearchParams("test", "fi", 5)));
+        assertEquals(expected, channel.getUrl(channel.getSearchParams("test", "fi", 5, null)));
+
+        String requestedSourcesExpected = "https://avoin-paikkatieto.maanmittauslaitos.fi/geocoding/xyz/testing?" +
+                "text=test" +
+                "&lang=fi&size=6" +
+                "&sources=testing%2Cmy%2Cdummy%2Csources" +
+                "&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067" +
+                "&request-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F3067";
+        assertEquals(requestedSourcesExpected, channel.getUrl("test", channel.getSearchParams("test", "fi", 5, "testing,my,dummy,sources")));
     }
 
     @Test
