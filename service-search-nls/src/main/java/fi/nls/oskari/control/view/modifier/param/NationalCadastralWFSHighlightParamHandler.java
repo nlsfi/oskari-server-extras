@@ -6,6 +6,7 @@ import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
 import fi.nls.oskari.search.channel.KTJkiiSearchChannel;
 import fi.nls.oskari.util.JSONHelper;
+import fi.nls.oskari.util.PropertyUtil;
 import fi.nls.oskari.view.modifier.ModifierException;
 import fi.nls.oskari.view.modifier.ModifierParams;
 import org.json.JSONArray;
@@ -13,11 +14,19 @@ import org.json.JSONObject;
 
 import java.util.List;
 
+/**
+ * @deprecated This is based on the old WFS-backend (transport) and would require changes for other parts of Oskari to make it work properly
+ */
 @OskariViewModifier("nationalCadastralReferenceHighlight")
 public class NationalCadastralWFSHighlightParamHandler extends WFSHighlightParamHandler {
 
     private static final Logger log = LogFactory.getLogger(NationalCadastralWFSHighlightParamHandler.class);
     private static SearchService searchService = new SearchServiceImpl();
+    private String channelID = KTJkiiSearchChannel.ID;
+
+    public void init() {
+        channelID = PropertyUtil.get("paramhandler.nationalCadastralReferenceHighlight.channel", channelID);
+    }
 
     @Override
     public boolean handleParam(ModifierParams params)
@@ -28,7 +37,7 @@ public class NationalCadastralWFSHighlightParamHandler extends WFSHighlightParam
         final JSONArray featureIdList = new JSONArray();
 
         List<SearchResultItem> list = getKTJfeature(params.getParamValue(),
-                params.getLocale().getLanguage());
+                params.getLocale().getLanguage(), params.getView().getSrsName());
         for (SearchResultItem item : list) {
             featureIdList.put(item.getResourceId());
         }
@@ -48,15 +57,16 @@ public class NationalCadastralWFSHighlightParamHandler extends WFSHighlightParam
         return featureIdList.length() > 0;
     }
 
-    private List<SearchResultItem> getKTJfeature(final String param, final String language) {
+    private List<SearchResultItem> getKTJfeature(final String param, final String language, String srs) {
 
         final SearchCriteria sc = new SearchCriteria();
-        sc.addChannel(KTJkiiSearchChannel.ID);
+        sc.addChannel(channelID);
         sc.setSearchString(param);
         sc.setLocale(language);
+        sc.setSRS(srs);
 
         final Query query = searchService.doSearch(sc);
-        return query.findResult(KTJkiiSearchChannel.ID).getSearchResultItems();
+        return query.findResult(channelID).getSearchResultItems();
     }
 
     private JSONArray calculateBbox(List<SearchResultItem> list) {

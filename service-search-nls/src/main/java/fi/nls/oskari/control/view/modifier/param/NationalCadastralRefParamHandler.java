@@ -18,6 +18,8 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 @OskariViewModifier("nationalCadastralReference")
@@ -25,7 +27,18 @@ public class NationalCadastralRefParamHandler extends ParamHandler {
 
     private static SearchService searchService = new SearchServiceImpl();
     private static final Logger log = LogFactory.getLogger(NationalCadastralRefParamHandler.class);
-    
+
+    private List<String> channelIDs = new ArrayList<>();
+    private final String[] defaultChannels = {MaastoAddressChannelSearchService.ID, KTJkiiSearchChannel.ID};
+
+    public void init() {
+        String[] channels = PropertyUtil.getCommaSeparatedList("paramhandler.nationalCadastralReference.channels");
+        if (channels.length == 0) {
+            channels = defaultChannels;
+        }
+        channelIDs.clear();
+        Arrays.stream(channels).forEach(channelId -> channelIDs.add(channelId));
+    }
     public boolean handleParam(final ModifierParams params) throws ModifierException {
         if(params.getParamValue() == null) {
             return false;
@@ -35,7 +48,7 @@ public class NationalCadastralRefParamHandler extends ParamHandler {
         // we can use fi as language since we only get coordinates, could
         // get it from published map if needed
         final ArrayList<String[]> latlon_list = getCoordinatesFromNatCadRef(
-                params.getLocale(), cadastralRef, PropertyUtil.getDefaultLanguage());
+                params.getLocale(), cadastralRef, PropertyUtil.getDefaultLanguage(), params.getView().getSrsName());
         // TODO: KTJ search channel now returns "palstat" instead of
         // "kiinteistöt" -> one ref returns multiple results
         // we need to think this through
@@ -58,9 +71,9 @@ public class NationalCadastralRefParamHandler extends ParamHandler {
     }
 
     private ArrayList<String[]> getCoordinatesFromNatCadRef(Locale locale,
-            String searchString, String publishedMapLanguage) {
+            String searchString, String publishedMapLanguage, String srs) {
 
-        ArrayList<String[]> lat_lon = new ArrayList<String[]>();
+        ArrayList<String[]> lat_lon = new ArrayList<>();
 
         if (!"".equalsIgnoreCase(publishedMapLanguage)
                 && publishedMapLanguage != null) {
@@ -72,24 +85,19 @@ public class NationalCadastralRefParamHandler extends ParamHandler {
             try {
                 searchString = URLDecoder.decode(searchString, "UTF-8");
                 SearchCriteria sc = new SearchCriteria();
-                sc.addChannel(MaastoAddressChannelSearchService.ID);
-                sc.addChannel(KTJkiiSearchChannel.ID);
+                channelIDs.forEach(id -> sc.addChannel(id));
+                //sc.addChannel(channelID);
+                //sc.addChannel(KTJkiiSearchChannel.ID);
                 sc.setSearchString(searchString);
                 sc.setLocale(locale.getLanguage());
+                sc.setSRS(srs);
 
                 Query query = searchService.doSearch(sc);
 
-                for (SearchResultItem item : query.findResult(
-                        MaastoAddressChannelSearchService.ID)
-                        .getSearchResultItems()) {
-                    lat_lon.add(item.getContentURL().split("_"));
-                }
-
-                for (SearchResultItem item : query.findResult(
-                        KTJkiiSearchChannel.ID).getSearchResultItems()) {
-                    lat_lon.add(item.getContentURL().split("_"));
-                }
-
+                channelIDs.forEach(channelId -> {
+                    query.findResult(channelId).getSearchResultItems()
+                            .forEach(item -> lat_lon.add(item.getContentURL().split("_")));
+                });
             } catch (UnsupportedEncodingException e) {
                 System.err.println("Problem encoding searchString. ");
             }
