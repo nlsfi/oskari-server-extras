@@ -161,6 +161,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         SearchResultItem item = new SearchResultItem();
         item.setLat(feat.y);
         item.setLon(feat.x);
+        item.setContentURL(feat.x + "_" + feat.y);
 
         // all features seems to have label, geonames have "name" that is an object
         //item.setLocationName((String) feat.properties.get("label"));

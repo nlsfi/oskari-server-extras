@@ -2,6 +2,7 @@ package fi.nls.oskari.control.view.modifier.param;
 
 import fi.mml.portti.service.search.*;
 import fi.nls.oskari.annotation.OskariViewModifier;
+import fi.nls.oskari.util.PropertyUtil;
 import fi.nls.oskari.view.modifier.ParamHandler;
 import fi.nls.oskari.control.view.modifier.bundle.MapfullHandler;
 import fi.nls.oskari.log.LogFactory;
@@ -22,6 +23,11 @@ public class AddressParamHandler extends ParamHandler {
     private static final Logger log = LogFactory.getLogger(AddressParamHandler.class);
     //private static final String PARAM_ADDRESS = "address";
     private static SearchService searchService = new SearchServiceImpl();
+    private String channelID = MaastoAddressChannelSearchService.ID;
+
+    public void init() {
+        channelID = PropertyUtil.get("paramhandler.address.channel", channelID);
+    }
 
     @Override
     public int getPriority() {
@@ -33,12 +39,15 @@ public class AddressParamHandler extends ParamHandler {
             return false;
         }
         final ArrayList<String[]> coordinates = getCoordinatesFromAddress(params.getParamValue(), params.getLocale());
-        if(coordinates.size() != 1) {
+        if (coordinates.isEmpty()) {
+            return false;
+        }
+        if (coordinates.size() != 1) {
             log.debug("Got multiple coordinates for address", coordinates);
             // not found or multiple found -> open search plugin with param value
             final JSONObject config = getBundleConfig(params.getConfig(), ViewModifier.BUNDLE_MAPFULL);
             final JSONObject searchplugin = MapfullHandler.getPlugin("Oskari.mapframework.bundle.mapmodule.plugin.SearchPlugin", config);
-            if(searchplugin != null) {
+            if (searchplugin != null) {
                 log.debug("Modifying search plugin config", searchplugin);
                 // get existing config or initialize new node
                 final JSONObject searchConfig = initPluginConfig(searchplugin, MapfullHandler.KEY_CONFIG);
@@ -46,9 +55,9 @@ public class AddressParamHandler extends ParamHandler {
                     // setup initial search for plugin
                     JSONHelper.putValue(searchConfig, "searchKey", params.getParamValue());
                 }
+                return false;
             }
-
-            return false;
+            // search plugin not found -> probably on geoportal
         }
         // found one -> set mapfull location
         final String[] coords = coordinates.get(0);
@@ -64,17 +73,16 @@ public class AddressParamHandler extends ParamHandler {
     protected ArrayList<String[]> getCoordinatesFromAddress(
                               String searchString, Locale locale) {
 
-        final ArrayList<String[]> lat_lon = new ArrayList<String[]>();
+        final ArrayList<String[]> lat_lon = new ArrayList<>();
 
         final SearchCriteria sc = new SearchCriteria();
-        sc.addChannel(MaastoAddressChannelSearchService.ID);
-        //searchString = URLDecoder.decode(searchString, "UTF-8");
+        sc.addChannel(channelID);
         sc.setSearchString(searchString);
         sc.setLocale(locale.getLanguage());
 
         try {
             final Query query = searchService.doSearch(sc);
-            final ChannelSearchResult result = query.findResult(MaastoAddressChannelSearchService.ID);
+            final ChannelSearchResult result = query.findResult(channelID);
             for(SearchResultItem item : result.getSearchResultItems()) {
                 lat_lon.add(item.getContentURL().split("_"));
             }
