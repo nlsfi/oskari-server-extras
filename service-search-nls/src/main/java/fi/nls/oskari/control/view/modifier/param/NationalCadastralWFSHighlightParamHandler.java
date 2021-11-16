@@ -37,7 +37,7 @@ public class NationalCadastralWFSHighlightParamHandler extends WFSHighlightParam
         final JSONArray featureIdList = new JSONArray();
 
         List<SearchResultItem> list = getKTJfeature(params.getParamValue(),
-                params.getLocale().getLanguage());
+                params.getLocale().getLanguage(), params.getView().getSrsName());
         for (SearchResultItem item : list) {
             featureIdList.put(item.getResourceId());
         }
@@ -57,12 +57,13 @@ public class NationalCadastralWFSHighlightParamHandler extends WFSHighlightParam
         return featureIdList.length() > 0;
     }
 
-    private List<SearchResultItem> getKTJfeature(final String param, final String language) {
+    private List<SearchResultItem> getKTJfeature(final String param, final String language, String srs) {
 
         final SearchCriteria sc = new SearchCriteria();
         sc.addChannel(channelID);
         sc.setSearchString(param);
         sc.setLocale(language);
+        sc.setSRS(srs);
 
         final Query query = searchService.doSearch(sc);
         return query.findResult(channelID).getSearchResultItems();

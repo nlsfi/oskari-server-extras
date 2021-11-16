@@ -48,7 +48,7 @@ public class NationalCadastralRefParamHandler extends ParamHandler {
         // we can use fi as language since we only get coordinates, could
         // get it from published map if needed
         final ArrayList<String[]> latlon_list = getCoordinatesFromNatCadRef(
-                params.getLocale(), cadastralRef, PropertyUtil.getDefaultLanguage());
+                params.getLocale(), cadastralRef, PropertyUtil.getDefaultLanguage(), params.getView().getSrsName());
         // TODO: KTJ search channel now returns "palstat" instead of
         // "kiinteistöt" -> one ref returns multiple results
         // we need to think this through
@@ -71,7 +71,7 @@ public class NationalCadastralRefParamHandler extends ParamHandler {
     }
 
     private ArrayList<String[]> getCoordinatesFromNatCadRef(Locale locale,
-            String searchString, String publishedMapLanguage) {
+            String searchString, String publishedMapLanguage, String srs) {
 
         ArrayList<String[]> lat_lon = new ArrayList<>();
 
@@ -90,6 +90,7 @@ public class NationalCadastralRefParamHandler extends ParamHandler {
                 //sc.addChannel(KTJkiiSearchChannel.ID);
                 sc.setSearchString(searchString);
                 sc.setLocale(locale.getLanguage());
+                sc.setSRS(srs);
 
                 Query query = searchService.doSearch(sc);
 

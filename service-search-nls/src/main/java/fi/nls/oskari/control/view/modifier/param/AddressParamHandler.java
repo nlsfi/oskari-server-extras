@@ -38,7 +38,7 @@ public class AddressParamHandler extends ParamHandler {
         if(params.getParamValue() == null) {
             return false;
         }
-        final ArrayList<String[]> coordinates = getCoordinatesFromAddress(params.getParamValue(), params.getLocale());
+        final ArrayList<String[]> coordinates = getCoordinatesFromAddress(params.getParamValue(), params.getLocale(), params.getView().getSrsName());
         if (coordinates.isEmpty()) {
             return false;
         }
@@ -71,7 +71,7 @@ public class AddressParamHandler extends ParamHandler {
         return true;
     }
     protected ArrayList<String[]> getCoordinatesFromAddress(
-                              String searchString, Locale locale) {
+                              String searchString, Locale locale, String srs) {
 
         final ArrayList<String[]> lat_lon = new ArrayList<>();
 
@@ -79,6 +79,7 @@ public class AddressParamHandler extends ParamHandler {
         sc.addChannel(channelID);
         sc.setSearchString(searchString);
         sc.setLocale(locale.getLanguage());
+        sc.setSRS(srs);
 
         try {
             final Query query = searchService.doSearch(sc);

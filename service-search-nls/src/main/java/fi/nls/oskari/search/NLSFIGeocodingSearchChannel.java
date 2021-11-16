@@ -208,7 +208,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
     }
 
     private boolean requiresReprojection(String srs) {
-        return !("EPSG:" + SERVICE_SRS_CODE).equals(srs);
+        return srs != null && !("EPSG:" + SERVICE_SRS_CODE).equals(srs);
     }
 
     protected String getEndpoint() {
