@@ -128,11 +128,11 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
     }
 
     private Map<String, Object> getResult(SearchCriteria criteria) throws IOException {
-        String requestedEndpoint = (String) criteria.getParamAsString("endpoint");
+        String requestedEndpoint = criteria.getParamAsString(ID + "_endpoint");
         String url = getUrl(requestedEndpoint, getSearchParams(criteria.getSearchString(),
                 criteria.getLocale(),
                 criteria.getMaxResults(),
-                criteria.getParamAsString("sources")));
+                criteria.getParamAsString(ID + "_sources")));
 
         LOG.debug("Calling search with", url);
         HttpURLConnection conn = connectToService(url);
