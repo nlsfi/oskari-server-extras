@@ -29,11 +29,20 @@ public class OgcApiSearchChannel extends SearchChannel {
     public static final String ID = "OGC_API_SEARCH_CHANNEL";
 
     //Local configs
+    /**
+     * One can use property search.channel.OGC_API_SEARCH_CHANNEL.apikey but if really needed apikey can go here.
+     */
     private static String apiKey = null;
     private static String searchAddress = "https://avoin-paikkatieto.maanmittauslaitos.fi/geographic-names/features/v1/collections/placenames/items?spelling_case_insensitive=";
     private static String additionalPlaceTypeInfoBaseUrl = "https://beta-paikkatieto.maanmittauslaitos.fi/catalogue/v1/codelistgroups/geographic-names/codelists/";
     private static String[] localAdditionalInfoNames = {"placeType", "municipality"};
+    /**
+     * Set true if one wants to use local jsons instead of url based one
+     */
     private static final boolean USE_LOCAL_ADDITIONAL_INFO = true;
+    /**
+     * Add languages you have translaited here as language code
+     */
     private static String[] languageArray = {"fin", "eng", "swe"};
 
     private static HashMap<Integer, HashMap<String, String>> placetypeCodes;
