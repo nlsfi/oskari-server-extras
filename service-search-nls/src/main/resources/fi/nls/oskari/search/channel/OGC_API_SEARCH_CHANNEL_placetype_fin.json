@@ -1,0 +1,1238 @@
+{
+  "name" : "placetype",
+  "values" : {
+    "0" : {
+      "value" : "0",
+      "label" : "Määrittelemätön kohde",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010105" : {
+      "value" : "1010105",
+      "label" : "Saari- tai luotoryhmä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010110" : {
+      "value" : "1010110",
+      "label" : "Saari tai luoto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010115" : {
+      "value" : "1010115",
+      "label" : "Vesikivi tai -kivikko",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010120" : {
+      "value" : "1010120",
+      "label" : "Niemi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010125" : {
+      "value" : "1010125",
+      "label" : "Kannas",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010130" : {
+      "value" : "1010130",
+      "label" : "Ranta-alue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010205" : {
+      "value" : "1010205",
+      "label" : "Kohoumaryhmä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010210" : {
+      "value" : "1010210",
+      "label" : "Kohouma",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010305" : {
+      "value" : "1010305",
+      "label" : "Painanne",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010405" : {
+      "value" : "1010405",
+      "label" : "Matalikko",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010410" : {
+      "value" : "1010410",
+      "label" : "Syvänne",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020105" : {
+      "value" : "1020105",
+      "label" : "Metsäalue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020205" : {
+      "value" : "1020205",
+      "label" : "Suo tai kosteikko",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020305" : {
+      "value" : "1020305",
+      "label" : "Pelto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020405" : {
+      "value" : "1020405",
+      "label" : "Niitty tai laidun",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020410" : {
+      "value" : "1020410",
+      "label" : "Pensaikko tai varvikko",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020505" : {
+      "value" : "1020505",
+      "label" : "Louhikko tai kivikko",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1030105" : {
+      "value" : "1030105",
+      "label" : "Kivi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1030110" : {
+      "value" : "1030110",
+      "label" : "Puu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1999905" : {
+      "value" : "1999905",
+      "label" : "Hävinnyt asuinpaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1999999" : {
+      "value" : "1999999",
+      "label" : "Muu maastopaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010105" : {
+      "value" : "2010105",
+      "label" : "Itämeri ja sen pääosa-alueet",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010110" : {
+      "value" : "2010110",
+      "label" : "Merialueen osa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010205" : {
+      "value" : "2010205",
+      "label" : "Järvi- tai lampiryhmä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010210" : {
+      "value" : "2010210",
+      "label" : "Järvi tai lampi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010215" : {
+      "value" : "2010215",
+      "label" : "Järven osa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010220" : {
+      "value" : "2010220",
+      "label" : "Tekojärvi tai -lampi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010225" : {
+      "value" : "2010225",
+      "label" : "Tekojärven osa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010230" : {
+      "value" : "2010230",
+      "label" : "Kanava",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020105" : {
+      "value" : "2020105",
+      "label" : "Virtavesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020110" : {
+      "value" : "2020110",
+      "label" : "Virtaveden osa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020115" : {
+      "value" : "2020115",
+      "label" : "Koski",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2030105" : {
+      "value" : "2030105",
+      "label" : "Lähde",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2030110" : {
+      "value" : "2030110",
+      "label" : "Vesikuoppa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2999999" : {
+      "value" : "2999999",
+      "label" : "Muu vesipaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3010105" : {
+      "value" : "3010105",
+      "label" : "Kaupunkialue tai taajama",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3010110" : {
+      "value" : "3010110",
+      "label" : "Kylä tai kulmakunta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020105" : {
+      "value" : "3020105",
+      "label" : "Kaupunkialueen tai taajaman osa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020110" : {
+      "value" : "3020110",
+      "label" : "Puisto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020115" : {
+      "value" : "3020115",
+      "label" : "Tori tai aukio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3030105" : {
+      "value" : "3030105",
+      "label" : "Talo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3999999" : {
+      "value" : "3999999",
+      "label" : "Muu asutuskohde",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010105" : {
+      "value" : "4010105",
+      "label" : "Valtio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010110" : {
+      "value" : "4010110",
+      "label" : "Aluehallintoviraston toimialue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010115" : {
+      "value" : "4010115",
+      "label" : "ELY-keskuksen toimialue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010120" : {
+      "value" : "4010120",
+      "label" : "Maakunta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010125" : {
+      "value" : "4010125",
+      "label" : "Kunta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010205" : {
+      "value" : "4010205",
+      "label" : "Rajapyykki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020105" : {
+      "value" : "4020105",
+      "label" : "Aluehallintoviraston päätoimipaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020110" : {
+      "value" : "4020110",
+      "label" : "ELY-keskuksen päätoimipaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020115" : {
+      "value" : "4020115",
+      "label" : "Maakunnan liiton toimisto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020120" : {
+      "value" : "4020120",
+      "label" : "Kunnanvirasto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020199" : {
+      "value" : "4020199",
+      "label" : "Muu hallinnollinen rakennus tai toimipaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030105" : {
+      "value" : "4030105",
+      "label" : "Kirkko",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030110" : {
+      "value" : "4030110",
+      "label" : "Muu pyhä rakennus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030199" : {
+      "value" : "4030199",
+      "label" : "Muu uskonnollinen rakennus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4040105" : {
+      "value" : "4040105",
+      "label" : "Hautausmaa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4040199" : {
+      "value" : "4040199",
+      "label" : "Muu hautaustoimen yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050105" : {
+      "value" : "4050105",
+      "label" : "Sairaala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050199" : {
+      "value" : "4050199",
+      "label" : "Muu terveydenhuollon yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050299" : {
+      "value" : "4050299",
+      "label" : "Sosiaalihuollon yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4059999" : {
+      "value" : "4059999",
+      "label" : "Muu sosiaali- tai terveydenhuollon yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060105" : {
+      "value" : "4060105",
+      "label" : "Pelastus- tai paloasema",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060110" : {
+      "value" : "4060110",
+      "label" : "Vapaaehtoisen tai sopimuspalokunnan yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060199" : {
+      "value" : "4060199",
+      "label" : "Muu pelastustoimen yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060205" : {
+      "value" : "4060205",
+      "label" : "Poliisiasema",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060299" : {
+      "value" : "4060299",
+      "label" : "Muu poliisitoimen yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060305" : {
+      "value" : "4060305",
+      "label" : "Vankila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060399" : {
+      "value" : "4060399",
+      "label" : "Muu rikosseuraamuslaitoksen yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060405" : {
+      "value" : "4060405",
+      "label" : "Tulliasema",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060499" : {
+      "value" : "4060499",
+      "label" : "Muu tullin yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060505" : {
+      "value" : "4060505",
+      "label" : "Sotilasalue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060599" : {
+      "value" : "4060599",
+      "label" : "Muu puolustusvoimien yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060605" : {
+      "value" : "4060605",
+      "label" : "Rajanylityspaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060699" : {
+      "value" : "4060699",
+      "label" : "Muu rajavartiolaitoksen yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4069999" : {
+      "value" : "4069999",
+      "label" : "Muu turvallisuus- tai puolustusalan yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070105" : {
+      "value" : "4070105",
+      "label" : "Yliopisto tai korkeakoulu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070199" : {
+      "value" : "4070199",
+      "label" : "Muu koulutusyksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070205" : {
+      "value" : "4070205",
+      "label" : "Tutkimuslaitos",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070299" : {
+      "value" : "4070299",
+      "label" : "Muu tutkimusyksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4080105" : {
+      "value" : "4080105",
+      "label" : "Jätteenkäsittelylaitos",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4080199" : {
+      "value" : "4080199",
+      "label" : "Muu jätehuollon yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4999999" : {
+      "value" : "4999999",
+      "label" : "Muu hallinnon yksikkö tai julkinen palvelu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010105" : {
+      "value" : "5010105",
+      "label" : "Kansallispuisto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010110" : {
+      "value" : "5010110",
+      "label" : "Luonnonpuisto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010115" : {
+      "value" : "5010115",
+      "label" : "Muu luonnonsuojelualue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999905" : {
+      "value" : "5999905",
+      "label" : "Erämaa-alue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999910" : {
+      "value" : "5999910",
+      "label" : "Valtion retkeilyalue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999915" : {
+      "value" : "5999915",
+      "label" : "Maailmanperintökohde",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999920" : {
+      "value" : "5999920",
+      "label" : "Luonnonmuistomerkki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999925" : {
+      "value" : "5999925",
+      "label" : "Muinaisjäännös",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999999" : {
+      "value" : "5999999",
+      "label" : "Muu suojeltu kohde",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010105" : {
+      "value" : "6010105",
+      "label" : "Linja-autoasema",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010110" : {
+      "value" : "6010110",
+      "label" : "Lautta tai lossi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010199" : {
+      "value" : "6010199",
+      "label" : "Muu tieliikennepaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010205" : {
+      "value" : "6010205",
+      "label" : "Rautatieasema tai seisake",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010210" : {
+      "value" : "6010210",
+      "label" : "Metroasema",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010299" : {
+      "value" : "6010299",
+      "label" : "Muu raideliikennepaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010305" : {
+      "value" : "6010305",
+      "label" : "Satama",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010310" : {
+      "value" : "6010310",
+      "label" : "Majakka tai turvalaite",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010399" : {
+      "value" : "6010399",
+      "label" : "Muu vesiliikennepaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010405" : {
+      "value" : "6010405",
+      "label" : "Lentoasema tai lentokenttä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010499" : {
+      "value" : "6010499",
+      "label" : "Muu ilmaliikennepaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010505" : {
+      "value" : "6010505",
+      "label" : "Datakeskus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010599" : {
+      "value" : "6010599",
+      "label" : "Muu tietoliikennepaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019905" : {
+      "value" : "6019905",
+      "label" : "Silta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019910" : {
+      "value" : "6019910",
+      "label" : "Tunneli",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019915" : {
+      "value" : "6019915",
+      "label" : "Liikenneterminaali",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019999" : {
+      "value" : "6019999",
+      "label" : "Muu liikennepaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010199" : {
+      "value" : "7010199",
+      "label" : "Maatalouden yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010299" : {
+      "value" : "7010299",
+      "label" : "Riista- tai kalatalouden yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010305" : {
+      "value" : "7010305",
+      "label" : "Kaivos tai louhos",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010310" : {
+      "value" : "7010310",
+      "label" : "Soran- tai hiekanottoalue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010315" : {
+      "value" : "7010315",
+      "label" : "Turvetuotantoalue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010399" : {
+      "value" : "7010399",
+      "label" : "Muu maa-aineksenottoalue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010405" : {
+      "value" : "7010405",
+      "label" : "Teollisuusalue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010410" : {
+      "value" : "7010410",
+      "label" : "Tehdas",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010415" : {
+      "value" : "7010415",
+      "label" : "Telakka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010499" : {
+      "value" : "7010499",
+      "label" : "Muu teollisuuden yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010505" : {
+      "value" : "7010505",
+      "label" : "Sähkön- tai lämmöntuotantolaitos",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010599" : {
+      "value" : "7010599",
+      "label" : "Muu energiatuotannon yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7019999" : {
+      "value" : "7019999",
+      "label" : "Muu tuotannon tai teollisuuden yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7020105" : {
+      "value" : "7020105",
+      "label" : "Kauppakeskus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7020199" : {
+      "value" : "7020199",
+      "label" : "Muu kauppakeskittymä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7029999" : {
+      "value" : "7029999",
+      "label" : "Muu kaupan yksikkö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010105" : {
+      "value" : "8010105",
+      "label" : "Kulttuuri- tai messukeskus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010110" : {
+      "value" : "8010110",
+      "label" : "Museo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010115" : {
+      "value" : "8010115",
+      "label" : "Teatteri",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010120" : {
+      "value" : "8010120",
+      "label" : "Muistomerkki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010199" : {
+      "value" : "8010199",
+      "label" : "Muu kulttuuripalvelu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020105" : {
+      "value" : "8020105",
+      "label" : "Urheilupuisto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020110" : {
+      "value" : "8020110",
+      "label" : "Urheilukenttä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020115" : {
+      "value" : "8020115",
+      "label" : "Urheiluhalli",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020120" : {
+      "value" : "8020120",
+      "label" : "Uimahalli tai uimala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020125" : {
+      "value" : "8020125",
+      "label" : "Golfkenttä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020130" : {
+      "value" : "8020130",
+      "label" : "Hiihto- tai laskettelukeskus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020135" : {
+      "value" : "8020135",
+      "label" : "Ampumarata",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020140" : {
+      "value" : "8020140",
+      "label" : "Moottorirata",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020145" : {
+      "value" : "8020145",
+      "label" : "Ravirata",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020199" : {
+      "value" : "8020199",
+      "label" : "Muu urheilu- tai liikuntapaikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030105" : {
+      "value" : "8030105",
+      "label" : "Huvipuisto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030110" : {
+      "value" : "8030110",
+      "label" : "Eläintarha",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030115" : {
+      "value" : "8030115",
+      "label" : "Uimaranta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030120" : {
+      "value" : "8030120",
+      "label" : "Luontokeskus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030125" : {
+      "value" : "8030125",
+      "label" : "Leirikeskus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030130" : {
+      "value" : "8030130",
+      "label" : "Matkailu-, retkeily- tai lomakeskus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030135" : {
+      "value" : "8030135",
+      "label" : "Leirintäalue",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030140" : {
+      "value" : "8030140",
+      "label" : "Siirtolapuutarha",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030145" : {
+      "value" : "8030145",
+      "label" : "Retkeilyreitti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030150" : {
+      "value" : "8030150",
+      "label" : "Autio-, päivä-, varaus- tai vuokratupa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030199" : {
+      "value" : "8030199",
+      "label" : "Muu virkistys- tai vapaa-ajan palvelu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "9999905" : {
+      "value" : "9999905",
+      "label" : "Merkittävä rakennus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "9999999" : {
+      "value" : "9999999",
+      "label" : "Muu kulttuurikohde",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    }
+  },
+  "type" : "CodeListDictionary"
+}

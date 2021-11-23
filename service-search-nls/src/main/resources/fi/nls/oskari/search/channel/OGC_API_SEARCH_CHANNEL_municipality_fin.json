@@ -1,0 +1,2478 @@
+{
+  "name" : "municipality",
+  "values" : {
+    "005" : {
+      "value" : "005",
+      "label" : "Alajärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "009" : {
+      "value" : "009",
+      "label" : "Alavieska",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "010" : {
+      "value" : "010",
+      "label" : "Alavus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "016" : {
+      "value" : "016",
+      "label" : "Asikkala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "018" : {
+      "value" : "018",
+      "label" : "Askola",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "019" : {
+      "value" : "019",
+      "label" : "Aura",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "020" : {
+      "value" : "020",
+      "label" : "Akaa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "035" : {
+      "value" : "035",
+      "label" : "Brändö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "043" : {
+      "value" : "043",
+      "label" : "Eckerö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "046" : {
+      "value" : "046",
+      "label" : "Enonkoski",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "047" : {
+      "value" : "047",
+      "label" : "Enontekiö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "049" : {
+      "value" : "049",
+      "label" : "Espoo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "050" : {
+      "value" : "050",
+      "label" : "Eura",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "051" : {
+      "value" : "051",
+      "label" : "Eurajoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "052" : {
+      "value" : "052",
+      "label" : "Evijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "060" : {
+      "value" : "060",
+      "label" : "Finström",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "061" : {
+      "value" : "061",
+      "label" : "Forssa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "062" : {
+      "value" : "062",
+      "label" : "Föglö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "065" : {
+      "value" : "065",
+      "label" : "Geta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "069" : {
+      "value" : "069",
+      "label" : "Haapajärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "071" : {
+      "value" : "071",
+      "label" : "Haapavesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "072" : {
+      "value" : "072",
+      "label" : "Hailuoto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "074" : {
+      "value" : "074",
+      "label" : "Halsua",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "075" : {
+      "value" : "075",
+      "label" : "Hamina",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "076" : {
+      "value" : "076",
+      "label" : "Hammarland",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "077" : {
+      "value" : "077",
+      "label" : "Hankasalmi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "078" : {
+      "value" : "078",
+      "label" : "Hanko",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "079" : {
+      "value" : "079",
+      "label" : "Harjavalta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "081" : {
+      "value" : "081",
+      "label" : "Hartola",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "082" : {
+      "value" : "082",
+      "label" : "Hattula",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "086" : {
+      "value" : "086",
+      "label" : "Hausjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "090" : {
+      "value" : "090",
+      "label" : "Heinävesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "091" : {
+      "value" : "091",
+      "label" : "Helsinki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "092" : {
+      "value" : "092",
+      "label" : "Vantaa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "097" : {
+      "value" : "097",
+      "label" : "Hirvensalmi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "098" : {
+      "value" : "098",
+      "label" : "Hollola",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "102" : {
+      "value" : "102",
+      "label" : "Huittinen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "103" : {
+      "value" : "103",
+      "label" : "Humppila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "105" : {
+      "value" : "105",
+      "label" : "Hyrynsalmi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "106" : {
+      "value" : "106",
+      "label" : "Hyvinkää",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "108" : {
+      "value" : "108",
+      "label" : "Hämeenkyrö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "109" : {
+      "value" : "109",
+      "label" : "Hämeenlinna",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "111" : {
+      "value" : "111",
+      "label" : "Heinola",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "139" : {
+      "value" : "139",
+      "label" : "Ii",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "140" : {
+      "value" : "140",
+      "label" : "Iisalmi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "142" : {
+      "value" : "142",
+      "label" : "Iitti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "143" : {
+      "value" : "143",
+      "label" : "Ikaalinen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "145" : {
+      "value" : "145",
+      "label" : "Ilmajoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "146" : {
+      "value" : "146",
+      "label" : "Ilomantsi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "148" : {
+      "value" : "148",
+      "label" : "Inari",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "149" : {
+      "value" : "149",
+      "label" : "Inkoo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "151" : {
+      "value" : "151",
+      "label" : "Isojoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "152" : {
+      "value" : "152",
+      "label" : "Isokyrö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "153" : {
+      "value" : "153",
+      "label" : "Imatra",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "165" : {
+      "value" : "165",
+      "label" : "Janakkala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "167" : {
+      "value" : "167",
+      "label" : "Joensuu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "169" : {
+      "value" : "169",
+      "label" : "Jokioinen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "170" : {
+      "value" : "170",
+      "label" : "Jomala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "171" : {
+      "value" : "171",
+      "label" : "Joroinen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "172" : {
+      "value" : "172",
+      "label" : "Joutsa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "176" : {
+      "value" : "176",
+      "label" : "Juuka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "177" : {
+      "value" : "177",
+      "label" : "Juupajoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "178" : {
+      "value" : "178",
+      "label" : "Juva",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "179" : {
+      "value" : "179",
+      "label" : "Jyväskylä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "181" : {
+      "value" : "181",
+      "label" : "Jämijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "182" : {
+      "value" : "182",
+      "label" : "Jämsä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "186" : {
+      "value" : "186",
+      "label" : "Järvenpää",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "202" : {
+      "value" : "202",
+      "label" : "Kaarina",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "204" : {
+      "value" : "204",
+      "label" : "Kaavi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "205" : {
+      "value" : "205",
+      "label" : "Kajaani",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "208" : {
+      "value" : "208",
+      "label" : "Kalajoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "211" : {
+      "value" : "211",
+      "label" : "Kangasala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "213" : {
+      "value" : "213",
+      "label" : "Kangasniemi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "214" : {
+      "value" : "214",
+      "label" : "Kankaanpää",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "216" : {
+      "value" : "216",
+      "label" : "Kannonkoski",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "217" : {
+      "value" : "217",
+      "label" : "Kannus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "218" : {
+      "value" : "218",
+      "label" : "Karijoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "224" : {
+      "value" : "224",
+      "label" : "Karkkila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "226" : {
+      "value" : "226",
+      "label" : "Karstula",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "230" : {
+      "value" : "230",
+      "label" : "Karvia",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "231" : {
+      "value" : "231",
+      "label" : "Kaskinen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "232" : {
+      "value" : "232",
+      "label" : "Kauhajoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "233" : {
+      "value" : "233",
+      "label" : "Kauhava",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "235" : {
+      "value" : "235",
+      "label" : "Kauniainen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "236" : {
+      "value" : "236",
+      "label" : "Kaustinen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "239" : {
+      "value" : "239",
+      "label" : "Keitele",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "240" : {
+      "value" : "240",
+      "label" : "Kemi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "241" : {
+      "value" : "241",
+      "label" : "Keminmaa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "244" : {
+      "value" : "244",
+      "label" : "Kempele",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "245" : {
+      "value" : "245",
+      "label" : "Kerava",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "249" : {
+      "value" : "249",
+      "label" : "Keuruu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "250" : {
+      "value" : "250",
+      "label" : "Kihniö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "256" : {
+      "value" : "256",
+      "label" : "Kinnula",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "257" : {
+      "value" : "257",
+      "label" : "Kirkkonummi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "260" : {
+      "value" : "260",
+      "label" : "Kitee",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "261" : {
+      "value" : "261",
+      "label" : "Kittilä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "263" : {
+      "value" : "263",
+      "label" : "Kiuruvesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "265" : {
+      "value" : "265",
+      "label" : "Kivijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "271" : {
+      "value" : "271",
+      "label" : "Kokemäki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "272" : {
+      "value" : "272",
+      "label" : "Kokkola",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "273" : {
+      "value" : "273",
+      "label" : "Kolari",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "275" : {
+      "value" : "275",
+      "label" : "Konnevesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "276" : {
+      "value" : "276",
+      "label" : "Kontiolahti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "280" : {
+      "value" : "280",
+      "label" : "Korsnäs",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "284" : {
+      "value" : "284",
+      "label" : "Koski Tl",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "285" : {
+      "value" : "285",
+      "label" : "Kotka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "286" : {
+      "value" : "286",
+      "label" : "Kouvola",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "287" : {
+      "value" : "287",
+      "label" : "Kristiinankaupunki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "288" : {
+      "value" : "288",
+      "label" : "Kruunupyy",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "290" : {
+      "value" : "290",
+      "label" : "Kuhmo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "291" : {
+      "value" : "291",
+      "label" : "Kuhmoinen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "295" : {
+      "value" : "295",
+      "label" : "Kumlinge",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "297" : {
+      "value" : "297",
+      "label" : "Kuopio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "300" : {
+      "value" : "300",
+      "label" : "Kuortane",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "301" : {
+      "value" : "301",
+      "label" : "Kurikka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "304" : {
+      "value" : "304",
+      "label" : "Kustavi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "305" : {
+      "value" : "305",
+      "label" : "Kuusamo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "309" : {
+      "value" : "309",
+      "label" : "Outokumpu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "312" : {
+      "value" : "312",
+      "label" : "Kyyjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "316" : {
+      "value" : "316",
+      "label" : "Kärkölä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "317" : {
+      "value" : "317",
+      "label" : "Kärsämäki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "318" : {
+      "value" : "318",
+      "label" : "Kökar",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "320" : {
+      "value" : "320",
+      "label" : "Kemijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "322" : {
+      "value" : "322",
+      "label" : "Kemiönsaari",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "398" : {
+      "value" : "398",
+      "label" : "Lahti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "399" : {
+      "value" : "399",
+      "label" : "Laihia",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "400" : {
+      "value" : "400",
+      "label" : "Laitila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "402" : {
+      "value" : "402",
+      "label" : "Lapinlahti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "403" : {
+      "value" : "403",
+      "label" : "Lappajärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "405" : {
+      "value" : "405",
+      "label" : "Lappeenranta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "407" : {
+      "value" : "407",
+      "label" : "Lapinjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "408" : {
+      "value" : "408",
+      "label" : "Lapua",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "410" : {
+      "value" : "410",
+      "label" : "Laukaa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "416" : {
+      "value" : "416",
+      "label" : "Lemi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "417" : {
+      "value" : "417",
+      "label" : "Lemland",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "418" : {
+      "value" : "418",
+      "label" : "Lempäälä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "420" : {
+      "value" : "420",
+      "label" : "Leppävirta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "421" : {
+      "value" : "421",
+      "label" : "Lestijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "422" : {
+      "value" : "422",
+      "label" : "Lieksa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "423" : {
+      "value" : "423",
+      "label" : "Lieto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "425" : {
+      "value" : "425",
+      "label" : "Liminka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "426" : {
+      "value" : "426",
+      "label" : "Liperi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "430" : {
+      "value" : "430",
+      "label" : "Loimaa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "433" : {
+      "value" : "433",
+      "label" : "Loppi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "434" : {
+      "value" : "434",
+      "label" : "Loviisa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "435" : {
+      "value" : "435",
+      "label" : "Luhanka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "436" : {
+      "value" : "436",
+      "label" : "Lumijoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "438" : {
+      "value" : "438",
+      "label" : "Lumparland",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "440" : {
+      "value" : "440",
+      "label" : "Luoto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "441" : {
+      "value" : "441",
+      "label" : "Luumäki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "444" : {
+      "value" : "444",
+      "label" : "Lohja",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "445" : {
+      "value" : "445",
+      "label" : "Parainen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "475" : {
+      "value" : "475",
+      "label" : "Maalahti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "478" : {
+      "value" : "478",
+      "label" : "Maarianhamina",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "480" : {
+      "value" : "480",
+      "label" : "Marttila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "481" : {
+      "value" : "481",
+      "label" : "Masku",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "483" : {
+      "value" : "483",
+      "label" : "Merijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "484" : {
+      "value" : "484",
+      "label" : "Merikarvia",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "489" : {
+      "value" : "489",
+      "label" : "Miehikkälä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "491" : {
+      "value" : "491",
+      "label" : "Mikkeli",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "494" : {
+      "value" : "494",
+      "label" : "Muhos",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "495" : {
+      "value" : "495",
+      "label" : "Multia",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "498" : {
+      "value" : "498",
+      "label" : "Muonio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "499" : {
+      "value" : "499",
+      "label" : "Mustasaari",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "500" : {
+      "value" : "500",
+      "label" : "Muurame",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "503" : {
+      "value" : "503",
+      "label" : "Mynämäki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "504" : {
+      "value" : "504",
+      "label" : "Myrskylä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "505" : {
+      "value" : "505",
+      "label" : "Mäntsälä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "507" : {
+      "value" : "507",
+      "label" : "Mäntyharju",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "508" : {
+      "value" : "508",
+      "label" : "Mänttä-Vilppula",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "529" : {
+      "value" : "529",
+      "label" : "Naantali",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "531" : {
+      "value" : "531",
+      "label" : "Nakkila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "535" : {
+      "value" : "535",
+      "label" : "Nivala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "536" : {
+      "value" : "536",
+      "label" : "Nokia",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "538" : {
+      "value" : "538",
+      "label" : "Nousiainen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "541" : {
+      "value" : "541",
+      "label" : "Nurmes",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "543" : {
+      "value" : "543",
+      "label" : "Nurmijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "545" : {
+      "value" : "545",
+      "label" : "Närpiö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "560" : {
+      "value" : "560",
+      "label" : "Orimattila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "561" : {
+      "value" : "561",
+      "label" : "Oripää",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "562" : {
+      "value" : "562",
+      "label" : "Orivesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "563" : {
+      "value" : "563",
+      "label" : "Oulainen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "564" : {
+      "value" : "564",
+      "label" : "Oulu",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "576" : {
+      "value" : "576",
+      "label" : "Padasjoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "577" : {
+      "value" : "577",
+      "label" : "Paimio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "578" : {
+      "value" : "578",
+      "label" : "Paltamo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "580" : {
+      "value" : "580",
+      "label" : "Parikkala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "581" : {
+      "value" : "581",
+      "label" : "Parkano",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "583" : {
+      "value" : "583",
+      "label" : "Pelkosenniemi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "584" : {
+      "value" : "584",
+      "label" : "Perho",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "588" : {
+      "value" : "588",
+      "label" : "Pertunmaa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "592" : {
+      "value" : "592",
+      "label" : "Petäjävesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "593" : {
+      "value" : "593",
+      "label" : "Pieksämäki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "595" : {
+      "value" : "595",
+      "label" : "Pielavesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "598" : {
+      "value" : "598",
+      "label" : "Pietarsaari",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "599" : {
+      "value" : "599",
+      "label" : "Pedersören kunta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "601" : {
+      "value" : "601",
+      "label" : "Pihtipudas",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "604" : {
+      "value" : "604",
+      "label" : "Pirkkala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "607" : {
+      "value" : "607",
+      "label" : "Polvijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "608" : {
+      "value" : "608",
+      "label" : "Pomarkku",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "609" : {
+      "value" : "609",
+      "label" : "Pori",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "611" : {
+      "value" : "611",
+      "label" : "Pornainen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "614" : {
+      "value" : "614",
+      "label" : "Posio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "615" : {
+      "value" : "615",
+      "label" : "Pudasjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "616" : {
+      "value" : "616",
+      "label" : "Pukkila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "619" : {
+      "value" : "619",
+      "label" : "Punkalaidun",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "620" : {
+      "value" : "620",
+      "label" : "Puolanka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "623" : {
+      "value" : "623",
+      "label" : "Puumala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "624" : {
+      "value" : "624",
+      "label" : "Pyhtää",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "625" : {
+      "value" : "625",
+      "label" : "Pyhäjoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "626" : {
+      "value" : "626",
+      "label" : "Pyhäjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "630" : {
+      "value" : "630",
+      "label" : "Pyhäntä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "631" : {
+      "value" : "631",
+      "label" : "Pyhäranta",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "635" : {
+      "value" : "635",
+      "label" : "Pälkäne",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "636" : {
+      "value" : "636",
+      "label" : "Pöytyä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "638" : {
+      "value" : "638",
+      "label" : "Porvoo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "678" : {
+      "value" : "678",
+      "label" : "Raahe",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "680" : {
+      "value" : "680",
+      "label" : "Raisio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "681" : {
+      "value" : "681",
+      "label" : "Rantasalmi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "683" : {
+      "value" : "683",
+      "label" : "Ranua",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "684" : {
+      "value" : "684",
+      "label" : "Rauma",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "686" : {
+      "value" : "686",
+      "label" : "Rautalampi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "687" : {
+      "value" : "687",
+      "label" : "Rautavaara",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "689" : {
+      "value" : "689",
+      "label" : "Rautjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "691" : {
+      "value" : "691",
+      "label" : "Reisjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "694" : {
+      "value" : "694",
+      "label" : "Riihimäki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "697" : {
+      "value" : "697",
+      "label" : "Ristijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "698" : {
+      "value" : "698",
+      "label" : "Rovaniemi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "700" : {
+      "value" : "700",
+      "label" : "Ruokolahti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "702" : {
+      "value" : "702",
+      "label" : "Ruovesi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "704" : {
+      "value" : "704",
+      "label" : "Rusko",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "707" : {
+      "value" : "707",
+      "label" : "Rääkkylä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "710" : {
+      "value" : "710",
+      "label" : "Raasepori",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "729" : {
+      "value" : "729",
+      "label" : "Saarijärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "732" : {
+      "value" : "732",
+      "label" : "Salla",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "734" : {
+      "value" : "734",
+      "label" : "Salo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "736" : {
+      "value" : "736",
+      "label" : "Saltvik",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "738" : {
+      "value" : "738",
+      "label" : "Sauvo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "739" : {
+      "value" : "739",
+      "label" : "Savitaipale",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "740" : {
+      "value" : "740",
+      "label" : "Savonlinna",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "742" : {
+      "value" : "742",
+      "label" : "Savukoski",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "743" : {
+      "value" : "743",
+      "label" : "Seinäjoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "746" : {
+      "value" : "746",
+      "label" : "Sievi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "747" : {
+      "value" : "747",
+      "label" : "Siikainen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "748" : {
+      "value" : "748",
+      "label" : "Siikajoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "749" : {
+      "value" : "749",
+      "label" : "Siilinjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "751" : {
+      "value" : "751",
+      "label" : "Simo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "753" : {
+      "value" : "753",
+      "label" : "Sipoo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "755" : {
+      "value" : "755",
+      "label" : "Siuntio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "758" : {
+      "value" : "758",
+      "label" : "Sodankylä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "759" : {
+      "value" : "759",
+      "label" : "Soini",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "761" : {
+      "value" : "761",
+      "label" : "Somero",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "762" : {
+      "value" : "762",
+      "label" : "Sonkajärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "765" : {
+      "value" : "765",
+      "label" : "Sotkamo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "766" : {
+      "value" : "766",
+      "label" : "Sottunga",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "768" : {
+      "value" : "768",
+      "label" : "Sulkava",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "771" : {
+      "value" : "771",
+      "label" : "Sund",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "777" : {
+      "value" : "777",
+      "label" : "Suomussalmi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "778" : {
+      "value" : "778",
+      "label" : "Suonenjoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "781" : {
+      "value" : "781",
+      "label" : "Sysmä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "783" : {
+      "value" : "783",
+      "label" : "Säkylä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "785" : {
+      "value" : "785",
+      "label" : "Vaala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "790" : {
+      "value" : "790",
+      "label" : "Sastamala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "791" : {
+      "value" : "791",
+      "label" : "Siikalatva",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "831" : {
+      "value" : "831",
+      "label" : "Taipalsaari",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "832" : {
+      "value" : "832",
+      "label" : "Taivalkoski",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "833" : {
+      "value" : "833",
+      "label" : "Taivassalo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "834" : {
+      "value" : "834",
+      "label" : "Tammela",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "837" : {
+      "value" : "837",
+      "label" : "Tampere",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "844" : {
+      "value" : "844",
+      "label" : "Tervo",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "845" : {
+      "value" : "845",
+      "label" : "Tervola",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "846" : {
+      "value" : "846",
+      "label" : "Teuva",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "848" : {
+      "value" : "848",
+      "label" : "Tohmajärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "849" : {
+      "value" : "849",
+      "label" : "Toholampi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "850" : {
+      "value" : "850",
+      "label" : "Toivakka",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "851" : {
+      "value" : "851",
+      "label" : "Tornio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "853" : {
+      "value" : "853",
+      "label" : "Turku",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "854" : {
+      "value" : "854",
+      "label" : "Pello",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "857" : {
+      "value" : "857",
+      "label" : "Tuusniemi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "858" : {
+      "value" : "858",
+      "label" : "Tuusula",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "859" : {
+      "value" : "859",
+      "label" : "Tyrnävä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "886" : {
+      "value" : "886",
+      "label" : "Ulvila",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "887" : {
+      "value" : "887",
+      "label" : "Urjala",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "889" : {
+      "value" : "889",
+      "label" : "Utajärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "890" : {
+      "value" : "890",
+      "label" : "Utsjoki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "892" : {
+      "value" : "892",
+      "label" : "Uurainen",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "893" : {
+      "value" : "893",
+      "label" : "Uusikaarlepyy",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "895" : {
+      "value" : "895",
+      "label" : "Uusikaupunki",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "905" : {
+      "value" : "905",
+      "label" : "Vaasa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "908" : {
+      "value" : "908",
+      "label" : "Valkeakoski",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "915" : {
+      "value" : "915",
+      "label" : "Varkaus",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "918" : {
+      "value" : "918",
+      "label" : "Vehmaa",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "921" : {
+      "value" : "921",
+      "label" : "Vesanto",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "922" : {
+      "value" : "922",
+      "label" : "Vesilahti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "924" : {
+      "value" : "924",
+      "label" : "Veteli",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "925" : {
+      "value" : "925",
+      "label" : "Vieremä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "927" : {
+      "value" : "927",
+      "label" : "Vihti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "931" : {
+      "value" : "931",
+      "label" : "Viitasaari",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "934" : {
+      "value" : "934",
+      "label" : "Vimpeli",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "935" : {
+      "value" : "935",
+      "label" : "Virolahti",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "936" : {
+      "value" : "936",
+      "label" : "Virrat",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "941" : {
+      "value" : "941",
+      "label" : "Vårdö",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "946" : {
+      "value" : "946",
+      "label" : "Vöyri",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "976" : {
+      "value" : "976",
+      "label" : "Ylitornio",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "977" : {
+      "value" : "977",
+      "label" : "Ylivieska",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "980" : {
+      "value" : "980",
+      "label" : "Ylöjärvi",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "981" : {
+      "value" : "981",
+      "label" : "Ypäjä",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "989" : {
+      "value" : "989",
+      "label" : "Ähtäri",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    },
+    "992" : {
+      "value" : "992",
+      "label" : "Äänekoski",
+      "status" : "valid",
+      "lang" : "fin",
+      "codelist" : "municipality",
+      "codelistgroup" : "geographic-names"
+    }
+  },
+  "type" : "CodeListDictionary"
+}
