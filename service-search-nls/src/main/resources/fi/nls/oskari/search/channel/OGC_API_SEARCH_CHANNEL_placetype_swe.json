@@ -1,0 +1,1238 @@
+{
+  "name" : "placetype",
+  "values" : {
+    "0" : {
+      "value" : "0",
+      "label" : "Odefinierat objekt",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010105" : {
+      "value" : "1010105",
+      "label" : "Grupp av öar eller skär",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010110" : {
+      "value" : "1010110",
+      "label" : "Ö eller skär",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010115" : {
+      "value" : "1010115",
+      "label" : "Sten eller stenar i vatten",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010120" : {
+      "value" : "1010120",
+      "label" : "Udde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010125" : {
+      "value" : "1010125",
+      "label" : "Näs",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010130" : {
+      "value" : "1010130",
+      "label" : "Strandområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010205" : {
+      "value" : "1010205",
+      "label" : "Grupp av höjningar",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010210" : {
+      "value" : "1010210",
+      "label" : "Höjning",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010305" : {
+      "value" : "1010305",
+      "label" : "Sänka",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010405" : {
+      "value" : "1010405",
+      "label" : "Grund",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010410" : {
+      "value" : "1010410",
+      "label" : "Djup",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020105" : {
+      "value" : "1020105",
+      "label" : "Skogsområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020205" : {
+      "value" : "1020205",
+      "label" : "Myr eller våtmark",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020305" : {
+      "value" : "1020305",
+      "label" : "Åker",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020405" : {
+      "value" : "1020405",
+      "label" : "Äng eller betesmark",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020410" : {
+      "value" : "1020410",
+      "label" : "Buskage eller rismark",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020505" : {
+      "value" : "1020505",
+      "label" : "Blockfält eller stenfält",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1030105" : {
+      "value" : "1030105",
+      "label" : "Sten",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1030110" : {
+      "value" : "1030110",
+      "label" : "Träd",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1999905" : {
+      "value" : "1999905",
+      "label" : "Försvunnen boplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1999999" : {
+      "value" : "1999999",
+      "label" : "Annan plats i terrängen",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010105" : {
+      "value" : "2010105",
+      "label" : "Östersjön och dess huvuddelområden",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010110" : {
+      "value" : "2010110",
+      "label" : "Del av havsområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010205" : {
+      "value" : "2010205",
+      "label" : "Grupp av sjöar eller tjärnar",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010210" : {
+      "value" : "2010210",
+      "label" : "Sjö eller tjärn",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010215" : {
+      "value" : "2010215",
+      "label" : "Del av sjö",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010220" : {
+      "value" : "2010220",
+      "label" : "Konstgjord sjö eller damm",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010225" : {
+      "value" : "2010225",
+      "label" : "Del av konstgjord sjö",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010230" : {
+      "value" : "2010230",
+      "label" : "Kanal",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020105" : {
+      "value" : "2020105",
+      "label" : "Strömvatten",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020110" : {
+      "value" : "2020110",
+      "label" : "Del av strömvatten",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020115" : {
+      "value" : "2020115",
+      "label" : "Fors",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2030105" : {
+      "value" : "2030105",
+      "label" : "Källa",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2030110" : {
+      "value" : "2030110",
+      "label" : "Vattengrop",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2999999" : {
+      "value" : "2999999",
+      "label" : "Annan vattenplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3010105" : {
+      "value" : "3010105",
+      "label" : "Stadsområde eller tätort",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3010110" : {
+      "value" : "3010110",
+      "label" : "By eller trakt",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020105" : {
+      "value" : "3020105",
+      "label" : "Del av stadsområde eller tätort",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020110" : {
+      "value" : "3020110",
+      "label" : "Park",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020115" : {
+      "value" : "3020115",
+      "label" : "Torg eller öppen plats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3030105" : {
+      "value" : "3030105",
+      "label" : "Hus",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3999999" : {
+      "value" : "3999999",
+      "label" : "Annat bosättningsobjekt",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010105" : {
+      "value" : "4010105",
+      "label" : "Staten",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010110" : {
+      "value" : "4010110",
+      "label" : "Regionalförvaltningsverkets verksamhetsområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010115" : {
+      "value" : "4010115",
+      "label" : "NTM-centralens verksamhetsområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010120" : {
+      "value" : "4010120",
+      "label" : "Landskap",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010125" : {
+      "value" : "4010125",
+      "label" : "Kommun",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010205" : {
+      "value" : "4010205",
+      "label" : "Råröse",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020105" : {
+      "value" : "4020105",
+      "label" : "Regionförvaltningsverkets huvudsakliga verksamhetsställe",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020110" : {
+      "value" : "4020110",
+      "label" : "NTM-centralens huvudsakliga verksamhetsställe",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020115" : {
+      "value" : "4020115",
+      "label" : "Landskapsförbundets kontor",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020120" : {
+      "value" : "4020120",
+      "label" : "Kommunkansli",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020199" : {
+      "value" : "4020199",
+      "label" : "Annan administrativ byggnad eller verksamhetsställe",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030105" : {
+      "value" : "4030105",
+      "label" : "Kyrka",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030110" : {
+      "value" : "4030110",
+      "label" : "Annan helig byggnad",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030199" : {
+      "value" : "4030199",
+      "label" : "Annan religiös byggnad",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4040105" : {
+      "value" : "4040105",
+      "label" : "Begravningsplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4040199" : {
+      "value" : "4040199",
+      "label" : "Annan enhet inom begravningsverksamhet",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050105" : {
+      "value" : "4050105",
+      "label" : "Sjukhus",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050199" : {
+      "value" : "4050199",
+      "label" : "Annan enhet inom hälsovård",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050299" : {
+      "value" : "4050299",
+      "label" : "Enhet inom socialvård",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4059999" : {
+      "value" : "4059999",
+      "label" : "Annan enhet inom social- eller hälsovård",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060105" : {
+      "value" : "4060105",
+      "label" : "Räddnings- eller brandstation",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060110" : {
+      "value" : "4060110",
+      "label" : "Enhet för frivillig brandkår eller avtalsbrandkår",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060199" : {
+      "value" : "4060199",
+      "label" : "Annan enhet inom räddningsväsendet",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060205" : {
+      "value" : "4060205",
+      "label" : "Polisstation",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060299" : {
+      "value" : "4060299",
+      "label" : "Annan enhet inom polisväsendet",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060305" : {
+      "value" : "4060305",
+      "label" : "Fängelse",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060399" : {
+      "value" : "4060399",
+      "label" : "Annan enhet inom brottspåföljdsväsendet",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060405" : {
+      "value" : "4060405",
+      "label" : "Tullstation",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060499" : {
+      "value" : "4060499",
+      "label" : "Annan enhet inom Tullen",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060505" : {
+      "value" : "4060505",
+      "label" : "Militärområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060599" : {
+      "value" : "4060599",
+      "label" : "Annan enhet inom Försvarsmakten",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060605" : {
+      "value" : "4060605",
+      "label" : "Gränsövergångsställe",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060699" : {
+      "value" : "4060699",
+      "label" : "Annan enhet inom Gränsbevakningsväsendet",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4069999" : {
+      "value" : "4069999",
+      "label" : "Annan enhet inom säkerhets- eller försvarsbranschen",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070105" : {
+      "value" : "4070105",
+      "label" : "Universitet eller högskola",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070199" : {
+      "value" : "4070199",
+      "label" : "Annan utbildningsenhet",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070205" : {
+      "value" : "4070205",
+      "label" : "Forskningsinstitut",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070299" : {
+      "value" : "4070299",
+      "label" : "Annan forskningsenhet",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4080105" : {
+      "value" : "4080105",
+      "label" : "Avfallsbehandlingsanläggning",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4080199" : {
+      "value" : "4080199",
+      "label" : "Annan enhet inom avfallshantering",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4999999" : {
+      "value" : "4999999",
+      "label" : "Annan enhet inom förvaltning eller offentlig tjänst",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010105" : {
+      "value" : "5010105",
+      "label" : "Nationalpark",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010110" : {
+      "value" : "5010110",
+      "label" : "Naturpark",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010115" : {
+      "value" : "5010115",
+      "label" : "Annat naturskyddsområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999905" : {
+      "value" : "5999905",
+      "label" : "Ödemarksområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999910" : {
+      "value" : "5999910",
+      "label" : "Statens strövområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999915" : {
+      "value" : "5999915",
+      "label" : "Världsarvsobjekt",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999920" : {
+      "value" : "5999920",
+      "label" : "Naturminnesmärke",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999925" : {
+      "value" : "5999925",
+      "label" : "Fornlämning",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999999" : {
+      "value" : "5999999",
+      "label" : "Annat skyddat objekt",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010105" : {
+      "value" : "6010105",
+      "label" : "Busstation",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010110" : {
+      "value" : "6010110",
+      "label" : "Färja eller kabelfärja",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010199" : {
+      "value" : "6010199",
+      "label" : "Annan vägtrafikplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010205" : {
+      "value" : "6010205",
+      "label" : "Järnvägsstation eller hållplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010210" : {
+      "value" : "6010210",
+      "label" : "Metrostation",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010299" : {
+      "value" : "6010299",
+      "label" : "Annan trafikplats för spårbunden trafik",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010305" : {
+      "value" : "6010305",
+      "label" : "Hamn",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010310" : {
+      "value" : "6010310",
+      "label" : "Fyr eller säkerhetsanordning",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010399" : {
+      "value" : "6010399",
+      "label" : "Annan sjötrafikplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010405" : {
+      "value" : "6010405",
+      "label" : "Flygplats eller flygfält",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010499" : {
+      "value" : "6010499",
+      "label" : "Annan lufttrafikplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010505" : {
+      "value" : "6010505",
+      "label" : "Datacentral",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010599" : {
+      "value" : "6010599",
+      "label" : "Annan telekommunikationsplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019905" : {
+      "value" : "6019905",
+      "label" : "Bro",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019910" : {
+      "value" : "6019910",
+      "label" : "Tunnel",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019915" : {
+      "value" : "6019915",
+      "label" : "Trafikterminal",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019999" : {
+      "value" : "6019999",
+      "label" : "Annan trafikplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010199" : {
+      "value" : "7010199",
+      "label" : "Enhet inom jordbruk",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010299" : {
+      "value" : "7010299",
+      "label" : "Enhet inom vilt- eller fiskerihushållning",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010305" : {
+      "value" : "7010305",
+      "label" : "Gruva eller stenbrott",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010310" : {
+      "value" : "7010310",
+      "label" : "Grus- eller sandtäktsområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010315" : {
+      "value" : "7010315",
+      "label" : "Torvutvinningsområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010399" : {
+      "value" : "7010399",
+      "label" : "Annat marktäktsområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010405" : {
+      "value" : "7010405",
+      "label" : "Industriområde",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010410" : {
+      "value" : "7010410",
+      "label" : "Fabrik",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010415" : {
+      "value" : "7010415",
+      "label" : "Varv",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010499" : {
+      "value" : "7010499",
+      "label" : "Annan enhet inom industri",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010505" : {
+      "value" : "7010505",
+      "label" : "El- eller värmeproduktionsanläggning",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010599" : {
+      "value" : "7010599",
+      "label" : "Annan enhet inom energiproduktion",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7019999" : {
+      "value" : "7019999",
+      "label" : "Annan enhet inom produktion eller industri",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7020105" : {
+      "value" : "7020105",
+      "label" : "Affärscentrum",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7020199" : {
+      "value" : "7020199",
+      "label" : "Annan handelskoncentration",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7029999" : {
+      "value" : "7029999",
+      "label" : "Annan enhet inom handel",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010105" : {
+      "value" : "8010105",
+      "label" : "Kultur- eller mässcentrum",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010110" : {
+      "value" : "8010110",
+      "label" : "Museum",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010115" : {
+      "value" : "8010115",
+      "label" : "Teater",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010120" : {
+      "value" : "8010120",
+      "label" : "Minnesmärke",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010199" : {
+      "value" : "8010199",
+      "label" : "Annan kulturtjänst",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020105" : {
+      "value" : "8020105",
+      "label" : "Idrottspark",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020110" : {
+      "value" : "8020110",
+      "label" : "Idrottsplan",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020115" : {
+      "value" : "8020115",
+      "label" : "Idrottshall",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020120" : {
+      "value" : "8020120",
+      "label" : "Simhall eller friluftsbad",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020125" : {
+      "value" : "8020125",
+      "label" : "Golfbana",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020130" : {
+      "value" : "8020130",
+      "label" : "Skid- eller slalomcentrum",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020135" : {
+      "value" : "8020135",
+      "label" : "Skjutbana",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020140" : {
+      "value" : "8020140",
+      "label" : "Motorbana",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020145" : {
+      "value" : "8020145",
+      "label" : "Travbana",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020199" : {
+      "value" : "8020199",
+      "label" : "Annan idrotts- eller motionsplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030105" : {
+      "value" : "8030105",
+      "label" : "Nöjesfält",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030110" : {
+      "value" : "8030110",
+      "label" : "Djurpark",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030115" : {
+      "value" : "8030115",
+      "label" : "Simstrand",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030120" : {
+      "value" : "8030120",
+      "label" : "Naturcentrum",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030125" : {
+      "value" : "8030125",
+      "label" : "Lägercentrum",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030130" : {
+      "value" : "8030130",
+      "label" : "Turist-, frilufts- eller semestercentrum",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030135" : {
+      "value" : "8030135",
+      "label" : "Campingplats",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030140" : {
+      "value" : "8030140",
+      "label" : "Koloniträdgård",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030145" : {
+      "value" : "8030145",
+      "label" : "Strövled",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030150" : {
+      "value" : "8030150",
+      "label" : "Öde-, rast-, reserverings- eller hyresstuga",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030199" : {
+      "value" : "8030199",
+      "label" : "Annan rekreations- eller fritidstjänst",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "9999905" : {
+      "value" : "9999905",
+      "label" : "Betydande byggnad",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "9999999" : {
+      "value" : "9999999",
+      "label" : "Annat kulturobjekt",
+      "status" : "valid",
+      "lang" : "swe",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    }
+  },
+  "type" : "CodeListDictionary"
+}

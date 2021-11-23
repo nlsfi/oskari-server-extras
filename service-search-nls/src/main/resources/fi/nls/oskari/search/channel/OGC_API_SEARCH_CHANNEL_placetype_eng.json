@@ -1,0 +1,1238 @@
+{
+  "name" : "placetype",
+  "values" : {
+    "0" : {
+      "value" : "0",
+      "label" : "Undefined object",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010105" : {
+      "value" : "1010105",
+      "label" : "Group of islands or islets",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010110" : {
+      "value" : "1010110",
+      "label" : "Island or islet",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010115" : {
+      "value" : "1010115",
+      "label" : "Boulder in water or boulders in water",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010120" : {
+      "value" : "1010120",
+      "label" : "Cape",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010125" : {
+      "value" : "1010125",
+      "label" : "Isthmus",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010130" : {
+      "value" : "1010130",
+      "label" : "Shore or waterside",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010205" : {
+      "value" : "1010205",
+      "label" : "Group of elevations",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010210" : {
+      "value" : "1010210",
+      "label" : "Elevation",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010305" : {
+      "value" : "1010305",
+      "label" : "Depression",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010405" : {
+      "value" : "1010405",
+      "label" : "Shallows",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1010410" : {
+      "value" : "1010410",
+      "label" : "Deep",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020105" : {
+      "value" : "1020105",
+      "label" : "Forested area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020205" : {
+      "value" : "1020205",
+      "label" : "Marsh or paludified area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020305" : {
+      "value" : "1020305",
+      "label" : "Field",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020405" : {
+      "value" : "1020405",
+      "label" : "Meadow or pasture",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020410" : {
+      "value" : "1020410",
+      "label" : "Bushland",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1020505" : {
+      "value" : "1020505",
+      "label" : "Blockfield or rocky area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1030105" : {
+      "value" : "1030105",
+      "label" : "Boulder",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1030110" : {
+      "value" : "1030110",
+      "label" : "Tree",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1999905" : {
+      "value" : "1999905",
+      "label" : "Former dwelling place",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "1999999" : {
+      "value" : "1999999",
+      "label" : "Other terrain feature",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010105" : {
+      "value" : "2010105",
+      "label" : "Baltic sea and its main parts",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010110" : {
+      "value" : "2010110",
+      "label" : "Part of sea",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010205" : {
+      "value" : "2010205",
+      "label" : "Group of lakes or ponds",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010210" : {
+      "value" : "2010210",
+      "label" : "Lake or pond",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010215" : {
+      "value" : "2010215",
+      "label" : "Part of lake",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010220" : {
+      "value" : "2010220",
+      "label" : "Reservoir",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010225" : {
+      "value" : "2010225",
+      "label" : "Part of reservoir",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2010230" : {
+      "value" : "2010230",
+      "label" : "Canal",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020105" : {
+      "value" : "2020105",
+      "label" : "Watercourse",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020110" : {
+      "value" : "2020110",
+      "label" : "Part of watercourse",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2020115" : {
+      "value" : "2020115",
+      "label" : "Rapids",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2030105" : {
+      "value" : "2030105",
+      "label" : "Spring",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2030110" : {
+      "value" : "2030110",
+      "label" : "Water pit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "2999999" : {
+      "value" : "2999999",
+      "label" : "Other water feature",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3010105" : {
+      "value" : "3010105",
+      "label" : "City or town or population centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3010110" : {
+      "value" : "3010110",
+      "label" : "Village or neighbourhood",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020105" : {
+      "value" : "3020105",
+      "label" : "Part of city or town or population centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020110" : {
+      "value" : "3020110",
+      "label" : "Park",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3020115" : {
+      "value" : "3020115",
+      "label" : "Market place or square",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3030105" : {
+      "value" : "3030105",
+      "label" : "House",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "3999999" : {
+      "value" : "3999999",
+      "label" : "Other populated place",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010105" : {
+      "value" : "4010105",
+      "label" : "State",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010110" : {
+      "value" : "4010110",
+      "label" : "Area of operation of the Regional State Administrative Agency",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010115" : {
+      "value" : "4010115",
+      "label" : "Area of operation of the Centre for Economic Development, Transport and the Environment",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010120" : {
+      "value" : "4010120",
+      "label" : "Region",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010125" : {
+      "value" : "4010125",
+      "label" : "Municipality",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4010205" : {
+      "value" : "4010205",
+      "label" : "Boundary marker",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020105" : {
+      "value" : "4020105",
+      "label" : "Main office of the Regional State Administrative Agency",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020110" : {
+      "value" : "4020110",
+      "label" : "Main office of the Centre for Economic Development, Transport and the Environment",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020115" : {
+      "value" : "4020115",
+      "label" : "Office of the Regional Council",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020120" : {
+      "value" : "4020120",
+      "label" : "Municipal hall",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4020199" : {
+      "value" : "4020199",
+      "label" : "Other administrative building or office",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030105" : {
+      "value" : "4030105",
+      "label" : "Church",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030110" : {
+      "value" : "4030110",
+      "label" : "Other holy building",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4030199" : {
+      "value" : "4030199",
+      "label" : "Other religious building",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4040105" : {
+      "value" : "4040105",
+      "label" : "Cemetery",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4040199" : {
+      "value" : "4040199",
+      "label" : "Other burial service",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050105" : {
+      "value" : "4050105",
+      "label" : "Hospital",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050199" : {
+      "value" : "4050199",
+      "label" : "Other health service",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4050299" : {
+      "value" : "4050299",
+      "label" : "Social care unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4059999" : {
+      "value" : "4059999",
+      "label" : "Other social or health service",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060105" : {
+      "value" : "4060105",
+      "label" : "Fire station",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060110" : {
+      "value" : "4060110",
+      "label" : "Volunteer fire station",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060199" : {
+      "value" : "4060199",
+      "label" : "Other rescue service",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060205" : {
+      "value" : "4060205",
+      "label" : "Police station",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060299" : {
+      "value" : "4060299",
+      "label" : "Other police unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060305" : {
+      "value" : "4060305",
+      "label" : "Prison",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060399" : {
+      "value" : "4060399",
+      "label" : "Other criminal sanctions unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060405" : {
+      "value" : "4060405",
+      "label" : "Customs office",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060499" : {
+      "value" : "4060499",
+      "label" : "Other customs unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060505" : {
+      "value" : "4060505",
+      "label" : "Military area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060599" : {
+      "value" : "4060599",
+      "label" : "Other defence forces unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060605" : {
+      "value" : "4060605",
+      "label" : "Border crossing point",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4060699" : {
+      "value" : "4060699",
+      "label" : "Other border guard unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4069999" : {
+      "value" : "4069999",
+      "label" : "Other security or defence unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070105" : {
+      "value" : "4070105",
+      "label" : "University",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070199" : {
+      "value" : "4070199",
+      "label" : "Other educational unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070205" : {
+      "value" : "4070205",
+      "label" : "Research institute",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4070299" : {
+      "value" : "4070299",
+      "label" : "Other research unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4080105" : {
+      "value" : "4080105",
+      "label" : "Waste processing plant",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4080199" : {
+      "value" : "4080199",
+      "label" : "Other waste management unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "4999999" : {
+      "value" : "4999999",
+      "label" : "Other administrative unit or public service",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010105" : {
+      "value" : "5010105",
+      "label" : "National park",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010110" : {
+      "value" : "5010110",
+      "label" : "Strict nature reserve",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5010115" : {
+      "value" : "5010115",
+      "label" : "Other nature reserve",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999905" : {
+      "value" : "5999905",
+      "label" : "Wilderness area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999910" : {
+      "value" : "5999910",
+      "label" : "National hiking area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999915" : {
+      "value" : "5999915",
+      "label" : "World heritage site",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999920" : {
+      "value" : "5999920",
+      "label" : "Natural monument",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999925" : {
+      "value" : "5999925",
+      "label" : "Ancient relic",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "5999999" : {
+      "value" : "5999999",
+      "label" : "Other protected site",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010105" : {
+      "value" : "6010105",
+      "label" : "Bus station",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010110" : {
+      "value" : "6010110",
+      "label" : "Ferry or cable ferry",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010199" : {
+      "value" : "6010199",
+      "label" : "Other road transport site",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010205" : {
+      "value" : "6010205",
+      "label" : "Railway station or stop",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010210" : {
+      "value" : "6010210",
+      "label" : "Metro station",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010299" : {
+      "value" : "6010299",
+      "label" : "Other rail transport site",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010305" : {
+      "value" : "6010305",
+      "label" : "Harbour, port or haven",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010310" : {
+      "value" : "6010310",
+      "label" : "Lighthouse or aid to navigation",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010399" : {
+      "value" : "6010399",
+      "label" : "Other water transport site",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010405" : {
+      "value" : "6010405",
+      "label" : "Airport or airfield",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010499" : {
+      "value" : "6010499",
+      "label" : "Other air transport site",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010505" : {
+      "value" : "6010505",
+      "label" : "Data centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6010599" : {
+      "value" : "6010599",
+      "label" : "Other telecommunication site",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019905" : {
+      "value" : "6019905",
+      "label" : "Bridge",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019910" : {
+      "value" : "6019910",
+      "label" : "Tunnel",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019915" : {
+      "value" : "6019915",
+      "label" : "Transport terminal",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "6019999" : {
+      "value" : "6019999",
+      "label" : "Production, industry and commerce",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010199" : {
+      "value" : "7010199",
+      "label" : "Agricultural unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010299" : {
+      "value" : "7010299",
+      "label" : "Game and fisheries unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010305" : {
+      "value" : "7010305",
+      "label" : "Mine or quarry",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010310" : {
+      "value" : "7010310",
+      "label" : "Gravel or sand extraction area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010315" : {
+      "value" : "7010315",
+      "label" : "Peat production area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010399" : {
+      "value" : "7010399",
+      "label" : "Other mineral resources extraction area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010405" : {
+      "value" : "7010405",
+      "label" : "Industrial area",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010410" : {
+      "value" : "7010410",
+      "label" : "Factory",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010415" : {
+      "value" : "7010415",
+      "label" : "Dock",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010499" : {
+      "value" : "7010499",
+      "label" : "Other industrial unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010505" : {
+      "value" : "7010505",
+      "label" : "Power or heat plant",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7010599" : {
+      "value" : "7010599",
+      "label" : "Other energy production unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7019999" : {
+      "value" : "7019999",
+      "label" : "Other production or industrial unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7020105" : {
+      "value" : "7020105",
+      "label" : "Shopping centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7020199" : {
+      "value" : "7020199",
+      "label" : "Other commercial centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "7029999" : {
+      "value" : "7029999",
+      "label" : "Other commercial unit",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010105" : {
+      "value" : "8010105",
+      "label" : "Cultural or fair centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010110" : {
+      "value" : "8010110",
+      "label" : "Museum",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010115" : {
+      "value" : "8010115",
+      "label" : "Theatre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010120" : {
+      "value" : "8010120",
+      "label" : "Monument or work of art",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8010199" : {
+      "value" : "8010199",
+      "label" : "Other cultural service",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020105" : {
+      "value" : "8020105",
+      "label" : "Sports park",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020110" : {
+      "value" : "8020110",
+      "label" : "Sports field",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020115" : {
+      "value" : "8020115",
+      "label" : "Sports hall",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020120" : {
+      "value" : "8020120",
+      "label" : "Swimming pool",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020125" : {
+      "value" : "8020125",
+      "label" : "Golf course",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020130" : {
+      "value" : "8020130",
+      "label" : "Skiing centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020135" : {
+      "value" : "8020135",
+      "label" : "Shooting range",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020140" : {
+      "value" : "8020140",
+      "label" : "Motor racing track",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020145" : {
+      "value" : "8020145",
+      "label" : "Trotting track",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8020199" : {
+      "value" : "8020199",
+      "label" : "Other sports or exercise site",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030105" : {
+      "value" : "8030105",
+      "label" : "Amusement park",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030110" : {
+      "value" : "8030110",
+      "label" : "Zoo",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030115" : {
+      "value" : "8030115",
+      "label" : "Swimming beach",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030120" : {
+      "value" : "8030120",
+      "label" : "Nature centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030125" : {
+      "value" : "8030125",
+      "label" : "Camp centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030130" : {
+      "value" : "8030130",
+      "label" : "Travel, hiking or holiday centre",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030135" : {
+      "value" : "8030135",
+      "label" : "Campsite",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030140" : {
+      "value" : "8030140",
+      "label" : "Allotment garden",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030145" : {
+      "value" : "8030145",
+      "label" : "Hiking route",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030150" : {
+      "value" : "8030150",
+      "label" : "Wilderness hut or daytrip hut or booked or rented hut",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "8030199" : {
+      "value" : "8030199",
+      "label" : "Other recreational service",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "9999905" : {
+      "value" : "9999905",
+      "label" : "Significant building",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    },
+    "9999999" : {
+      "value" : "9999999",
+      "label" : "Other cultural object",
+      "status" : "valid",
+      "lang" : "eng",
+      "codelist" : "placetype",
+      "codelistgroup" : "geographic-names"
+    }
+  },
+  "type" : "CodeListDictionary"
+}
