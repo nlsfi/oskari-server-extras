@@ -198,13 +198,24 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
                 // label includes the same postfixed with " ([municipality] )" that we want to get rid of
                 String address = feat.getString("katunimi");
                 String addressNumber = feat.getString("katunumero");
-                if (addressNumber != null && !addressNumber.isEmpty()) {
-                    address += " " + addressNumber;
-                }
-                item.setTitle(address);
+                item.setTitle(formatStreetAddress(address, addressNumber));
             }
         }
         return item;
+    }
+
+    private String formatStreetAddress(String name, String number) {
+        if (name == null) {
+            return null;
+        }
+        if (number == null || number.isEmpty()) {
+            return name;
+        }
+        if ("0".equals(number.trim())) {
+            // 0 addresses are "always wrong"/don't need to be shown. This is a quirk in the backing service.
+            return name;
+        }
+        return name + " " + number;
     }
 
     private boolean requiresReprojection(String srs) {
