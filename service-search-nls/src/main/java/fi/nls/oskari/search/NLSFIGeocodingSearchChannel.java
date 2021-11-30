@@ -50,10 +50,12 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
 
     private String baseURL;
     private String apiKey;
+
+    // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
+    private String defaultSources = "geographic-names,cadastral-units,interpolated-road-addresses"; // ,addresses
     private final Map<String, String> endPoints = new HashMap();
     private static final int SERVICE_SRS_CODE = 3067;
     private CoordinateReferenceSystem serviceCRS;
-
 
     @Override
     public void init() {
@@ -65,6 +67,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
                     + getPropertyName("APIkey")
                     + ". You can get an apikey by registering in https://omatili.maanmittauslaitos.fi/.");
         }
+        defaultSources = getProperty("sources", defaultSources);
         // defaults
         //endPoints.put("default", "/v1/pelias/search"); // the text search
         endPoints.put("default", "/v2/advanced/search"); // the text search
@@ -259,8 +262,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         params.put("size", Integer.toString(SearchWorker.getMaxResults(count) + 1));
 
         if (sources == null) {
-            // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
-            params.put("sources", "geographic-names,cadastral-units,interpolated-road-addresses"); // ,addresses
+            params.put("sources", defaultSources);
         } else {
             params.put("sources", sources);
         }
