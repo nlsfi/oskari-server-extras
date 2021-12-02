@@ -51,8 +51,13 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
     private String baseURL;
     private String apiKey;
 
+    public Capabilities getCapabilities() {
+        return Capabilities.BOTH;
+    }
+
     // we can put all of these here by default. The service will detect if query is matching cadastral-unit id and optimize internally
     private String defaultSources = "geographic-names,cadastral-units,interpolated-road-addresses"; // ,addresses
+    private String defaultReverseBoundary = "10";
     private final Map<String, String> endPoints = new HashMap();
     private static final int SERVICE_SRS_CODE = 3067;
     private CoordinateReferenceSystem serviceCRS;
@@ -68,11 +73,12 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
                     + ". You can get an apikey by registering in https://omatili.maanmittauslaitos.fi/.");
         }
         defaultSources = getProperty("sources", defaultSources);
+        defaultReverseBoundary = getProperty("reverse.boundary", defaultReverseBoundary);
         // defaults
         //endPoints.put("default", "/v1/pelias/search"); // the text search
         endPoints.put("default", "/v2/advanced/search"); // the text search
         endPoints.put("autocomplete", "/v2/searchterm/similar"); // autocompletion
-        endPoints.put("reverse", "/v1/pelias/reverse"); // reverse geocoding
+        endPoints.put("reverse", "/v2/pelias/reverse"); // reverse geocoding
         // override/add more from props:
         // search.channel.GEOLOCATOR_NLS_FI.endpoint.horses=/v8/wroom
         // would add a new endpoint called "horses" with path "/v8/wroom"
@@ -123,6 +129,40 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         }
     }
 
+    public ChannelSearchResult reverseGeocode(SearchCriteria criteria) {
+        double lat = criteria.getLat();
+        double lon = criteria.getLon();
+        String crs = criteria.getSRS();
+        CoordinateReferenceSystem sourceCrs;
+        try {
+            sourceCrs = CRS.decode(crs, true);
+        } catch (Exception e) {
+            LOG.error("Couldn't transform from:", crs, e.getMessage());
+            ChannelSearchResult result = new ChannelSearchResult();
+            result.setQueryFailed(true);
+            return result;
+        }
+        Point p = ProjectionHelper.transformPoint(lon, lat, sourceCrs, serviceCRS);
+        ChannelSearchResult result = new ChannelSearchResult();
+        Map<String, String> params = getSearchParams(criteria.getSearchString(),
+                criteria.getLocale(),
+                criteria.getMaxResults(),
+                criteria.getParamAsString(ID + "_sources"));
+
+        params.put("point.lon", p.getLonToString());
+        params.put("point.lat", p.getLatToString());
+        params.put("boundary.circle.radius", defaultReverseBoundary);
+        String url = getUrl("reverse", params);
+        try {
+            HttpURLConnection conn = connectToService(url);
+            validateResponse(conn);
+            return parseResponse(criteria, GeocodeHelper.readJSON(conn), criteria.getSRS());
+        } catch (Exception e) {
+            LOG.error("Couldn't get reverse geocoding result from service", e.getMessage());
+            result.setQueryFailed(true);
+            return result;
+        }
+    }
 
     private HttpURLConnection connectToService(String url) throws IOException {
         HttpURLConnection conn = IOHelper.getConnection(url, apiKey, PASSWORD);
