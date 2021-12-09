@@ -22,11 +22,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 
-@Oskari(OgcApiSearchChannel.ID)
-public class OgcApiSearchChannel extends SearchChannel {
+@Oskari(NLSFIGeographicNamesSearchChannel.ID)
+public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
 
 
-    public static final String ID = "OGC_API_SEARCH_CHANNEL";
+    public static final String ID = "NLSFIGeographicNamesSearchChannel";
 
     //Local configs
     /**
