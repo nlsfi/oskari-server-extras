@@ -7,19 +7,17 @@ import fi.nls.oskari.annotation.Oskari;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
 import fi.nls.oskari.search.channel.SearchChannel;
+import fi.nls.oskari.service.ServiceRuntimeException;
 import fi.nls.oskari.util.IOHelper;
-import fi.nls.oskari.util.PropertyUtil;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
+
+import static org.springframework.beans.PropertyAccessorUtils.getPropertyName;
 
 
 @Oskari(NLSFIGeographicNamesSearchChannel.ID)
@@ -33,9 +31,13 @@ public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
      * One can use property search.channel.OGC_API_SEARCH_CHANNEL.apikey but if really needed apikey can go here.
      */
     private static String apiKey = null;
-    private static String searchAddress = "https://avoin-paikkatieto.maanmittauslaitos.fi/geographic-names/features/v1/collections/placenames/items?spelling_case_insensitive=";
-    private static String additionalPlaceTypeInfoBaseUrl = "https://beta-paikkatieto.maanmittauslaitos.fi/catalogue/v1/codelistgroups/geographic-names/codelists/";
-    private static String[] localAdditionalInfoNames = {"placeType", "municipality"};
+    private static String defaultSearchAddress = "https://avoin-paikkatieto.maanmittauslaitos.fi/geographic-names/features/v1/collections/placenames/items";
+    private static String defaultadditionalPlaceTypeInfoBaseUrl = "https://beta-paikkatieto.maanmittauslaitos.fi/catalogue/v1/codelistgroups/geographic-names/codelists/";
+    private static String searchAddress;
+    private static String additionalPlaceTypeInfoBaseUrl;
+
+    private static final String PLACE_TYPE = "placeType";
+    private static final String MUNICIPALITY = "municipality";
     /**
      * Set true if one wants to use local jsons instead of url based one
      */
@@ -50,50 +52,49 @@ public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
 
     private Logger log = LogFactory.getLogger(this.getClass());
 
-    private static String CRS = null;
-    private static final String defaultCRS = "http://www.opengis.net/def/crs/EPSG/0/3067";
+
+    @Override
+    public void init() {
+        super.init();
+
+        searchAddress = getProperty("searchAddress", defaultSearchAddress);
+        if (searchAddress.equals(defaultSearchAddress)) {
+            log.info("Using default searchAddress, use " + getPropertyName("searchAddress") + " to configure different one");
+        }
+        additionalPlaceTypeInfoBaseUrl = getProperty("additionalPlaceTypeInfoBaseUrl", defaultadditionalPlaceTypeInfoBaseUrl);
+        if (additionalPlaceTypeInfoBaseUrl.equals(defaultadditionalPlaceTypeInfoBaseUrl)) {
+            log.info("Using default additionalPlaceTypeInfoBaseUrl, use " + getPropertyName("additionalPlaceTypeInfoBaseUrl") + " to configure different one");
+        }
+
+
+        if (placetypeCodes == null) {
+            placetypeCodes = buildAdditionalInfo(PLACE_TYPE);
+        }
+        if (municipalityCodes == null) {
+            municipalityCodes = buildAdditionalInfo(MUNICIPALITY);
+        }
+
+        apiKey = getProperty("APIkey", getProperty("service.user", null));
+        if (apiKey == null) {
+            throw new ServiceRuntimeException("API-key missing for channel. Configure with "
+                    + getPropertyName("APIkey")
+                    + ". You can get an apikey by registering in https://omatili.maanmittauslaitos.fi/.");
+        }
+    }
 
 
     public ChannelSearchResult doSearch(SearchCriteria criteria) {
         ChannelSearchResult result = new ChannelSearchResult();
 
-        if (placetypeCodes == null) {
-            placetypeCodes = buildAdditionalInfo(localAdditionalInfoNames[0]);
-        }
-        if (municipalityCodes == null) {
-            municipalityCodes = buildAdditionalInfo(localAdditionalInfoNames[1]);
-        }
+        Map<String, String> params = new LinkedHashMap<>();
+        params.put("spelling_case_insensitive", criteria.getSearchString());
+        params.put("limit", Integer.toString(criteria.getMaxResults() + 1));
+        String[] splittedCriteriaSRS = criteria.getSRS().split(":");
+        params.put("crs", "http://www.opengis.net/def/crs/" + splittedCriteriaSRS[0] + "/0/" + splittedCriteriaSRS[1]);
 
-        //ApiKey Things
-        String propertyKey = PropertyUtil.get("search.channel." + ID + ".apikey");
-        if (propertyKey != null) {
-            String encodedApiKey = IOHelper.encode64(propertyKey + ":");
-            apiKey = "Basic " + encodedApiKey;
-
-        }
-        if (apiKey == null) {
-            log.error("OGC Api key was not found. OGC api will not return results.");
-        }
-        Map<String, String> headers = new HashMap<>(5);
-        headers.put("Authorization", apiKey);
-
-        String encodedSearchTerm = "";
+        String searchQuery = IOHelper.constructUrl(searchAddress, params);
         try {
-            encodedSearchTerm = URLEncoder.encode(criteria.getSearchString(), StandardCharsets.UTF_8.toString());
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
-        String searchQuerry = searchAddress + encodedSearchTerm + "&limit=" + criteria.getMaxResults();
-
-        CRS = PropertyUtil.get("OgcApiCrs", defaultCRS);
-        if (CRS != null) {
-            searchQuerry += "&crs=" + CRS;
-        }
-
-        try {
-            final String responseData = IOHelper.getURL(searchQuerry, headers);
-
+            final String responseData = IOHelper.getURL(searchQuery, apiKey, "", Collections.EMPTY_MAP);
             JSONObject responseDataObject = new JSONObject(responseData);
             JSONArray features = responseDataObject.getJSONArray("features");
             for (int i = 0; i < features.length(); i++) {
@@ -101,15 +102,23 @@ public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
                 JSONObject properties = feature.getJSONObject("properties");
                 JSONArray coordinates = feature.getJSONObject("geometry").getJSONArray("coordinates");
 
-
                 //Make SearchItem
                 SearchResultItem item = new SearchResultItem();
                 item.setTitle(properties.getString("spelling"));
-                item.setType(placetypeCodes.get(properties.getInt(localAdditionalInfoNames[0])).get(properties.getString("language")));
                 item.setLon(Double.parseDouble(coordinates.get(0).toString()));
                 item.setLat(Double.parseDouble(coordinates.get(1).toString()));
                 item.setZoomScale(properties.getDouble("scaleRelevance"));
-                item.setRegion(municipalityCodes.get(properties.getInt(localAdditionalInfoNames[1])).get(properties.getString("language")));
+
+                String placeType = placetypeCodes.get(properties.getInt(PLACE_TYPE)).get(properties.getString("language"));
+                if (placeType.isEmpty() || placeType == null) {
+                    log.warn("Problems getting placeType info for " + item.getTitle() + ".");
+                }
+                item.setType(placeType);
+                String municipality = municipalityCodes.get(properties.getInt(MUNICIPALITY)).get(properties.getString("language"));
+                if (municipality.isEmpty() || municipality == null) {
+                    log.warn("Problems getting municipality info for " + item.getTitle() + ".");
+                }
+                item.setRegion(municipality);
                 result.addItem(item);
 
             }
@@ -133,33 +142,33 @@ public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
         if (USE_LOCAL_ADDITIONAL_INFO) {
             results = buildAdditionalInfoFromLocals(thing);
         } else {
-            results = buildAdditionalInfoFromURL(additionalPlaceTypeInfoBaseUrl + thing + "/items");
+            results = buildAdditionalInfoFromURL(thing);
         }
         return results;
     }
 
     /**
-     * Takes url suffix in and constructs string represantation of that file.
+     * Takes url suffix in and constructs string representation of that file.
      *
      * @param infoURL
      * @return HashMap that holds id to hashmap of languages.
      */
     private HashMap<Integer, HashMap<String, String>> buildAdditionalInfoFromURL(String infoURL) {
         HashMap<Integer, HashMap<String, String>> results = new HashMap<>();
-        for (int i = 0; i < languageArray.length; i++) {
-            try {
-                final String responseData = IOHelper.getURL(infoURL + "?lang=" + languageArray[i]);
+        try {
+            for (int i = 0; i < languageArray.length; i++) {
+                final String responseData = IOHelper.getURL(additionalPlaceTypeInfoBaseUrl + infoURL + "/items" + "?lang=" + languageArray[i]);
                 buildLanguageInfoMap(results, responseData);
-
-            } catch (IOException ex) {
-                throw new RuntimeException("Error getting additional information", ex);
             }
+        } catch (IOException ex) {
+            log.info("Failed to retrieve data for " + infoURL + " via url. Trying local data.");
+            results = buildAdditionalInfoFromLocals(infoURL);
         }
         return results;
     }
 
     /**
-     * Takes file suffix in and constructs string represantation of that file.
+     * Takes file suffix in and constructs string representation of that file.
      *
      * @param fileSuffix
      * @return HashMap that holds id to hashmap of languages.
@@ -167,34 +176,37 @@ public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
     private HashMap<Integer, HashMap<String, String>> buildAdditionalInfoFromLocals(String fileSuffix) {
         HashMap<Integer, HashMap<String, String>> results = new HashMap<>();
         for (int i = 0; i < languageArray.length; i++) {
-            InputStream inputStreamFromFile = OgcApiSearchChannel.class.getResourceAsStream(ID + "_" + fileSuffix.toLowerCase() + "_" + languageArray[i] + ".json");
-            Scanner s = new Scanner(inputStreamFromFile, "UTF-8").useDelimiter("\\A");
-            String fileAsString = s.hasNext() ? s.next() : "";
+            String fileAsString = null;
+            try {
+                fileAsString = IOHelper.readString(getClass().getResourceAsStream(ID + "_" + fileSuffix.toLowerCase() + "_" + languageArray[i] + ".json"));
+            } catch (IOException e) {
+                log.error("Could not construct " + fileSuffix + " from local nor from url sources.");
+                e.printStackTrace();
+            }
             buildLanguageInfoMap(results, fileAsString);
-
         }
+
         return results;
     }
 
     /**
      * Goes through Json and adds all the label data to Hashmap that holds language id pairs.
      *
-     * @param results: HashMap to fill with results.
+     * @param results:      HashMap to fill with results.
      * @param responseData: The full json where to parse everything.
      */
     private void buildLanguageInfoMap(HashMap<Integer, HashMap<String, String>> results, String responseData) {
         try {
             JSONObject values = (new JSONObject(responseData)).getJSONObject("values");
             for (int j = 0; j < values.names().length(); j++) {
-
                 JSONObject singularValue = values.getJSONObject(values.names().get(j).toString());
                 int value = Integer.parseInt(singularValue.getString("value"));
                 HashMap<String, String> languageMap = results.getOrDefault(value, new HashMap<>(3));
                 languageMap.put(singularValue.getString("lang"), singularValue.getString("label"));
                 results.remove(value);
                 results.put(value, languageMap);
-
             }
+
         } catch (JSONException ex) {
             throw new RuntimeException("Error constructing additional info json object", ex);
         }
