@@ -5,7 +5,7 @@
 
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>oskari-search-nls</artifactId>
-    <version>3.6-SNAPSHOT</version>
+    <version>3.6</version>
     <packaging>jar</packaging>
     <name>NLS Search Service</name>
 
@@ -141,12 +141,12 @@
         <repository>
             <id>oskari_org</id>
             <name>Oskari.org repository</name>
-            <url>https://oskari.org/nexus/content/repositories/releases/</url>
+            <url>https://oskari.org/repository/maven/releases/</url>
         </repository>
         <repository>
             <id>oskari_org_snapshot</id>
             <name>Oskari.org snapshot repository</name>
-            <url>https://oskari.org/nexus/content/repositories/snapshots/</url>
+            <url>https://oskari.org/repository/maven/snapshots/</url>
         </repository>
         <repository>
             <id>osgeo</id>
