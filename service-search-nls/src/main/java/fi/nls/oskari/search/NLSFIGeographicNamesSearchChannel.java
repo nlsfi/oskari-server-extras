@@ -34,7 +34,7 @@ public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
     private static String codelistUrl;
     private static String apiKey = null;
     // Use local resource files instead of getting codelist over network
-    private static final boolean USE_LOCAL_CODELIST = true;
+    private boolean useLocalCodelist = true;
     private static String[] languageArray = {"fin", "eng", "swe"};
 
     private HashMap<Integer, HashMap<String, String>> placetypeCodes;
@@ -51,9 +51,12 @@ public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
         if (baseUrl.equals(DEFAULT_SEARCH_URL)) {
             log.info("Using default searchAddress, use " + getPropertyName("service.url") + " to configure different one");
         }
-        codelistUrl = getProperty("additionalPlaceTypeInfoBaseUrl", DEFAULT_CODELIST_URL);
-        if (codelistUrl.equals(DEFAULT_CODELIST_URL)) {
-            log.info("Using default additionalPlaceTypeInfoBaseUrl, use " + getPropertyName("additionalPlaceTypeInfoBaseUrl") + " to configure different one");
+        codelistUrl = getProperty("codelist.url", null);
+        useLocalCodelist = (codelistUrl == null);
+        if (useLocalCodelist) {
+            log.info("Using local code list. To configure network resource use " +
+                    getPropertyName("codelist.url") + "=" + DEFAULT_CODELIST_URL +
+                    " in oskari-ext.properties to configure one");
         }
 
 
@@ -153,7 +156,7 @@ public class NLSFIGeographicNamesSearchChannel extends SearchChannel {
      */
     private HashMap<Integer, HashMap<String, String>> buildAdditionalInfo(String thing) {
         HashMap<Integer, HashMap<String, String>> results;
-        if (USE_LOCAL_CODELIST) {
+        if (useLocalCodelist) {
             results = buildAdditionalInfoFromLocals(thing);
         } else {
             results = buildAdditionalInfoFromURL(thing);
