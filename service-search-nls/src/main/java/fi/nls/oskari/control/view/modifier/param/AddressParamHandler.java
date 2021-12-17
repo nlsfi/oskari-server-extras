@@ -77,7 +77,7 @@ public class AddressParamHandler extends ParamHandler {
 
         final SearchCriteria sc = new SearchCriteria();
         sc.addChannel(channelID);
-        sc.setSearchString(searchString.replaceAll(", ", " ").replaceAll("_", " "));
+        sc.setSearchString(searchString.replaceAll("_", " "));
         sc.setLocale(locale.getLanguage());
         sc.setSRS(srs);
 
