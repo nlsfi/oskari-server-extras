@@ -5,7 +5,7 @@
 
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>oskari-search-nls</artifactId>
-    <version>3.6.3</version>
+    <version>3.7.0</version>
     <packaging>jar</packaging>
     <name>NLS Search Service</name>
 
@@ -13,13 +13,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <!-- Any version after 2.0.1 as it changed lon/lat on searches from string to double -->
-        <oskari.version>[2.4.0,)</oskari.version>
+        <oskari.version>[2.6.0,)</oskari.version>
         <fi.mml.nameregister.version>1.0</fi.mml.nameregister.version>
         <geotools.version>25.1</geotools.version>
-        <javax.xml.version>1.0</javax.xml.version>
         <vecmath.version>1.5.2</vecmath.version>
-        <xmlunit.version>1.6</xmlunit.version>
-        <xmlbeans.version>2.6.0</xmlbeans.version>
     </properties>
 
     <!-- Build Settings -->
@@ -128,12 +125,6 @@
             <groupId>javax.vecmath</groupId>
             <artifactId>vecmath</artifactId>
             <version>${vecmath.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>xmlunit</groupId>
-            <artifactId>xmlunit</artifactId>
-            <version>${xmlunit.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
