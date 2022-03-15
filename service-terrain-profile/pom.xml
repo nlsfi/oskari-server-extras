@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
-        <oskari.version>[2.4.0,)</oskari.version>
+        <oskari.version>[2.7.0,)</oskari.version>
         <hystrix.version>1.5.18</hystrix.version>
         <geotools.version>25.1</geotools.version>
         <junit.version>4.13</junit.version>
