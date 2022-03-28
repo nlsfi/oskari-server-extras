@@ -29,7 +29,7 @@ public class ScaledGrayscaleValueExtractor implements TileValueExtractor {
         if (ifd.getSamplesPerPixel() != 1) {
             throw new IllegalArgumentException("Unexpected samples per pixel, expected 1 (grayscale)");
         }
-        if (ifd.getSampleFormat()[0] != 1 && ifd.getSampleFormat()[1] != 2) {
+        if (ifd.getSampleFormat()[0] != 1 && ifd.getSampleFormat()[0] != 2) {
             throw new IllegalArgumentException("Unexpected sample format, expected unsigned or signed integer");
         }
         unsigned = ifd.getSampleFormat()[0] == 1;

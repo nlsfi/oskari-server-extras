@@ -5,7 +5,7 @@
 
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>service-terrain-profile</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
     <name>Terrain Profile</name>
 
@@ -15,28 +15,21 @@
         <oskari.version>[2.7.0,)</oskari.version>
         <hystrix.version>1.5.18</hystrix.version>
         <geotools.version>25.1</geotools.version>
-        <junit.version>4.13</junit.version>
+        <junit.version>4.13.2</junit.version>
         <geojson-jackson.version>1.14</geojson-jackson.version>
+        <javax.servlet.version>3.1.0</javax.servlet.version>
     </properties>
-
+    
     <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>org.oskari</groupId>
             <artifactId>service-control</artifactId>
             <version>${oskari.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.oskari</groupId>
             <artifactId>service-wcs</artifactId>
             <version>${oskari.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
@@ -71,6 +64,13 @@
             <version>${geojson-jackson.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
