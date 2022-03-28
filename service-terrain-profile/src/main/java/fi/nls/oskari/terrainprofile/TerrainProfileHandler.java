@@ -101,7 +101,7 @@ public class TerrainProfileHandler extends ActionHandler {
             double scale = Double.parseDouble(PropertyUtil.getNecessary(PROPERTY_DEM_SCALE));
             double offset = Double.parseDouble(PropertyUtil.getNecessary(PROPERTY_DEM_OFFSET));
             short noDataS = getNoDataValue(Short::parseShort).shortValue();
-            return () -> new ScaledGrayscaleValueExtractor(offset, scale, noDataS);
+            return () -> new ScaledGrayscaleValueExtractor(scale, offset, noDataS);
 
         case FloatAsIsValueExtractor.ID:
         default:
