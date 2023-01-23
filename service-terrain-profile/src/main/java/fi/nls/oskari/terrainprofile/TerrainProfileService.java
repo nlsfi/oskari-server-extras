@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import fi.nls.oskari.service.ServiceRuntimeException;
 import fi.nls.oskari.terrainprofile.dem.FloatAsIsValueExtractor;
 import fi.nls.oskari.terrainprofile.dem.TileValueExtractor;
 import fi.nls.oskari.terrainprofile.dem.TiledTiffDEM;
@@ -51,8 +52,12 @@ public class TerrainProfileService {
             0.015625,
             0.0078125
     };
+    // password is always empty string with apikey
+    private static final String PASSWORD = "";
+    private static final int MAX_REDIRECTS = 5;
 
     private final String endPoint;
+    private final String apiKey;
     private final Supplier<TileValueExtractor> extractorGenerator;
     private final Capabilities caps;
     private final RectifiedGridCoverage desc;
@@ -66,8 +71,13 @@ public class TerrainProfileService {
     }
 
     public TerrainProfileService(String endPoint, String coverageId, Supplier<TileValueExtractor> extractorGenerator) throws ServiceException {
+        this(endPoint, coverageId, null, extractorGenerator);
+    }
+
+    public TerrainProfileService(String endPoint, String coverageId, String apiKey, Supplier<TileValueExtractor> extractorGenerator) throws ServiceException {
         try {
             this.endPoint = endPoint;
+            this.apiKey = apiKey;
             this.extractorGenerator = extractorGenerator;
             caps = getCapabilities(endPoint);
             CoverageDescription tmp = describeCoverage(endPoint, coverageId);
@@ -89,7 +99,7 @@ public class TerrainProfileService {
             throws IOException, ParserConfigurationException, SAXException {
         Map<String, String> params = GetCapabilities.toQueryParameters();
         String url = IOHelper.constructUrl(endPoint, params);
-        HttpURLConnection conn = IOHelper.getConnection(url);
+        HttpURLConnection conn = connectToService(url);
         try (InputStream in = new BufferedInputStream(conn.getInputStream())) {
             return CapabilitiesParser.parse(in);
         }
@@ -99,10 +109,26 @@ public class TerrainProfileService {
             throws IOException, ParserConfigurationException, SAXException {
         Map<String, String> params = DescribeCoverage.toQueryParameters(coverageId);
         String url = IOHelper.constructUrl(endPoint, params);
-        HttpURLConnection conn = IOHelper.getConnection(url);
+        HttpURLConnection conn = connectToService(url);
         try (InputStream in = new BufferedInputStream(conn.getInputStream())) {
             return CoverageDescriptionsParser.parse(in).get(0);
         }
+    }
+
+    private HttpURLConnection connectToService(String url) throws IOException {
+        HttpURLConnection conn = IOHelper.getConnection(url, apiKey, PASSWORD);
+        IOHelper.addIdentifierHeaders(conn);
+        return IOHelper.followRedirect(conn, apiKey, PASSWORD, MAX_REDIRECTS);
+    }
+
+    private Supplier<HttpURLConnection> getConnectionSupplier(String url) {
+        return () -> {
+            try {
+                return connectToService(url);
+            } catch (IOException e) {
+                throw new ServiceRuntimeException("Error connecting to service", e);
+            }
+        };
     }
 
     /**
@@ -308,10 +334,10 @@ public class TerrainProfileService {
         Map<String, String[]> getCoverageKVP = getCoverage.toKVP();
 
         String queryString = IOHelper.getParamsMultiValue(getCoverageKVP);
-        String request = endPoint + "?" + queryString;
+        String request = IOHelper.addQueryString(endPoint, queryString);
         byte[] response;
         try {
-            response = new CommandGetCoverage(request).execute();
+            response = new CommandGetCoverage(getConnectionSupplier(request)).execute();
         } catch (HystrixRuntimeException e) {
             if (e.getCause() instanceof TimeoutException) {
                 throw new ServiceException("Timeout");

@@ -42,6 +42,7 @@ public class TerrainProfileHandler extends ActionHandler {
     protected static final String PROPERTY_ENDPOINT = "terrain.profile.wcs.endPoint";
     protected static final String PROPERTY_ENDPOINT_SRS = "terrain.profile.wcs.srs";
     protected static final String PROPERTY_DEM_COVERAGE_ID = "terrain.profile.wcs.demCoverageId";
+    protected static final String PROPERTY_DEM_APIKEY = "terrain.profile.wcs.APIkey";
     protected static final String PROPERTY_NODATA_VALUE = "terrain.profile.wcs.noData";
     protected static final String PROPERTY_DEM_TYPE = "terrain.profile.wcs.demType";
     protected static final String PROPERTY_DEM_SCALE = "terrain.profile.wcs.demScale";
@@ -88,6 +89,7 @@ public class TerrainProfileHandler extends ActionHandler {
             tps = new TerrainProfileService(
                     PropertyUtil.getNecessary(PROPERTY_ENDPOINT),
                     PropertyUtil.getNecessary(PROPERTY_DEM_COVERAGE_ID),
+                    PropertyUtil.getOptional(PROPERTY_DEM_APIKEY),
                     getTileValueExtractor());
         }
         return tps;
