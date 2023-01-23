@@ -52,6 +52,7 @@ public class TerrainProfileService {
             0.015625,
             0.0078125
     };
+    private static final String[] TILING_PARAM = new String[] {"true"};
     // password is always empty string with apikey
     private static final String PASSWORD = "";
     private static final int MAX_REDIRECTS = 5;
@@ -332,6 +333,7 @@ public class TerrainProfileService {
         getCoverage.subset("N", northMin, northMax);
         getCoverage.scaling(new ScaleByFactor(scaleFactor));
         Map<String, String[]> getCoverageKVP = getCoverage.toKVP();
+        getCoverageKVP.put("tiling", TILING_PARAM);
 
         String queryString = IOHelper.getParamsMultiValue(getCoverageKVP);
         String request = IOHelper.addQueryString(endPoint, queryString);
