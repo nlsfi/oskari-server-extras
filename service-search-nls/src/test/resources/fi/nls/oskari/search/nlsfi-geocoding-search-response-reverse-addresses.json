@@ -1,0 +1,173 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [ {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "1001773126",
+      "kiinteistotunnus" : "73941900020018",
+      "kuntanimiFin" : "Savitaipale",
+      "kuntanimiSwe" : "Savitaipale",
+      "kuntatunnus" : "739",
+      "osoite.Osoite.katunimi" : "Repovuorentie",
+      "osoite.Osoite.katunumero" : "26",
+      "osoite.Osoite.jarjestysnumero" : "1",
+      "osoite.Osoite.kieli" : "fin",
+      "osoite.Osoite.postinumero" : "54750",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#1",
+      "distance" : 248.00878089309535,
+      "rank" : 1,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "label" : "Repovuorentie 26 (Savitaipale)",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "739",
+      "label:kuntatunnus" : "Savitaipale",
+      "label:municipality" : "Savitaipale"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 529013.0, 6772369.0 ]
+    }
+  }, {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "1001773104",
+      "kiinteistotunnus" : "73941900020017",
+      "kuntanimiFin" : "Savitaipale",
+      "kuntanimiSwe" : "Savitaipale",
+      "kuntatunnus" : "739",
+      "osoite.Osoite.katunimi" : "Repovuorentie",
+      "osoite.Osoite.katunumero" : "27",
+      "osoite.Osoite.jarjestysnumero" : "1",
+      "osoite.Osoite.kieli" : "fin",
+      "osoite.Osoite.postinumero" : "54750",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#2",
+      "distance" : 295.47740252015507,
+      "rank" : 2,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "label" : "Repovuorentie 27 (Savitaipale)",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "739",
+      "label:kuntatunnus" : "Savitaipale",
+      "label:municipality" : "Savitaipale"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 529108.0, 6772439.0 ]
+    }
+  }, {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "100177303W",
+      "kiinteistotunnus" : "73941900020005",
+      "kuntanimiFin" : "Savitaipale",
+      "kuntanimiSwe" : "Savitaipale",
+      "kuntatunnus" : "739",
+      "osoite.Osoite.katunimi" : "Repovuorentie",
+      "osoite.Osoite.katunumero" : "20a",
+      "osoite.Osoite.jarjestysnumero" : "1",
+      "osoite.Osoite.kieli" : "fin",
+      "osoite.Osoite.postinumero" : "54750",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#3",
+      "distance" : 328.5960002801828,
+      "rank" : 3,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "label" : "Repovuorentie 20a (Savitaipale)",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "739",
+      "label:kuntatunnus" : "Savitaipale",
+      "label:municipality" : "Savitaipale"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 528864.0, 6772208.0 ]
+    }
+  }, {
+    "type" : "Feature",
+    "properties" : {
+      "rakennustunnus" : "1001773082",
+      "kiinteistotunnus" : "73941900020010",
+      "kuntanimiFin" : "Savitaipale",
+      "kuntanimiSwe" : "Savitaipale",
+      "kuntatunnus" : "739",
+      "osoite.Osoite.katunimi" : "Repovuorentie",
+      "osoite.Osoite.katunumero" : "25",
+      "osoite.Osoite.jarjestysnumero" : "1",
+      "osoite.Osoite.kieli" : "fin",
+      "osoite.Osoite.postinumero" : "54750",
+      "source" : "addresses",
+      "gid" : "nlsfi:addresses#4",
+      "distance" : 333.3533611651587,
+      "rank" : 4,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "label" : "Repovuorentie 25 (Savitaipale)",
+      "match_type" : "exact",
+      "accuracy" : "point",
+      "municipality" : "739",
+      "label:kuntatunnus" : "Savitaipale",
+      "label:municipality" : "Savitaipale"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 529071.0, 6772306.0 ]
+    }
+  } ],
+  "geocoding" : {
+    "status" : "success",
+    "metadata" : [ ],
+    "sources" : {
+      "addresses" : {
+        "status" : "success",
+        "duration" : 27,
+        "links" : [ ]
+      }
+    },
+    "query" : {
+      "limit" : 4,
+      "radius" : 1000.0,
+      "searchGeometry" : {
+        "type" : "Polygon",
+        "coordinates" : [ [ [ 529828.438, 6772534.666 ], [ 529809.2232804032, 6772339.575677984 ], [ 529752.3175325112, 6772151.982567635 ], [ 529659.9076123025, 6771979.09576698 ], [ 529535.5447811865, 6771827.559218814 ], [ 529384.0082330196, 6771703.196387698 ], [ 529211.121432365, 6771610.786467489 ], [ 529023.5283220161, 6771553.8807195965 ], [ 528828.438, 6771534.666 ], [ 528633.3476779838, 6771553.8807195965 ], [ 528445.7545676349, 6771610.786467489 ], [ 528272.8677669803, 6771703.196387698 ], [ 528121.3312188134, 6771827.559218814 ], [ 527996.9683876975, 6771979.09576698 ], [ 527904.5584674887, 6772151.982567635 ], [ 527847.6527195968, 6772339.575677984 ], [ 527828.438, 6772534.666 ], [ 527847.6527195968, 6772729.756322016 ], [ 527904.5584674887, 6772917.349432365 ], [ 527996.9683876975, 6773090.23623302 ], [ 528121.3312188134, 6773241.772781187 ], [ 528272.8677669803, 6773366.135612302 ], [ 528445.7545676349, 6773458.545532512 ], [ 528633.3476779838, 6773515.451280404 ], [ 528828.438, 6773534.666 ], [ 529023.5283220161, 6773515.451280404 ], [ 529211.121432365, 6773458.545532512 ], [ 529384.0082330196, 6773366.135612302 ], [ 529535.5447811865, 6773241.772781187 ], [ 529659.9076123025, 6773090.23623302 ], [ 529752.3175325112, 6772917.349432365 ], [ 529809.2232804032, 6772729.756322016 ], [ 529828.438, 6772534.666 ] ] ]
+      },
+      "focusPoint" : {
+        "type" : "Point",
+        "coordinates" : [ 528828.438, 6772534.666 ]
+      },
+      "sources" : "addresses",
+      "lang" : "fin",
+      "crs" : "http://www.opengis.net/def/crs/EPSG/0/3067",
+      "requestCrs" : "http://www.opengis.net/def/crs/EPSG/0/3067",
+      "scaleDenominator" : 5000,
+      "excludesMaps" : { }
+    },
+    "version" : "2.0.1",
+    "attribution" : "https://www.maanmittauslaitos.fi/en/opendata-licence-cc40",
+    "engine" : {
+      "name" : "maanmittauslaitos.fi/geocoding",
+      "author" : "National Land Survey of Finland",
+      "version" : "2.0.1"
+    },
+    "timestamp" : 1676020428401
+  }
+}
