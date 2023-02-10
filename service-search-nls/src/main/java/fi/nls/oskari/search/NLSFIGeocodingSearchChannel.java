@@ -41,6 +41,8 @@ import java.util.*;
 @Oskari(NLSFIGeocodingSearchChannel.ID)
 public class NLSFIGeocodingSearchChannel extends SearchChannel implements SearchAutocomplete {
     public static final String ID = "NLSFI_GEOCODING";
+    // buffer config for reverse geocoding
+    public static final String PARAM_BUFFER = "buffer";
 
     private static final Logger LOG = LogFactory.getLogger(NLSFIGeocodingSearchChannel.class);
     // password is always empty string with apikey
@@ -151,7 +153,9 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
 
         params.put("point.lon", p.getLonToString());
         params.put("point.lat", p.getLatToString());
-        params.put("boundary.circle.radius", defaultReverseBoundary);
+
+        params.put("boundary.circle.radius",
+                (String) criteria.getParams().getOrDefault(PARAM_BUFFER, defaultReverseBoundary));
         String url = getUrl("reverse", params);
         try {
             HttpURLConnection conn = connectToService(url);
@@ -239,12 +243,31 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
             } else if ("addresses".equals(src) || "interpolated-road-addresses".equals(src)) {
                 item.setZoomScale(5000);
                 // label includes the same postfixed with " ([municipality] )" that we want to get rid of
-                String address = feat.getString("katunimi");
-                String addressNumber = feat.getString("katunumero");
+                String address = searchForAddressValue(feat,"katunimi");
+                String addressNumber = searchForAddressValue(feat,"katunumero");
                 item.setTitle(formatStreetAddress(address, addressNumber));
             }
         }
         return item;
+    }
+
+    protected String searchForAddressValue(Feature feat, String propName) {
+        // this works for textual search
+        String address = feat.getString(propName);
+
+        if (address != null) {
+            return address;
+        }
+        // in reverse geocoding the address prop name has a prefix
+        address = feat.getString("osoite.Osoite." + propName);
+        if (address != null) {
+            return address;
+        }
+        // fallback if we can't find it from where it should be - just try finding it the hard way
+        return feat.properties.keySet().stream()
+                .filter(key -> key.contains(propName))
+                .findFirst()
+                .orElse(null);
     }
 
     private String formatStreetAddress(String name, String number) {

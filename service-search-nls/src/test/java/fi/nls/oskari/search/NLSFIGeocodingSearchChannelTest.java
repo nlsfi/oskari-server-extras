@@ -70,6 +70,16 @@ public class NLSFIGeocodingSearchChannelTest {
         Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-addresses.json"));
         List<Feature> results = GeocodeHelper.parseResponse(geojson);
         assertEquals("Should get 5 results", 5, results.size());
+        assertEquals("Hämeenkatu", channel.searchForAddressValue(results.get(0), "katunimi"));
+        //results.stream().forEach(feat -> System.out.println(feat.id));
+    }
+
+    @Test
+    public void testResponseParsingForReverse() throws IOException {
+        Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-reverse-addresses.json"));
+        List<Feature> results = GeocodeHelper.parseResponse(geojson);
+        assertEquals("Should get 4 results", 4, results.size());
+        assertEquals("Repovuorentie", channel.searchForAddressValue(results.get(0), "katunimi"));
         //results.stream().forEach(feat -> System.out.println(feat.id));
     }
 }
