@@ -137,7 +137,8 @@ public class TerrainProfileHandler extends ActionHandler {
         // Allow route to be GC'd
         route = null;
 
-        MathTransform transform = getTransform(serviceSrs, params);
+        String targetSRS = params.getHttpParam(ActionConstants.PARAM_SRS, DEFAULT_SRS);
+        MathTransform transform = getTransform(targetSRS, serviceSrs);
 
         if (transform != null) {
             transformInPlace(points, transform);
@@ -151,6 +152,8 @@ public class TerrainProfileHandler extends ActionHandler {
         try {
             List<DataPoint> dp = getService().getTerrainProfile(points, numPoints, scaleFactor);
             if (transform != null) {
+                // we transformed input so we must transform for output by switching input/output
+                transform = getTransform(serviceSrs, targetSRS);
                 transformInPlace(dp, transform);
             }
             writeResponse(params, dp);
@@ -227,14 +230,13 @@ public class TerrainProfileHandler extends ActionHandler {
         return props.get(JSON_PROPERTY_SCALE_FACTOR).asDouble(fallback);
     }
 
-    private MathTransform getTransform(String serviceCrs, ActionParameters params) throws ActionParamsException {
+    private MathTransform getTransform(String input, String output) throws ActionParamsException {
         try {
-            String targetSRS = params.getHttpParam(ActionConstants.PARAM_SRS, DEFAULT_SRS);
-            if (targetSRS.equals(serviceSrs)) {
+            if (input.equals(output)) {
                 return null;
             }
-            CoordinateReferenceSystem fromCRS = CRS.decode(serviceCrs);
-            CoordinateReferenceSystem toCRS = CRS.decode(targetSRS);
+            CoordinateReferenceSystem fromCRS = CRS.decode(input);
+            CoordinateReferenceSystem toCRS = CRS.decode(output);
             boolean lenient = true; // allow for some error due to different datums
             return CRS.findMathTransform(fromCRS, toCRS, lenient);
         } catch (FactoryException e) {
