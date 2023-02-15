@@ -30,6 +30,7 @@ import org.geotools.referencing.CRS;
 import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
+import org.opengis.referencing.operation.NoninvertibleTransformException;
 import org.opengis.referencing.operation.TransformException;
 
 @OskariActionRoute("TerrainProfile")
@@ -137,8 +138,8 @@ public class TerrainProfileHandler extends ActionHandler {
         // Allow route to be GC'd
         route = null;
 
-        String targetSRS = params.getHttpParam(ActionConstants.PARAM_SRS, DEFAULT_SRS);
-        MathTransform transform = getTransform(targetSRS, serviceSrs);
+        String clientSRS = params.getHttpParam(ActionConstants.PARAM_SRS, DEFAULT_SRS);
+        MathTransform transform = getTransform(clientSRS, serviceSrs);
 
         if (transform != null) {
             transformInPlace(points, transform);
@@ -152,13 +153,14 @@ public class TerrainProfileHandler extends ActionHandler {
         try {
             List<DataPoint> dp = getService().getTerrainProfile(points, numPoints, scaleFactor);
             if (transform != null) {
-                // we transformed input so we must transform for output by switching input/output
-                transform = getTransform(serviceSrs, targetSRS);
-                transformInPlace(dp, transform);
+                // we transformed input so we must transform for output by inversing input/output srs
+                transformInPlace(dp, transform.inverse());
             }
             writeResponse(params, dp);
         } catch (ServiceException e) {
             throw new ActionException(e.getMessage(), e);
+        } catch (NoninvertibleTransformException e) {
+            throw new ActionParamsException("Coulnd't transform coordinates", e);
         }
     }
 
