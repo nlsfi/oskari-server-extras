@@ -155,7 +155,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         params.put("point.lat", p.getLatToString());
 
         params.put("boundary.circle.radius",
-                (String) criteria.getParams().getOrDefault(PARAM_BUFFER, defaultReverseBoundary));
+                "" + criteria.getParams().getOrDefault(PARAM_BUFFER, defaultReverseBoundary));
         String url = getUrl("reverse", params);
         try {
             HttpURLConnection conn = connectToService(url);

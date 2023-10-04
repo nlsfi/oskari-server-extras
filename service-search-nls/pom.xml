@@ -5,16 +5,16 @@
 
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>oskari-search-nls</artifactId>
-    <version>4.1</version>
+    <version>4.2</version>
     <packaging>jar</packaging>
     <name>NLS Search Service</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
-        <!-- Any version after 2.0.1 as it changed lon/lat on searches from string to double -->
-        <oskari.version>[2.9.0,)</oskari.version>
-        <geotools.version>27.1</geotools.version>
+        <!-- Any version after 2.11.0 uses the same geotools version -->
+        <oskari.version>[2.11.0,)</oskari.version>
+        <geotools.version>28.4</geotools.version>
         <vecmath.version>1.5.2</vecmath.version>
     </properties>
 
