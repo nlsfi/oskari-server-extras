@@ -43,10 +43,15 @@ public class NLSNearestFeatureSearchChannel extends NLSFIGeocodingSearchChannel 
     }
 
     public String getBuffer(Object param) {
-        if(param != null && param instanceof String) {
-            String str = (String) param;
-            if(!str.isEmpty()) {
-                return str;
+        if (param != null) {
+            if (param instanceof String) {
+                String str = (String) param;
+                if (!str.isEmpty()) {
+                    return str;
+                }
+            } else if (param instanceof Integer) {
+                // fixes issue where GetReverseGeocoding sends default buffer as int
+                return param.toString();
             }
         }
         return "1000";
