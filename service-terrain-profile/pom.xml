@@ -15,7 +15,8 @@
         <oskari.version>[3.0.0-SNAPSHOT,)</oskari.version>
         <hystrix.version>1.5.18</hystrix.version>
         <geotools.version>32.1</geotools.version>
-        <junit.version>4.13.2</junit.version>
+        <junit.version>5.11.4</junit.version>
+        <mockito.version>5.15.2</mockito.version>
         <geojson-jackson.version>1.14</geojson-jackson.version>
         <javax.servlet.version>3.1.0</javax.servlet.version>
     </properties>
@@ -50,12 +51,6 @@
             <groupId>org.oskari</groupId>
             <artifactId>shared-test-resources</artifactId>
             <version>${oskari.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -135,6 +130,19 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <dependencies>
+                <!-- Required for @Disabled annotation to work on test -->
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

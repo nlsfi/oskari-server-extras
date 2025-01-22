@@ -1,13 +1,12 @@
 package fi.nls.oskari.terrainprofile.dem;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import org.oskari.wcs.geotiff.IFD;
 import org.oskari.wcs.geotiff.TIFFReader;
 
