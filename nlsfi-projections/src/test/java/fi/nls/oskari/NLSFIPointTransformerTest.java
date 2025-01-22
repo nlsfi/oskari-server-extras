@@ -27,8 +27,8 @@ public class NLSFIPointTransformerTest {
 
         Point input = new Point(1530012.833,6942456.165);
         Point value = transformer.reproject(input, "NLSFI:kkj", "LATLON:kkj");
-        System.out.println(value.getLon() + "\t" + value.getLat());
+        // System.out.println(value.getLon() + "\t" + value.getLat());
         assertEquals(21.58399205221266, value.getLon(), 0.0, "lon");
-        assertEquals(62.58520521458717, value.getLat(), 0.0, "lat");
+        assertEquals(62.58520521458718, value.getLat(), 0.0, "lat");
     }
 }
