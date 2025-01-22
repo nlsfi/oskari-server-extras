@@ -3,8 +3,8 @@ package fi.nls.oskari.search.channel;
 import fi.mml.portti.service.search.ChannelSearchResult;
 import fi.mml.portti.service.search.SearchCriteria;
 import fi.mml.portti.service.search.SearchResultItem;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TM35LehtijakoSearchChannelTest {
 
@@ -29,7 +29,7 @@ public class TM35LehtijakoSearchChannelTest {
 
         TM35LehtijakoSearchChannel instance = new TM35LehtijakoSearchChannel();
         ChannelSearchResult result = instance.doSearch(searchCriteria);
-        assertTrue("Should not find anything", result.getSearchResultItems().isEmpty());
+        assertTrue(result.getSearchResultItems().isEmpty(), "Should not find anything");
 
     }
 
@@ -47,7 +47,7 @@ public class TM35LehtijakoSearchChannelTest {
         ChannelSearchResult result = instance.reverseGeocode(searchCriteria);
         SearchResultItem item = result.getSearchResultItems().get(0);
 
-        assertEquals("source EPSG:4326", "U52", item.getTitle());
+        assertEquals("U52", item.getTitle(), "source EPSG:4326");
 
         searchCriteria.setSRS("EPSG:3857");
         // Lat,Lon order
@@ -57,7 +57,7 @@ public class TM35LehtijakoSearchChannelTest {
         result = instance.reverseGeocode(searchCriteria);
         item = result.getSearchResultItems().get(0);
 
-        assertEquals("source EPSG:3857", "U52", item.getTitle());
+        assertEquals("U52", item.getTitle(), "source EPSG:3857");
 
         searchCriteria.setSRS("EPSG:3067");
         // Lat,Lon order
@@ -67,7 +67,7 @@ public class TM35LehtijakoSearchChannelTest {
         result = instance.reverseGeocode(searchCriteria);
         item = result.getSearchResultItems().get(0);
 
-        assertEquals("source EPSG:3067", "U52", item.getTitle());
+        assertEquals("U52", item.getTitle(), "source EPSG:3067");
     }
 
 }
