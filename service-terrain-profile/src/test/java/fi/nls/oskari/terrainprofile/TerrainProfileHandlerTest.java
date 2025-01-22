@@ -1,8 +1,6 @@
 package fi.nls.oskari.terrainprofile;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -27,9 +25,9 @@ import org.geojson.Feature;
 import org.geojson.LineString;
 import org.geojson.LngLatAlt;
 import org.geojson.MultiPoint;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
 public class TerrainProfileHandlerTest {
@@ -37,7 +35,7 @@ public class TerrainProfileHandlerTest {
     private static ObjectMapper om;
     private static TerrainProfileHandler handler;
 
-    @BeforeClass
+    @BeforeAll
     public static void init() throws IOException, ParserConfigurationException, SAXException {
         om = new ObjectMapper();
         handler = new TerrainProfileHandler(om, null);
@@ -159,7 +157,7 @@ public class TerrainProfileHandlerTest {
     }
 
     @Test
-    @Ignore("Depends on an outside API")
+    @Disabled("Depends on an outside API")
     public void whenInputIsCorrectWePass() throws IOException, ActionException, ServiceException {
         Feature feature = new Feature();
         LineString line = new LineString();

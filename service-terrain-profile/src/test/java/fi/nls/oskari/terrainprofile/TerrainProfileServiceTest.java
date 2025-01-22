@@ -1,34 +1,34 @@
 package fi.nls.oskari.terrainprofile;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
 import fi.nls.oskari.control.ActionException;
 import fi.nls.oskari.service.ServiceException;
 
-@Ignore("Depends on an outside API")
+@Disabled("Depends on an outside API")
 public class TerrainProfileServiceTest {
 
     private static String endPoint = "https://beta-karttakuva.maanmittauslaitos.fi/wcs/service/ows";
     private static String coverageId = "korkeusmalli__korkeusmalli";
     private static TerrainProfileService tps;
 
-    @BeforeClass
+    @BeforeAll
     public static void setup() throws ServiceException {
         tps = new TerrainProfileService(endPoint, coverageId);
     }
 
     @Test
+    @Disabled("Depends on an outside API")
     public void offsetIsCorrect() throws IOException, ActionException, ParserConfigurationException, SAXException, ServiceException {
         double[] coordinates = new double[] {
                 500002, 6822001,
@@ -50,7 +50,7 @@ public class TerrainProfileServiceTest {
     }
 
     @Test
-    @Ignore("Too long")
+    @Disabled("Too long")
     public void testLongLine() throws IOException, ActionException, ParserConfigurationException, SAXException, ServiceException {
         double[] coordinates = {
                 279816, 6640056,
@@ -64,6 +64,7 @@ public class TerrainProfileServiceTest {
     }
 
     @Test
+    @Disabled("Depends on an outside API")
     public void testHorizontalLine() throws IOException, ActionException, ParserConfigurationException, SAXException, ServiceException {
         double[] coordinates = {
                 400000, 6700000,
@@ -77,6 +78,7 @@ public class TerrainProfileServiceTest {
     }
 
     @Test
+    @Disabled("Depends on an outside API")
     public void tesVerticalLine() throws IOException, ActionException, ParserConfigurationException, SAXException, ServiceException {
         double[] coordinates = {
                 400000, 6700000,
@@ -90,6 +92,7 @@ public class TerrainProfileServiceTest {
     }
 
     @Test
+    @Disabled("Depends on an outside API")
     public void testSmallLine() throws IOException, ActionException, ParserConfigurationException, SAXException, ServiceException {
         double[] coordinates = {
                 400000, 6700000,
