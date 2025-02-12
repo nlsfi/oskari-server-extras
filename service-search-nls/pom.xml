@@ -14,8 +14,8 @@
         <jdk.version>17</jdk.version>
         <!-- Any version after 3.0.0 uses the same geotools version -->
         <oskari.version>[3.0.0-SNAPSHOT,)</oskari.version>
-        <geotools.version>32.1</geotools.version>
-        <vecmath.version>1.5.2</vecmath.version>
+        <geotools.version>32.2</geotools.version>
+        <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
     </properties>
 
     <!-- Build Settings -->
@@ -105,9 +105,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${jakarta.servlet.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -133,11 +133,6 @@
             <artifactId>gt-epsg-hsql</artifactId>
             <version>${geotools.version}</version>
         </dependency>
-        <!-- dependency>
-            <groupId>javax.vecmath</groupId>
-            <artifactId>vecmath</artifactId>
-            <version>${vecmath.version}</version>
-        </dependency -->
     </dependencies>
 
     <repositories>
