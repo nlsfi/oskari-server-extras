@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeoutException;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
@@ -30,8 +29,6 @@ import org.oskari.wcs.request.DescribeCoverage;
 import org.oskari.wcs.request.GetCapabilities;
 import org.oskari.wcs.request.GetCoverage;
 import org.xml.sax.SAXException;
-
-import com.netflix.hystrix.exception.HystrixRuntimeException;
 
 import fi.nls.oskari.service.ServiceException;
 import fi.nls.oskari.util.IOHelper;
@@ -57,6 +54,7 @@ public class TerrainProfileService {
     private static final String PASSWORD = "";
     private static final int MAX_REDIRECTS = 5;
 
+    private final CoverageLoader loader;
     private final String endPoint;
     private final String apiKey;
     private final Supplier<TileValueExtractor> extractorGenerator;
@@ -76,6 +74,7 @@ public class TerrainProfileService {
     }
 
     public TerrainProfileService(String endPoint, String coverageId, String apiKey, Supplier<TileValueExtractor> extractorGenerator) throws ServiceException {
+        loader = new CoverageLoader();
         try {
             this.endPoint = endPoint;
             this.apiKey = apiKey;
@@ -337,16 +336,7 @@ public class TerrainProfileService {
 
         String queryString = IOHelper.getParamsMultiValue(getCoverageKVP);
         String request = IOHelper.addQueryString(endPoint, queryString);
-        byte[] response;
-        try {
-            response = new CommandGetCoverage(getConnectionSupplier(request)).execute();
-        } catch (HystrixRuntimeException e) {
-            if (e.getCause() instanceof TimeoutException) {
-                throw new ServiceException("Timeout");
-            }
-            throw new ServiceException("Failed to retrieve data from WCS", e);
-        }
-
+        byte[] response = loader.getCoverage(getConnectionSupplier(request));
         try {
             TIFFReader r = new TIFFReader(response);
             TiledTiffDEM tiff = new TiledTiffDEM(r, extractorGenerator.get());
