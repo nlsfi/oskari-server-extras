@@ -157,6 +157,8 @@ public class TerrainProfileHandler extends ActionHandler {
                 transformInPlace(dp, transform.inverse());
             }
             writeResponse(params, dp);
+        } catch (ServiceRuntimeException e) {
+            throw new ActionCommonException(e.getMessage(), e);
         } catch (ServiceException e) {
             throw new ActionException(e.getMessage(), e);
         } catch (NoninvertibleTransformException e) {
