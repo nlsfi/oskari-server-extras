@@ -36,6 +36,40 @@
   }, {
     "type" : "Feature",
     "properties" : {
+      "kuntatunnus" : "049",
+      "source" : "interpolated-road-addresses",
+      "gid" : "nlsfi:interpolated-road-addresses#1",
+      "distance" : 65.53093208451352,
+      "rank" : 1,
+      "country" : "Suomi",
+      "country_gid" : "whosonfirst:country:85633143",
+      "continent" : "Eurooppa",
+      "continent_gid" : "whosonfirst:continent:102191581",
+      "country_a" : "FIN",
+      "label" : "Lansankallionkuja 4 (Espoo)",
+      "label:kuntatunnus" : "Espoo",
+      "label:municipality" : "Espoo",
+      "osoite.Osoite.katunimi" : "Lansankallionkuja",
+      "osoite.Osoite.katunumero" : "4",
+      "osoite.Osoite.jarjestysnumero" : "3",
+      "osoite.Osoite.kieli" : "fin",
+      "osoite.Osoite#2.katunimi" : "Lansabergsgränden",
+      "osoite.Osoite#2.katunumero" : "4",
+      "osoite.Osoite#2.jarjestysnumero" : "3",
+      "osoite.Osoite#2.kieli" : "swe",
+      "match_type" : "interpolated",
+      "accuracy" : "point",
+      "municipality" : "049",
+      "kuntanimiFin" : "Espoo",
+      "kuntanimiSwe" : "Esbo"
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 1.0, 2.0 ]
+    }
+  }, {
+    "type" : "Feature",
+    "properties" : {
       "rakennustunnus" : "1001773104",
       "kiinteistotunnus" : "73941900020017",
       "kuntanimiFin" : "Savitaipale",

@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Search channel impl for https://www.maanmittauslaitos.fi/geokoodauspalvelu/tekninen-kuvaus
@@ -245,31 +247,61 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
             } else if ("addresses".equals(src) || "interpolated-road-addresses".equals(src)) {
                 item.setZoomScale(5000);
                 // label includes the same postfixed with " ([municipality] )" that we want to get rid of
-                String address = searchForAddressValue(feat,"katunimi");
-                String addressNumber = searchForAddressValue(feat,"katunumero");
+                String address = searchForAddressValue(feat, "katunimi", lang);
+                String addressNumber = searchForAddressValue(feat,"katunumero", lang);
                 item.setTitle(formatStreetAddress(address, addressNumber));
             }
         }
         return item;
     }
 
-    protected String searchForAddressValue(Feature feat, String propName) {
+    protected String searchForAddressValue(Feature feat, String propName, String lang) {
         // this works for textual search
         String address = feat.getString(propName);
 
         if (address != null) {
             return address;
         }
+        boolean useFiLang = lang == null || "fi".equalsIgnoreCase(lang);
         // in reverse geocoding the address prop name has a prefix
         address = feat.getString("osoite.Osoite." + propName);
-        if (address != null) {
+        if (address != null && useFiLang) {
             return address;
         }
         // fallback if we can't find it from where it should be - just try finding it the hard way
+        Set<String> prefixedProps = feat.properties.keySet().stream()
+                .filter(key -> key.contains(propName))
+                .map(key -> key.substring(0, key.lastIndexOf('.')))
+                .collect(Collectors.toSet());
+        if (prefixedProps.isEmpty()) {
+            // fallback to label
+            return feat.getString("label");
+        }
+        // available languages
+        Map<String, String> languagePrefixes = prefixedProps.stream()
+                .collect(Collectors.toMap(
+                        key -> getLang(feat.getString(key + ".kieli")), Function.identity())
+                );
+        if (languagePrefixes.containsKey(lang)) {
+            String langAddress = feat.getString(languagePrefixes.get(lang) + "." + propName);
+            if (langAddress != null) {
+                return langAddress;
+            }
+        }
         return feat.properties.keySet().stream()
                 .filter(key -> key.contains(propName))
+                .map(feat::getString)
                 .findFirst()
                 .orElse(null);
+    }
+
+    private String getLang(String geocodeLang) {
+        if ("swe".equalsIgnoreCase(geocodeLang)) {
+            return "sv";
+        } else if ("fin".equalsIgnoreCase(geocodeLang)) {
+            return "fi";
+        }
+        return geocodeLang;
     }
 
     private String formatStreetAddress(String name, String number) {

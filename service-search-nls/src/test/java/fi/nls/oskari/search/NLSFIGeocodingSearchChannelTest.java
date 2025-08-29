@@ -70,7 +70,7 @@ public class NLSFIGeocodingSearchChannelTest {
         Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-addresses.json"));
         List<Feature> results = GeocodeHelper.parseResponse(geojson);
         assertEquals(5, results.size(), "Should get 5 results");
-        assertEquals(channel.searchForAddressValue(results.get(0), "katunimi"), "Hämeenkatu");
+        assertEquals(channel.searchForAddressValue(results.get(0), "katunimi", "fi"), "Hämeenkatu");
         //results.stream().forEach(feat -> System.out.println(feat.id));
     }
 
@@ -78,8 +78,19 @@ public class NLSFIGeocodingSearchChannelTest {
     public void testResponseParsingForReverse() throws IOException {
         Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-reverse-addresses.json"));
         List<Feature> results = GeocodeHelper.parseResponse(geojson);
-        assertEquals(4, results.size(), "Should get 4 results");
-        assertEquals(channel.searchForAddressValue(results.get(0), "katunimi"), "Repovuorentie");
+        assertEquals(5, results.size(), "Should get 5 results");
+        assertEquals(channel.searchForAddressValue(results.get(0), "katunimi", "fi"), "Repovuorentie");
+        //results.stream().forEach(feat -> System.out.println(feat.id));
+    }
+
+    @Test
+    public void testResponseParsingForReverseLangSV() throws IOException {
+        Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-reverse-addresses.json"));
+        List<Feature> results = GeocodeHelper.parseResponse(geojson);
+        assertEquals(5, results.size(), "Should get 5 results");
+        assertEquals(channel.searchForAddressValue(results.get(1), "katunimi", "fi"), "Lansankallionkuja");
+        assertEquals(channel.searchForAddressValue(results.get(1), "katunimi", "sv"), "Lansabergsgränden");
+        assertEquals(channel.searchForAddressValue(results.get(1), "katunimi", "asdf"), "Lansankallionkuja");
         //results.stream().forEach(feat -> System.out.println(feat.id));
     }
 }
