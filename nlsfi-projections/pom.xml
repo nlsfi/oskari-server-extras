@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>nlsfi-projections</artifactId>
-    <version>1.3</version>
+    <version>1.4</version>
     <packaging>jar</packaging>
     <name>Oskari wrapper for projection libs usable in NLSFI applications</name>
 
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.4</version>
+            <version>5.13.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
