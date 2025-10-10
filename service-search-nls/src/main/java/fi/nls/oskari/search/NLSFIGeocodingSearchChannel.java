@@ -217,8 +217,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         // all features seems to have label, geonames have "name" that is an object
         //item.setLocationName((String) feat.properties.get("label"));
         item.setTitle(feat.getString("label"));
-        // "label:municipality" is atleast in both "source" : "geographic-names" && "addresses"
-        item.setRegion(feat.getString("label:municipality"));
+        item.setRegion(getRegion(feat));
         String src = feat.getString("source");
         if (src == null) {
             // all features seems to have label, geonames have "name" that is an object
@@ -253,6 +252,16 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
             }
         }
         return item;
+    }
+
+    static String getRegion(Feature feat) {
+        // "label:municipality" is atleast in both "source" : "geographic-names" && "addresses"
+        String municipality = feat.getString("label:municipality");
+        if (municipality == null) {
+            // label:municipality is missing for source interpolated-road-addresses if and only if lang != fi
+            municipality = feat.getString("label:kuntatunnus");
+        }
+        return municipality;
     }
 
     protected String searchForAddressValue(Feature feat, String propName, String lang) {

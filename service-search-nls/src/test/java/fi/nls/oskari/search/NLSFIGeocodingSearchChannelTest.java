@@ -93,4 +93,12 @@ public class NLSFIGeocodingSearchChannelTest {
         assertEquals(channel.searchForAddressValue(results.get(1), "katunimi", "asdf"), "Lansankallionkuja");
         //results.stream().forEach(feat -> System.out.println(feat.id));
     }
+
+    @Test
+    public void testResponseParsingForInterpolatedRoadAddressesEn() throws IOException {
+        Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-interpolated-road-addresses.json"));
+        List<Feature> results = GeocodeHelper.parseResponse(geojson);
+        assertEquals(2, results.size(), "Should get 2 results");
+        assertEquals("Limingo", NLSFIGeocodingSearchChannel.getRegion(results.get(0)));
+    }
 }
