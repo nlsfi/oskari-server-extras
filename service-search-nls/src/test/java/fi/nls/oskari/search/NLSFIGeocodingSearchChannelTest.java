@@ -1,5 +1,6 @@
 package fi.nls.oskari.search;
 
+import fi.mml.portti.service.search.SearchResultItem;
 import fi.nls.oskari.search.geocoding.Feature;
 import fi.nls.oskari.search.geocoding.GeocodeHelper;
 import fi.nls.oskari.service.ServiceRuntimeException;
@@ -30,6 +31,7 @@ public class NLSFIGeocodingSearchChannelTest {
         String user = "[this is an api key for testing]"; //apikey
         PropertyUtil.addProperty("search.channel." + NLSFIGeocodingSearchChannel.ID + ".APIkey", user);
         PropertyUtil.addProperty("search.channel." + NLSFIGeocodingSearchChannel.ID + ".endpoint.test", "/xyz/testing");
+        PropertyUtil.addProperty("search.channel." + NLSFIGeocodingSearchChannel.ID + ".placenames.contenturl", "https://tietokortit.maanmittauslaitos.fi/nimisto/paikka/");
         channel.init();
     }
 
@@ -81,6 +83,22 @@ public class NLSFIGeocodingSearchChannelTest {
         assertEquals(5, results.size(), "Should get 5 results");
         assertEquals(channel.searchForAddressValue(results.get(0), "katunimi", "fi"), "Repovuorentie");
         //results.stream().forEach(feat -> System.out.println(feat.id));
+    }
+
+    @Test
+    public void testGeonamesItemHasContentURL() throws IOException {
+        Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-geonames.json"));
+        List<Feature> results = GeocodeHelper.parseResponse(geojson);
+        SearchResultItem item = channel.getItem(results.get(0), "fi");
+        assertEquals("https://tietokortit.maanmittauslaitos.fi/nimisto/paikka/10581718", item.getContentURL());
+    }
+
+    @Test
+    public void testAddressItemHasNoContentURL() throws IOException {
+        Map<String, Object> geojson = GeocodeHelper.readJSON(this.getClass().getResourceAsStream("nlsfi-geocoding-search-response-addresses.json"));
+        List<Feature> results = GeocodeHelper.parseResponse(geojson);
+        SearchResultItem item = channel.getItem(results.get(0), "fi");
+        assertNull(item.getContentURL());
     }
 
     @Test
