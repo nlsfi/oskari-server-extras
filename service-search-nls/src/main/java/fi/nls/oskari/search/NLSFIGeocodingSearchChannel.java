@@ -54,6 +54,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
 
     private String baseURL;
     private String apiKey;
+    private String placenamesContentURL;
 
     public Capabilities getCapabilities() {
         return Capabilities.BOTH;
@@ -78,6 +79,7 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         }
         defaultSources = getProperty("sources", defaultSources);
         defaultReverseBoundary = getProperty("reverse.boundary", defaultReverseBoundary);
+        placenamesContentURL = getProperty("placenames.contenturl", null);
         // defaults
         //endPoints.put("default", "/v1/pelias/search"); // the text search
         endPoints.put("default", "/v2/advanced/search"); // the text search
@@ -207,12 +209,11 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         return result;
     }
 
-    private SearchResultItem getItem(Feature feat, String lang) {
+    SearchResultItem getItem(Feature feat, String lang) {
 
         SearchResultItem item = new SearchResultItem();
         item.setLat(feat.y);
         item.setLon(feat.x);
-        item.setContentURL(feat.x + "_" + feat.y);
 
         // all features seems to have label, geonames have "name" that is an object
         //item.setLocationName((String) feat.properties.get("label"));
@@ -229,8 +230,11 @@ public class NLSFIGeocodingSearchChannel extends SearchChannel implements Search
         item.setType(src);
 
         if ("geographic-names".equals(src)) {
-            // all features seems to have label, geonames have "name" that is an object
-            item.setResourceId("" + feat.properties.get("placeId"));
+            Object placeId = feat.properties.get("placeId");
+            item.setResourceId("" + placeId);
+            if (placenamesContentURL != null && placeId != null) {
+                item.setContentURL(placenamesContentURL + placeId);
+            }
             Integer scaleRelevance = (Integer)feat.properties.get("scaleRelevance");
             if (scaleRelevance != null && scaleRelevance > 0) {
                 // divide by to get a closer zoom. Oskari zooms out to get the scale
