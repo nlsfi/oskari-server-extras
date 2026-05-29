@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
@@ -15,8 +16,10 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import fi.nls.oskari.service.ServiceRuntimeException;
 import fi.nls.oskari.terrainprofile.dem.FloatAsIsValueExtractor;
+import fi.nls.oskari.terrainprofile.dem.ScaledGrayscaleValueExtractor;
 import fi.nls.oskari.terrainprofile.dem.TileValueExtractor;
 import fi.nls.oskari.terrainprofile.dem.TiledTiffDEM;
+import fi.nls.oskari.util.PropertyUtil;
 import org.oskari.wcs.capabilities.Capabilities;
 import org.oskari.wcs.coverage.CoverageDescription;
 import org.oskari.wcs.coverage.RectifiedGridCoverage;
@@ -64,6 +67,63 @@ public class TerrainProfileService {
     private final double originNorth;
     private final double offsetVectorX;
     private final double offsetVectorY;
+    private String serviceSrs = DEFAULT_SRS;
+
+    public static final String DEFAULT_SRS = "EPSG:3067";
+
+    public static final String PROPERTY_ENDPOINT = "terrain.profile.wcs.endPoint";
+    public static final String PROPERTY_ENDPOINT_SRS = "terrain.profile.wcs.srs";
+    public static final String PROPERTY_DEM_COVERAGE_ID = "terrain.profile.wcs.demCoverageId";
+    public static final String PROPERTY_DEM_APIKEY = "terrain.profile.wcs.APIkey";
+    public static final String PROPERTY_NODATA_VALUE = "terrain.profile.wcs.noData";
+    public static final String PROPERTY_DEM_TYPE = "terrain.profile.wcs.demType";
+    public static final String PROPERTY_DEM_SCALE = "terrain.profile.wcs.demScale";
+    public static final String PROPERTY_DEM_OFFSET = "terrain.profile.wcs.demOffset";
+
+    /**
+     * Build a service from the shared terrain.profile.wcs.* properties.
+     * Used by both TerrainProfileHandler and search channels.
+     */
+    public static TerrainProfileService fromProperties() throws ServiceException {
+        TerrainProfileService service = new TerrainProfileService(
+                PropertyUtil.getNecessary(PROPERTY_ENDPOINT),
+                PropertyUtil.getNecessary(PROPERTY_DEM_COVERAGE_ID),
+                PropertyUtil.getOptional(PROPERTY_DEM_APIKEY),
+                getTileValueExtractor());
+        service.serviceSrs = PropertyUtil.get(PROPERTY_ENDPOINT_SRS, DEFAULT_SRS).toUpperCase();
+        return service;
+    }
+
+
+
+    private static Supplier<TileValueExtractor> getTileValueExtractor() {
+        String type = PropertyUtil.get(PROPERTY_DEM_TYPE, FloatAsIsValueExtractor.ID);
+
+        switch (type) {
+        case ScaledGrayscaleValueExtractor.ID:
+            double scale = Double.parseDouble(PropertyUtil.getNecessary(PROPERTY_DEM_SCALE));
+            double offset = Double.parseDouble(PropertyUtil.getNecessary(PROPERTY_DEM_OFFSET));
+            short noDataS = getNoDataValue(Short::parseShort).shortValue();
+            return () -> new ScaledGrayscaleValueExtractor(scale, offset, noDataS);
+
+        case FloatAsIsValueExtractor.ID:
+        default:
+            float noDataF = getNoDataValue(Float::parseFloat).floatValue();
+            return () -> new FloatAsIsValueExtractor(noDataF);
+        }
+    }
+
+    private static Number getNoDataValue(Function<String, Number> parser) {
+        String noDataStr = PropertyUtil.getOptional(PROPERTY_NODATA_VALUE);
+        if (noDataStr != null && !noDataStr.isEmpty()) {
+            try {
+                return parser.apply(noDataStr);
+            } catch (NumberFormatException e) {
+                // fall through to NaN
+            }
+        }
+        return Double.NaN;
+    }
 
     public TerrainProfileService(String endPoint, String coverageId) throws ServiceException {
         this(endPoint, coverageId, () -> new FloatAsIsValueExtractor(Float.NaN));
@@ -93,6 +153,10 @@ public class TerrainProfileService {
         } catch (IOException | ParserConfigurationException | SAXException e) {
             throw new ServiceException("Failed to initialize", e);
         }
+    }
+
+    public String getServiceSrs() {
+        return serviceSrs;
     }
 
     private Capabilities getCapabilities(String endPoint)
