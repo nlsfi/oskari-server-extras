@@ -49,6 +49,18 @@
         </dependency>
         <dependency>
             <groupId>org.oskari</groupId>
+            <artifactId>service-search</artifactId>
+            <version>${oskari.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.oskari</groupId>
+            <artifactId>service-map</artifactId>
+            <version>${oskari.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.oskari</groupId>
             <artifactId>shared-test-resources</artifactId>
             <version>${oskari.version}</version>
             <scope>test</scope>

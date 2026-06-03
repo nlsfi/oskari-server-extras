@@ -18,13 +18,19 @@ import fi.nls.oskari.service.ServiceException;
 @Disabled("Depends on an outside API")
 public class TerrainProfileServiceTest {
 
-    private static String endPoint = "https://beta-karttakuva.maanmittauslaitos.fi/wcs/service/ows";
-    private static String coverageId = "korkeusmalli__korkeusmalli";
+    // Configurable so the live endpoint/coverage/apikey aren't baked into the repo.
+    // Run with e.g. -Dterrain.test.apikey=... -Dterrain.test.endpoint=... when enabling.
+    private static String endPoint = System.getProperty("terrain.test.endpoint",
+            "https://avoin-karttakuva.maanmittauslaitos.fi/ortokuvat-ja-korkeusmallit/wcs/v2");
+    private static String coverageId = System.getProperty("terrain.test.coverage", "korkeusmalli_2m");
+    private static String apiKey = System.getProperty("terrain.test.apikey");
+    private static float noData = Float.parseFloat(System.getProperty("terrain.test.noData", "-9999"));
     private static TerrainProfileService tps;
 
     @BeforeAll
     public static void setup() throws ServiceException {
-        tps = new TerrainProfileService(endPoint, coverageId);
+        tps = new TerrainProfileService(endPoint, coverageId, apiKey,
+                () -> new fi.nls.oskari.terrainprofile.dem.FloatAsIsValueExtractor(noData)); //
     }
 
     @Test
@@ -47,6 +53,27 @@ public class TerrainProfileServiceTest {
             assertEquals(n, single.getN(), 0.0);
             assertEquals(p.getAltitude(), single.getAltitude(), 0.0);
         }
+    }
+
+    @Test
+    @Disabled("Depends on an outside API")
+    public void singlePointReturnsSensibleValue() throws IOException, ActionException, ParserConfigurationException, SAXException, ServiceException {
+        // a point on land in southern Finland (EPSG:3067) should have a real, positive elevation
+        double e = 385445;
+        double n = 6675125;
+        double alt = tps.getTerrainProfile(new double[] { e, n }, 1, 0).get(0).getAltitude();
+        assertFalse(Double.isNaN(alt), "expected a value, got NaN");
+        assertTrue(alt > 0 && alt < 1500, "elevation out of expected range: " + alt);
+    }
+
+    @Test
+    @Disabled("Depends on an outside API")
+    public void singlePointOutsideCoverageIsNaN() throws IOException, ActionException, ParserConfigurationException, SAXException, ServiceException {
+        // a point in open sea / outside the land DEM should have no elevation data
+        double e = 150000;
+        double n = 6900000;
+        double alt = tps.getTerrainProfile(new double[] { e, n }, 1, 0).get(0).getAltitude();
+        assertTrue(Double.isNaN(alt), "expected NaN for out-of-coverage point, got " + alt);
     }
 
     @Test

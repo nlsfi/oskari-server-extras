@@ -177,9 +177,14 @@ public class TerrainProfileHandlerTest {
         params.setRequest(request);
         params.setResponse(response);
 
-        String endPoint = "https://beta-karttakuva.maanmittauslaitos.fi/wcs/service/ows";
-        String coverageId = "korkeusmalli__korkeusmalli";
-        TerrainProfileService tps = new TerrainProfileService(endPoint, coverageId);
+        // Configurable so the live endpoint/coverage/apikey aren't baked into the repo.
+        // Run with e.g. -Dterrain.test.apikey=... when enabling.
+        String endPoint = System.getProperty("terrain.test.endpoint",
+                "https://avoin-karttakuva.maanmittauslaitos.fi/ortokuvat-ja-korkeusmallit/wcs/v2");
+        String coverageId = System.getProperty("terrain.test.coverage", "korkeusmalli_2m");
+        String apiKey = System.getProperty("terrain.test.apikey");
+        TerrainProfileService tps = new TerrainProfileService(endPoint, coverageId, apiKey,
+                () -> new fi.nls.oskari.terrainprofile.dem.FloatAsIsValueExtractor(Float.NaN));
         new TerrainProfileHandler(om, tps).handleAction(params);
     }
 
