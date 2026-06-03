@@ -5,7 +5,7 @@
 
     <groupId>fi.nls.oskari.extras</groupId>
     <artifactId>oskari-search-nls</artifactId>
-    <version>5.1</version>
+    <version>5.2</version>
     <packaging>jar</packaging>
     <name>NLS Search Service</name>
 
@@ -13,8 +13,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>17</jdk.version>
         <!-- Any version after 3.1.0 uses the same geotools version -->
-        <oskari.version>[3.1.0,)</oskari.version>
-        <geotools.version>33.2</geotools.version>
+        <oskari.version>[3.3.0,)</oskari.version>
+        <geotools.version>34.2</geotools.version>
         <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
     </properties>
 
