@@ -14,7 +14,8 @@ import fi.nls.oskari.view.modifier.ModifierParams;
 import fi.nls.oskari.view.modifier.ViewModifier;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 import java.util.Locale;
 
 @OskariViewModifier("address")
@@ -37,7 +38,7 @@ public class AddressParamHandler extends ParamHandler {
         if(params.getParamValue() == null) {
             return false;
         }
-        final ArrayList<String[]> coordinates = getCoordinatesFromAddress(params.getParamValue(), params.getLocale(), params.getView().getSrsName());
+        final List<SearchResultItem> coordinates = getCoordinatesFromAddress(params.getParamValue(), params.getLocale(), params.getView().getSrsName());
         if (coordinates.isEmpty()) {
             return false;
         }
@@ -59,20 +60,18 @@ public class AddressParamHandler extends ParamHandler {
             // search plugin not found -> probably on geoportal
         }
         // found one -> set mapfull location
-        final String[] coords = coordinates.get(0);
+        final SearchResultItem coords = coordinates.get(0);
         final JSONObject state = getBundleState(params.getConfig(), ViewModifier.BUNDLE_MAPFULL);
         try {
-            state.put(KEY_EAST, coords[0]);
-            state.put(KEY_NORTH, coords[1]);
+            state.put(KEY_EAST, coords.getLon());
+            state.put(KEY_NORTH, coords.getLat());
         } catch (Exception ex) {
             throw new ModifierException("Got address coordinates but could not modify location.");
         }
         return true;
     }
-    protected ArrayList<String[]> getCoordinatesFromAddress(
+    protected List<SearchResultItem> getCoordinatesFromAddress(
                               String searchString, Locale locale, String srs) {
-
-        final ArrayList<String[]> lat_lon = new ArrayList<>();
 
         final SearchCriteria sc = new SearchCriteria();
         sc.addChannel(channelID);
@@ -83,14 +82,12 @@ public class AddressParamHandler extends ParamHandler {
         try {
             final Query query = searchService.doSearch(sc);
             final ChannelSearchResult result = query.findResult(channelID);
-            for(SearchResultItem item : result.getSearchResultItems()) {
-                lat_lon.add(item.getContentURL().split("_"));
-            }
+            return result.getSearchResultItems();
         } catch (Exception e) {
             log.error(e, "Problems with address search:", sc);
         }
 
-        return lat_lon;
+        return Collections.emptyList();
     }
     // returns existing node or initializes new one if not existing
     private JSONObject initPluginConfig(final JSONObject content, final String key) {
